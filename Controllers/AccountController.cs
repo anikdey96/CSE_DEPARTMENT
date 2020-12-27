@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CSE_DEPARTMENT.Models;
+using System.Web.Security;
+using System.Collections.Generic;
 
 namespace CSE_DEPARTMENT.Controllers
 {
@@ -20,7 +22,10 @@ namespace CSE_DEPARTMENT.Controllers
 
         public AccountController()
         {
+
         }
+
+       
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
@@ -472,6 +477,7 @@ namespace CSE_DEPARTMENT.Controllers
                 RedirectUri = redirectUri;
                 UserId = userId;
             }
+
 
             public string LoginProvider { get; set; }
             public string RedirectUri { get; set; }

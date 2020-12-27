@@ -96,6 +96,7 @@ namespace CSE_DEPARTMENT
         public ApplicationUserManager(IUserStore<ApplicationUser> store)
             : base(store)
         {
+
         }
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
@@ -165,16 +166,16 @@ namespace CSE_DEPARTMENT
         }
     }
 
-    public class ApplicationRoleManager : RoleManager<ApplicationRole>
-    {
-        public ApplicationRoleManager(IRoleStore<ApplicationRole,string> roleStore) : base(roleStore) { }
-        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options,IOwinContext context)
-        {
-            var applicationRoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<ApplicationDbContext>()));
-            return applicationRoleManager;
-        }
+    //public class ApplicationRoleManager : RoleManager<ApplicationRole>
+    //{
+    //    public ApplicationRoleManager(IRoleStore<ApplicationRole, string> roleStore) : base(roleStore) { }
+    //    public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
+    //    {
+    //        var applicationRoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<ApplicationDbContext>()));
+    //        return applicationRoleManager;
+    //    }
 
 
-    }
+    //}
 
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSE_DEPARTMENT.Models
 {
@@ -131,4 +132,5 @@ namespace CSE_DEPARTMENT.Models
         [Display(Name = "Email Address")]
         public string Email { get; set; }
     }
+
 }

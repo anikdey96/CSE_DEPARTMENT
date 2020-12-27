@@ -19,11 +19,11 @@ namespace CSE_DEPARTMENT.Models
         }
     }
 
-    public class ApplicationRole : IdentityRole
-    {
-        public ApplicationRole() : base() { }
-        public ApplicationRole(string roleName): base(roleName) { }
-    }
+    //public class ApplicationRole : IdentityRole
+    //{
+    //    public ApplicationRole() : base() { }
+    //    public ApplicationRole(string roleName) : base(roleName) { }
+    //}
 
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -73,6 +73,6 @@ namespace CSE_DEPARTMENT.Models
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.teacher_career> teacher_career { get; set; }
 
-        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.RoleViewModel> RoleViewModels { get; set; }
+        //public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }
