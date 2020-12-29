@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,13 +14,14 @@ namespace CSE_DEPARTMENT.Controllers
     public class AdminController : Controller
     {
         ApplicationDbContext context = new ApplicationDbContext();
-        
+       
+
         // GET: Admin
         public ActionResult Index()
         {
             return View();
         }
-
+          
         public ActionResult CreateUser()
         {
             return View();
