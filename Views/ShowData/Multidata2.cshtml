@@ -1,0 +1,11 @@
+﻿@model CSE_DEPARTMENT.ViewModel.Multipledata
+
+@{
+    ViewBag.Title = "Multidata2";
+}
+
+<h2>Users</h2>
+<div>
+    @{WebGrid obj1 = new WebGrid(source: Model.AspNetUser, canPage: true, rowsPerPage: 10);}
+    @obj1.GetHtml();
+</div>

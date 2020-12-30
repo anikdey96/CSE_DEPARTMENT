@@ -14,6 +14,8 @@ namespace CSE_DEPARTMENT.Models
         public virtual ICollection<teacher> Teachers { get; set; }
         public virtual ICollection<student> Students { get; set; }
         public virtual ICollection<Staff> Staffs { get; set; }
+
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -22,6 +24,8 @@ namespace CSE_DEPARTMENT.Models
             return userIdentity;
         }
     }
+
+
 
     //public class ApplicationRole : IdentityRole
     //{
@@ -76,6 +80,8 @@ namespace CSE_DEPARTMENT.Models
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.staff_career> staff_career { get; set; }
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.teacher_career> teacher_career { get; set; }
+
+     
 
         //public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.RoleViewModel> RoleViewModels { get; set; }
     }

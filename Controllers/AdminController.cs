@@ -19,6 +19,7 @@ namespace CSE_DEPARTMENT.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            
             return View();
         }
           
@@ -59,9 +60,6 @@ namespace CSE_DEPARTMENT.Controllers
             ApplicationUser user = context.Users.Where(u => u.UserName.Equals(usrname, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             userManager.AddToRole(user.Id, rolname);
-
-
-
             return View("Index");
         }
 
