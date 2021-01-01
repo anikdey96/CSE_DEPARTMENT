@@ -81,8 +81,10 @@ namespace CSE_DEPARTMENT.Models
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.teacher_career> teacher_career { get; set; }
 
-     
-
         //public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.RoleViewModel> RoleViewModels { get; set; }
+
+
+
+     
     }
 }
