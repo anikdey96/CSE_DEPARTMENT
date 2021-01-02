@@ -315,7 +315,6 @@
     <Compile Include="Controllers\noticesController.cs" />
     <Compile Include="Controllers\previous_academicController.cs" />
     <Compile Include="Controllers\resultsController.cs" />
-    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\routinesController.cs" />
     <Compile Include="Controllers\SessionsController.cs" />
     <Compile Include="Controllers\ShowDataController.cs" />
@@ -409,15 +408,21 @@
     <Compile Include="ViewModel\Users-in-Role_ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\fontawesome-free\all.css" />
+    <Content Include="css\fontawesome-free\all.min.css" />
+    <Content Include="css\sb-admin-2.css" />
+    <Content Include="css\sb-admin-2.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\eye-icon.png" />
+    <Content Include="jquery-easing\jquery.easing.min.js" />
     <Content Include="Models\UserRoleAssign.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UserRoleAssign.edmx</DependentUpon>
@@ -437,6 +442,7 @@
     <Content Include="Models\UserRoleAssign.edmx.diagram">
       <DependentUpon>UserRoleAssign.edmx</DependentUpon>
     </Content>
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -570,7 +576,6 @@
     <Content Include="Views\ShowData\Multidata2.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\ManageUsers\UsersWithRoles.cshtml" />
-    <Content Include="Views\Role\DeleteRoles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
