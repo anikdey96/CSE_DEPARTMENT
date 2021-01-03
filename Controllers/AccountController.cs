@@ -80,9 +80,22 @@ namespace CSE_DEPARTMENT.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+           
             if (!ModelState.IsValid)
             {
                 return View(model);
+            }
+
+            if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("SuperAdmin"))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
 
             // This doesn't count login failures towards account lockout
@@ -90,6 +103,8 @@ namespace CSE_DEPARTMENT.Controllers
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
+                
+            
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:

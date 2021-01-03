@@ -2,24 +2,22 @@
 using CSE_DEPARTMENT.ViewModel;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 namespace CSE_DEPARTMENT.Controllers
 {
-    [Authorize(Roles ="SuperAdmin")]
+    [Authorize(Roles = "SuperAdmin")]
     public class AdminController : Controller
     {
         ApplicationDbContext context = new ApplicationDbContext();
-        
+
         // GET: Admin
+
 
         public ActionResult Index()
         {
@@ -43,7 +41,7 @@ namespace CSE_DEPARTMENT.Controllers
             var user = new ApplicationUser();
             user.UserName = UserName;
             user.Email = Email;
-            
+
             var newuser = usermanager.Create(user, pwd);
 
             return RedirectToAction("Multidata2", "ShowData");
@@ -85,8 +83,5 @@ namespace CSE_DEPARTMENT.Controllers
             }
             return RedirectToAction("Multidata", "ShowData");
         }
-
-       
-
     }
 }
