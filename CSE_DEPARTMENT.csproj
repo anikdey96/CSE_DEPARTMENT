@@ -407,7 +407,6 @@
     <Compile Include="ViewModel\Users-in-Role_ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Content\Admin Template\css\about.css" />
     <Content Include="Content\Admin Template\css\login.css" />
     <Content Include="Content\Admin Template\css\sb-admin-2.css" />
@@ -2088,10 +2087,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="css\fontawesome-free\all.css" />
-    <Content Include="css\fontawesome-free\all.min.css" />
-    <Content Include="css\sb-admin-2.css" />
-    <Content Include="css\sb-admin-2.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -2116,7 +2111,6 @@
     <Content Include="Models\UserRoleAssign.edmx.diagram">
       <DependentUpon>UserRoleAssign.edmx</DependentUpon>
     </Content>
-    <Content Include="bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="Content\Admin Template\scss\navs\_global.scss" />
     <Content Include="Content\Admin Template\scss\navs\_sidebar.scss" />
     <Content Include="Content\Admin Template\scss\navs\_topbar.scss" />

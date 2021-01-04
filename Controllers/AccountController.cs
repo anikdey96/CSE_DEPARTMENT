@@ -86,27 +86,23 @@ namespace CSE_DEPARTMENT.Controllers
                 return View(model);
             }
 
-            if (User.Identity.IsAuthenticated)
-            {
-                if (User.IsInRole("SuperAdmin"))
-                {
-                    return RedirectToAction("Index", "Admin");
-                }
-                else
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-            }
+           
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
-                
-            
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    ApplicationUser user = await UserManager.FindAsync(model.Email, model.Password);
+                    // Redirect to User landing page on SignIn, according to Role
+                    if ((UserManager.IsInRole(user.Id, "SuperAdmin")))
+                    {
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    return RedirectToAction("Index", "Home");
+
+                //return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
