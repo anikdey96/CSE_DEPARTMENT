@@ -2091,7 +2091,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\binary.jpg" />
     <Content Include="Images\eye-icon.png" />
+    <Content Include="Images\login-digital-wave-small-particles.jpg" />
     <Content Include="Models\UserRoleAssign.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UserRoleAssign.edmx</DependentUpon>

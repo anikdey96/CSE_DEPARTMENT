@@ -75,6 +75,8 @@ namespace CSE_DEPARTMENT.Models
 
     public class RegisterViewModel
     {
+       
+
         [Required]
         [EmailAddress]
         //[RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",

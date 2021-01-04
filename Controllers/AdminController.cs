@@ -18,7 +18,6 @@ namespace CSE_DEPARTMENT.Controllers
 
         // GET: Admin
 
-
         public ActionResult Index()
         {
             return View();
