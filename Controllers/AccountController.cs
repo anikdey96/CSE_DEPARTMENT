@@ -102,6 +102,7 @@ namespace CSE_DEPARTMENT.Controllers
                     }
                     return RedirectToAction("Index", "Home");
 
+
                 //return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -111,6 +112,8 @@ namespace CSE_DEPARTMENT.Controllers
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
+
+                    
             }
         }
 
@@ -415,6 +418,7 @@ namespace CSE_DEPARTMENT.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+           
             return RedirectToAction("Index", "Home");
         }
 

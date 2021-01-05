@@ -3,7 +3,7 @@
 @*@{WebGrid obj = new WebGrid(source: Model.AspNetRole, canPage: true, rowsPerPage: 5);}*@
 @{
     Layout = null;
-    
+
     WebGrid obj = new WebGrid(source: Model.AspNetRole, canPage: true, rowsPerPage: 5);
 }
 
@@ -14,15 +14,20 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+
     <title>Roles</title>
+
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <style type="text/css">
         body {
             font-family: Arial;
             font-size: 15pt;
-
+            color: #F0FFF0;
+            background-image: url('../../Images/login.jpeg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
         }
-
 
         .Grid {
             border: 3px solid #5f6660;
@@ -35,30 +40,27 @@
                 background-color: #8ca191;
                 font-weight: bold;
                 text-align: center;
-               
-             
             }
 
             .Grid th, .Grid td {
                 padding: 5px;
                 border: 1px solid #ccc;
-               
             }
 
             .Grid, .Grid table td {
                 border: 0px solid #ccc;
             }
 
-            .Grid th a, .Grid th a:visited {
+                .Grid th a, .Grid th a:visited {
                     color: #333;
-            }
+                }
 
-            h2{
-                text-align:center;
-            }
+        h2 {
+            text-align: center;
+        }
 
-        .buttonback{
-            text-align:center;
+        .buttonback {
+            text-align: center;
         }
     </style>
 </head>
@@ -88,16 +90,3 @@
 
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

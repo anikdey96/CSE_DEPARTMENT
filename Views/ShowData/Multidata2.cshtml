@@ -2,7 +2,7 @@
 
 @{
     Layout = null;
-  
+
     WebGrid obj1 = new WebGrid(source: Model.AspNetUser, canPage: true, rowsPerPage: 5);
 }
 
@@ -18,6 +18,11 @@
         body {
             font-family: Arial;
             font-size: 10pt;
+            color: #F0FFF0;
+            background-image: url('../../Images/login.jpeg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
         }
 
         .Grid {
@@ -42,12 +47,14 @@
                 border: 0px solid #ccc;
             }
 
-         .Grid th a, .Grid th a:visited {
+                .Grid th a, .Grid th a:visited {
                     color: #333;
-         }
+                }
+
         h2 {
             text-align: center;
         }
+
         .buttonback {
             text-align: center;
         }
@@ -85,5 +92,3 @@
 
 
 </html>
-
-

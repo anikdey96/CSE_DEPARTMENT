@@ -1086,9 +1086,9 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #6eff00;
+    color: #F0FFF0;
     /*  background-color: #fff;*/
-    background-image: url('../Images/binary.jpg');
+    background-image: url('../Images/login.jpeg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
