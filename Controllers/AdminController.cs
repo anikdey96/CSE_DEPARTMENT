@@ -82,5 +82,8 @@ namespace CSE_DEPARTMENT.Controllers
             }
             return RedirectToAction("Multidata", "ShowData");
         }
+
+
+
     }
 }

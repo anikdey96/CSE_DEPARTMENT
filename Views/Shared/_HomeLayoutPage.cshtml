@@ -7,6 +7,7 @@
         #div1 {
             font-size: 48px;
         }
+       
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,7 +25,7 @@
 
 
 
-<body>
+<body id="page-top">
 
     <div id="wrapper">
 
@@ -178,12 +179,12 @@
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            @*<hr class="sidebar-divider d-none d-md-block">*@
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
+            @*<div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            </div>*@
 
 
 
@@ -200,7 +201,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="position: fixed; top: 0; width: 84%">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -226,13 +227,13 @@
                                 <img class="img-profile rounded-circle" src="~/Content/Admin Template/img/welcome.gif">
 
                             </a>
-                            
-    
-    
-    
-    
-    
-                          <!-- Dropdown - User Information -->
+
+
+
+
+
+
+                            <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 
 
@@ -240,7 +241,7 @@
                                 <a href="@Url.Action("Index", "Manage")">
                                     <i class="fas fa-user text-gray"></i>
                                     <span>
-                                       <strong>Manage Profile</strong>
+                                        <strong>Manage Profile</strong>
                                     </span>
                                 </a>
 
@@ -261,7 +262,7 @@
 
                     </ul>
 
-                   
+
                 </nav>
 
                 <!-- End of Topbar -->
@@ -300,7 +301,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     @Html.ActionLink("Logout", "Login", "Account", null, new { @class = "btn btn-info" })
-                   
+
                 </div>
             </div>
         </div>
@@ -310,7 +311,13 @@
 
 
 
-
+    <div class="text-center">
+        <footer>
+   
+            <p><b>&copy; @*@DateTime.Now.Year*@ DEVELOPERS TEAM, CSE</b></p>
+          
+        </footer>
+    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="~/Content/Admin Template/vendor/jquery/jquery.min.js"></script>
