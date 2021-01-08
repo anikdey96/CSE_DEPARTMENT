@@ -13,8 +13,17 @@
     @Html.AntiForgeryToken()
     <h3>Create a new account</h3>
     <hr />
-    @Html.ValidationSummary("", new { @style = "color: white" })
+    @Html.ValidationSummary("", new { @style = "color: black" })
 
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Select Role</label>
+        <div class="col-md-3 input-group">
+            <div class="input-group">
+                @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select")
+            </div>
+        </div>
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
@@ -37,14 +46,7 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="control-label col-md-2">Select Role</label>
-        <div class="col-md-3 input-group" >
-            <div class="input-group">
-                @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "--Select--")
-            </div>
-        </div>
-    </div>
+
 
 
 
