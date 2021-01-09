@@ -128,12 +128,25 @@
                 }
             }*@
         </dd>
-        <br /><br />
+        <br />
+        <br />
+
         
-             <div class="text-center">
-                 @Html.ActionLink("Go Back", "Index", "Home", null, new { @class = "btn btn-danger" })
-             </div>
-        
+
+        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+        {
+           <div class="text-center">
+           @Html.ActionLink("Go Back", "Index", "Admin", null, new { @class = "btn btn-danger" })
+           </div>
+        }
+
+        @if (User.Identity.IsAuthenticated && !User.IsInRole("SuperAdmin"))
+        {
+            <div class="text-center">
+            @Html.ActionLink("Go Back", "Index", "Home", null, new { @class = "btn btn-danger" })
+            </div>
+        }
+
     </dl>
   
     
