@@ -49,12 +49,8 @@ namespace CSE_DEPARTMENT.Controllers
         public ActionResult AssignRole()
         {
          
-
-      
             ViewBag.Roles = context.Roles.Select(r => new SelectListItem { Value = r.Name, Text = r.Name}).ToList();
             ViewBag.Users = context.Users.Select(r => new SelectListItem { Value = r.Email, Text = r.Email }).ToList();
-
-
 
             return View();
         }

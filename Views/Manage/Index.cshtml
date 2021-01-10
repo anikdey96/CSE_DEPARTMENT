@@ -15,7 +15,7 @@
 
             @if (Model.HasPassword)
             {
-                @Html.ActionLink("Change your password", "ChangePassword", null, new { @class = "btn btn-info" })
+                @Html.ActionLink("Change your password", "ChangePassword", null, new { @class = "btn btn-danger" })
             }
             else
             {
@@ -136,14 +136,14 @@
         @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
         {
            <div class="text-center">
-           @Html.ActionLink("Go Back", "Index", "Admin", null, new { @class = "btn btn-danger" })
+           @Html.ActionLink("Go Back", "Index", "Admin", null, new { @class = "btn btn-info" })
            </div>
         }
 
         @if (User.Identity.IsAuthenticated && !User.IsInRole("SuperAdmin"))
         {
             <div class="text-center">
-            @Html.ActionLink("Go Back", "Index", "Home", null, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Go Back", "Index", "Home", null, new { @class = "btn btn-info" })
             </div>
         }
 
