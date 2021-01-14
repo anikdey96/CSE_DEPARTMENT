@@ -360,6 +360,10 @@
     <Compile Include="Migrations\202012291042141_userforeignid.designer.cs">
       <DependentUpon>202012291042141_userforeignid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101141917038_RoleSelected.cs" />
+    <Compile Include="Migrations\202101141917038_RoleSelected.designer.cs">
+      <DependentUpon>202101141917038_RoleSelected.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\activities.cs" />
@@ -2478,6 +2482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012291042141_userforeignid.resx">
       <DependentUpon>202012291042141_userforeignid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141917038_RoleSelected.resx">
+      <DependentUpon>202101141917038_RoleSelected.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
