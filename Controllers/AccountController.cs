@@ -11,6 +11,8 @@ using Microsoft.Owin.Security;
 using CSE_DEPARTMENT.Models;
 using System.Web.Security;
 using System.Collections.Generic;
+using System.IO;
+
 
 namespace CSE_DEPARTMENT.Controllers
 {
@@ -186,7 +188,7 @@ namespace CSE_DEPARTMENT.Controllers
             {
                
                
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, RoleSelected = model.RoleSelected};
                 var result = await UserManager.CreateAsync(user, model.Password);
                
                 if (result.Succeeded)
@@ -197,7 +199,7 @@ namespace CSE_DEPARTMENT.Controllers
                     // Send an email with this link
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "<a href=\"" + callbackUrl + "\"</a>");
 
                     return RedirectToAction("Index", "Home");
                 }

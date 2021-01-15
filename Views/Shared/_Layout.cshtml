@@ -7,7 +7,10 @@
     <title>@ViewBag.Title/ CSE Department</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
     <link href="~/Content/bootstrap-chosen.css" rel="stylesheet" />
+  
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -19,32 +22,38 @@
                     <span class="icon-bar"></span>
                 </button>
 
-
-                @Html.ActionLink("CSE Department", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-
+                @Html.ActionLink("Computer Science & Engineering Department", "", "", new { area = "" }, new { @class = "navbar-brand" })
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; 
 
             </div>
+            @*<h4 style="color:white">Computer Science & Engineering Department</h4>*@
+
 
             @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
-            {
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        @*<li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                        <li>@Html.ActionLink("Admin Arena", "Index", "Admin")</li>
+                        {
+
+        <div class="navbar-collapse collapse">
+            
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                @*<li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                <li>@Html.ActionLink("Admin Arena", "Index", "Admin")</li>
+
+                @Html.Partial("_LoginPartial")
+            </ul>
+
+        </div>
+             }
 
 
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            }
-
-          
 
         </div>
 
-       
+
     </div>
 
 
@@ -61,5 +70,6 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/chosen.jquery.js"></script>
+   
 </body>
 </html>
