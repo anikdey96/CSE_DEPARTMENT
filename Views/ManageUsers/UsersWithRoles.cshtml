@@ -9,9 +9,14 @@
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 16px;
         color: #050100;
+        
+    }
+
+    .buttonback {
+        text-align: center;
     }
 </style>
-<body>
+<body id="page">
     <br />
     <br />
     <div class="panel panel-primary">
@@ -43,11 +48,15 @@
                 }
             </table>
         </div>
-
+        <a class="scroll-to-top rounded" href="#page">
+            <i class="fas fa-angle-double-up"></i>
+        </a>
 
     </div>
 
-    @Html.ActionLink("Back To List", "Index", "Admin", null, new { @class = "btn btn-warning" })
-
+    <div class=" buttonback">
+        @Html.ActionLink("Back To List", "Index", "Admin", null, new { @class = "btn btn-info btn-lg" })
+    </div>
+   
 
 </body>
