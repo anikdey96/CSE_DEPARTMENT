@@ -61,10 +61,13 @@ namespace CSE_DEPARTMENT.Controllers
         {
             string usrname = form["dropUserName"];
             string rolname = form["RoleName"];
+
+           
             ApplicationUser user = context.Users.Where(u => u.UserName.Equals(usrname, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             userManager.AddToRole(user.Id, rolname);
             return RedirectToAction("UsersWithRoles", "ManageUsers");
+
         }
 
         public ActionResult CreateRole()

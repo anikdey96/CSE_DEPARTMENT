@@ -50,6 +50,8 @@ namespace CSE_DEPARTMENT.Controllers
             return RedirectToAction("Multidata2", "ShowData");
         }
 
+      
+
 
         public List<AspNetUser> GetUsers(string search, string sort, string sortdir, int skip, int pageSize, out int totalRecord)
         {
