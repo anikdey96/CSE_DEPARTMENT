@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<CSE_DEPARTMENT.ViewModel.Users_in_Role_ViewModel>
 
+
 @{
     ViewBag.Title = "Users With Roles";
     //Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,18 +20,42 @@
 
 
 
-<body id="page">
+<body>
     <br />
     <br />
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="box-title">
-                <b>Users with Roles</b>
-            </h3>
+           
+            <h2>Users List</h2>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand">Search Here</a>
+                       
+                    </div>
+                    <div class="collapse navbar-collapse">
+
+
+                        @using (Html.BeginForm("UsersWithRoles", "ManageUsers", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                        {
+                            <div class="form-group">
+                                <input type="text" name="search" id="txtsearch" class="form-control" placeholder="Enter Email Address"  />
+                            </div>
+
+                        }
+                        @*<input type="text" id="txtsearch" placeholder="Enter Email Address" />*@
+
+
+
+                </div>
+            </div>
+        </nav>
+
         </div>
         <!-- /.box-header -->
-
+       
         <div class="panel-body">
+
             <table class="table table-hover table-bordered table-condensed" id="UsersWithRoles">
                 <thead>
                     <tr>
@@ -39,21 +64,55 @@
                         <td><b>Roles</b></td>
                     </tr>
                 </thead>
-                @foreach (var user in Model)
-                {
-                    <tr>
-                        <td>@user.Username</td>
-                        <td>@user.Email</td>
-                        <td>@user.Role</td>
+                
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.Username</td>
+                            <td>@user.Email</td>
+                            <td>@user.Role</td>
 
-                    </tr>
+                        </tr>
 
-                }
+                    }
+                
             </table>
+
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+            <script>
+                $("#txtsearch").on("keyup", function () {
+                    var txtenter = $(this).val();
+                    $("table tr").each(function (results) {
+                        if (results !== 0) {
+                            var id = $(this).find("td:nth-child(2)").text();
+                            if (id.indexOf(txtenter) !== 0 && id.toLowerCase().indexOf(txtenter.toLowerCase()) < 0) {
+                                $(this).hide();
+
+                            }
+                            else {
+                                $(this).show();
+                            }
+                        }
+
+
+                    });
+                });
+
+                   
+               
+            </script>
+
+
+         
+
+
+
         </div>
-        <a class="scroll-to-top rounded" href="#page">
+        @*<a class="scroll-to-top rounded" href="#page">
             <i class="fas fa-angle-double-up"></i>
-        </a>
+        </a>*@
 
     </div>
 

@@ -54,7 +54,7 @@
                 grid.Column(columnName: "PhoneNumber", header: "PhoneNumber"),
                 grid.Column(columnName: "PhoneNumberConfirmed", header: "PhoneNumberConfirmed"),
                 grid.Column(columnName: "TwoFactorEnabled", header: "TwoFactorEnabled"),
-                grid.Column(header: "Action", format:@<a href="/ShowData/Delete/@item.ID" class="btn btn-danger">Delete</a>)))
+                grid.Column(header: "Action", format:@<a href="/ShowData/DeleteRole/@item.ID" class="btn btn-danger">Delete</a>)))
 
             <div class="row">
                 <div class="col-sm-6">
@@ -88,15 +88,8 @@
                 if (dir == "Descending") {
                     header.text(header.text() + "  ▼");
                 }
-
-
-
-
             } catch (e) {
-
             }
-
-
         })
     </script>
 
@@ -105,4 +98,3 @@
 </body>
 
 </html>
-
