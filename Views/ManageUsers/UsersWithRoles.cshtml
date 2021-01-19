@@ -15,6 +15,10 @@
     .buttonback {
         text-align: center;
     }
+
+    i{
+        color:black;
+    }
 </style>
 
 
@@ -39,15 +43,16 @@
                         @using (Html.BeginForm("UsersWithRoles", "ManageUsers", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
                         {
                             <div class="form-group">
-                                <input type="text" name="search" id="txtsearch" class="form-control" placeholder="Enter Email Address"  />
+                                <input type="text" name="search" id="txtsearch" class="form-control" placeholder="Enter Email Address" />
                             </div>
+                            <i class="glyphicon glyphicon-search"></i>
 
                         }
                         @*<input type="text" id="txtsearch" placeholder="Enter Email Address" />*@
 
 
 
-                </div>
+                    </div>
             </div>
         </nav>
 
