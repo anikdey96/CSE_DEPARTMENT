@@ -16,8 +16,8 @@
         text-align: center;
     }
 
-    i{
-        color:black;
+    i {
+        color: black;
     }
 </style>
 
@@ -29,13 +29,13 @@
     <br />
     <div class="panel panel-primary">
         <div class="panel-heading">
-           
+
             <h2>Users List</h2>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a href="#" class="navbar-brand">Search Here</a>
-                       
+
                     </div>
                     <div class="collapse navbar-collapse">
 
@@ -47,18 +47,30 @@
                             </div>
                             <i class="glyphicon glyphicon-search"></i>
 
+
+                            <select class="form-control" name="state" id="maxRows">
+                                <option value="5000">Show ALL Rows</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="70">70</option>
+                                <option value="100">100</option>
+                            </select>
+
                         }
                         @*<input type="text" id="txtsearch" placeholder="Enter Email Address" />*@
 
 
 
                     </div>
-            </div>
-        </nav>
+                </div>
+            </nav>
 
         </div>
         <!-- /.box-header -->
-       
+
         <div class="panel-body">
 
             <table class="table table-hover table-bordered table-condensed" id="UsersWithRoles">
@@ -69,22 +81,60 @@
                         <td><b>Roles</b></td>
                     </tr>
                 </thead>
-                
-                    @foreach (var user in Model)
-                    {
-                        <tr>
-                            <td>@user.Username</td>
-                            <td>@user.Email</td>
-                            <td>@user.Role</td>
 
-                        </tr>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Username</td>
+                        <td>@user.Email</td>
+                        <td>@user.Role</td>
 
-                    }
-                
+                    </tr>
+
+                }
+
             </table>
 
-            
+
+            <div class="pagination-container">
+
+                <nav>
+
+                    <ul class="pagination">
+
+                        <li data-page="prev">
+
+                            <span> < <span class="sr-only">(current)</span></span>
+
+                        </li>
+
+
+
+                        <li data-page="next" id="prev">
+
+                            <span> > <span class="sr-only">(current)</span></span>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+
+
+            <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+            <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+            <script src="~/Scripts/js.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+            <script type="text/javascript">
+
+                getPagination('#UsersWithRoles');
+
+
+            </script>
 
             <script>
                 $("#txtsearch").on("keyup", function () {
@@ -94,30 +144,23 @@
                             var id = $(this).find("td:nth-child(2)").text();
                             if (id.indexOf(txtenter) !== 0 && id.toLowerCase().indexOf(txtenter.toLowerCase()) < 0) {
                                 $(this).hide();
-
                             }
                             else {
                                 $(this).show();
                             }
                         }
-
-
                     });
                 });
 
-                   
-               
+
             </script>
 
 
-         
 
 
 
         </div>
-        @*<a class="scroll-to-top rounded" href="#page">
-            <i class="fas fa-angle-double-up"></i>
-        </a>*@
+
 
     </div>
 
@@ -125,5 +168,8 @@
         @Html.ActionLink("Back To List", "Index", "Admin", null, new { @class = "btn btn-info btn-lg" })
     </div>
 
-
+    @*<a class="scroll-to-top rounded" href="#page">
+        <i class="fas fa-angle-double-up"></i>
+    </a>*@
 </body>
+
