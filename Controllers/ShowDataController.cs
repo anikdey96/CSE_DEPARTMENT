@@ -28,7 +28,7 @@ namespace CSE_DEPARTMENT.Controllers
 
         public ActionResult Multidata2(int page = 1, string sort = "Email", string sortdir = "asc", string search = "")
         {
-         
+
             int pageSize = 10;
             int totalRecord = 0;
             if (page < 1) page = 1;
@@ -40,7 +40,7 @@ namespace CSE_DEPARTMENT.Controllers
 
         }
 
-     
+
 
         public ActionResult Delete(string Id)
         {
@@ -70,7 +70,7 @@ namespace CSE_DEPARTMENT.Controllers
                                  a.Id.Contains(search) ||
                                  a.Email.Contains(search) ||
                                  a.PhoneNumber.Contains(search)
-                                 
+
                          select a
                                 );
                 totalRecord = v.Count();
@@ -91,7 +91,7 @@ namespace CSE_DEPARTMENT.Controllers
                          where
                                  a.Id.Contains(search) ||
                                  a.Name.Contains(search)
-                                
+
 
                          select a
                                 );

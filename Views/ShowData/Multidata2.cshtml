@@ -15,7 +15,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
 
     <style>
         .buttonback {
@@ -101,19 +101,13 @@
                     var id = $(this).find("td:nth-child(2)").text();
                     if (id.indexOf(txtenter) !== 0 && id.toLowerCase().indexOf(txtenter.toLowerCase()) < 0) {
                         $(this).hide();
-
                     }
                     else {
                         $(this).show();
                     }
                 }
-
-
             });
         });
-
-
-
     </script>
 
 

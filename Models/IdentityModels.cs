@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -12,7 +13,9 @@ namespace CSE_DEPARTMENT.Models
     public class ApplicationUser : IdentityUser
     {
         public string RoleSelected { get; set; }
-      
+
+       
+        
 
         public virtual ICollection<teacher> Teachers { get; set; }
         public virtual ICollection<student> Students { get; set; }

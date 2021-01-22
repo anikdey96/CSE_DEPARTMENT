@@ -14,7 +14,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
 
     <style>
         .buttonback {
@@ -73,25 +73,20 @@
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script>
-                //$(function () {
-                //    try {
-                //        var dir = $('#dir').val();
-                //        var col = $('#col').val();
-                //        var header = $("th a[href*=" + col + "]");
-                //        if (dir == "Ascending") {
-                //            header.text(header.text() + "  ▲")
-                //        }
-                //        if (dir == "Descending") {
-                //            header.text(header.text() + "  ▼");
-                //        }
-
-                //    } catch (e) {
-
-                //    }
-
-
-                //})
-
+        //$(function () {
+        //    try {
+        //        var dir = $('#dir').val();
+        //        var col = $('#col').val();
+        //        var header = $("th a[href*=" + col + "]");
+        //        if (dir == "Ascending") {
+        //            header.text(header.text() + "  ▲")
+        //        }
+        //        if (dir == "Descending") {
+        //            header.text(header.text() + "  ▼");
+        //        }
+        //    } catch (e) {
+        //    }
+        //})
         $("#txtsearch").on("keyup", function () {
             var txtenter = $(this).val();
             $("table tr").each(function (results) {
@@ -99,20 +94,13 @@
                     var id = $(this).find("td:nth-child(2)").text();
                     if (id.indexOf(txtenter) !== 0 && id.toLowerCase().indexOf(txtenter.toLowerCase()) < 0) {
                         $(this).hide();
-
                     }
                     else {
                         $(this).show();
                     }
                 }
-
-
             });
         });
-
-
-
-
     </script>
 
 
@@ -120,4 +108,3 @@
 </body>
 
 </html>
-

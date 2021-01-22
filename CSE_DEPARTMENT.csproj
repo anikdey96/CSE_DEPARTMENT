@@ -2116,6 +2116,7 @@
     <Content Include="Content\chosen-sprite.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\background.png" />
@@ -2339,6 +2340,10 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\chosen.jquery.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />
@@ -2473,11 +2478,9 @@
     <Content Include="Views\Years\Details.cshtml" />
     <Content Include="Views\Years\Edit.cshtml" />
     <Content Include="Views\Years\Index.cshtml" />
-    <Content Include="Views\Admin\CreateUser.cshtml" />
     <Content Include="Views\Admin\AssignRole.cshtml" />
     <Content Include="Views\Admin\CreateRole.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\ManageUsers\UsersWithRoles.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -2493,6 +2496,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\ManageUsers\UsersWithRoles.cshtml" />
+    <Content Include="Views\Account\CreateUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

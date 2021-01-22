@@ -177,6 +177,16 @@ namespace CSE_DEPARTMENT.Controllers
             return View();
         }
 
+        // GET: /Account/Register
+        [AllowAnonymous]
+        public ActionResult CreateUser()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            ViewBag.Roles = context.Roles.Select(r => new SelectListItem { Value = r.Name, Text = r.Name }).ToList();
+
+            return View();
+        }
+
         //
         // POST: /Account/Register
         [HttpPost]
@@ -209,6 +219,46 @@ namespace CSE_DEPARTMENT.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+
+        
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> CreateUser(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
+                var result = await UserManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                    // Send an email with this link
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "<a href=\"" + callbackUrl + "\"</a>");
+
+                    return RedirectToAction("Multidata2", "ShowData");
+                    //return RedirectToAction("Index", "Home");
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+
+
+
+
+
 
         //
         // GET: /Account/ConfirmEmail
