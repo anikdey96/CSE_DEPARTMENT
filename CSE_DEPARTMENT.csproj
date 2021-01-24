@@ -426,7 +426,6 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\Multipledata.cs" />
     <Compile Include="ViewModel\Users-in-Role_ViewModel.cs" />
-    <Compile Include="WebGridExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Admin Template\css\about.css" />

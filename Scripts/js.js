@@ -11,7 +11,7 @@ function getPagination(table) {
 
     $('#maxRows')
         .on('change', function (evt) {
-            //$('.paginationprev').html('');						// reset pagination
+            $('.paginationprev').html('');						// reset pagination
 
             lastPage = 1;
             $('.pagination')
@@ -75,7 +75,7 @@ function getPagination(table) {
                     pageNum = --lastPage;
                 }
                 if (pageNum == 'next') {
-                    if (lastPage == $('.pagination li').length - 2) {
+                    if (lastPage == $('.pagination li').length) {
                         return;
                     }
                     pageNum = ++lastPage;
@@ -103,7 +103,7 @@ function getPagination(table) {
             }); // end of on click pagination list
             limitPagging();
         })
-        .val(5)
+        .val(10)
         .change();
 
     // end of on select change

@@ -177,8 +177,8 @@ namespace CSE_DEPARTMENT.Controllers
             return View();
         }
 
-        // GET: /Account/Register
-        [AllowAnonymous]
+        // GET: /Account/CreateUser
+
         public ActionResult CreateUser()
         {
             ApplicationDbContext context = new ApplicationDbContext();
@@ -223,8 +223,7 @@ namespace CSE_DEPARTMENT.Controllers
 
         
         [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+       [ValidateAntiForgeryToken]
         public async Task<ActionResult> CreateUser(RegisterViewModel model)
         {
             if (ModelState.IsValid)
