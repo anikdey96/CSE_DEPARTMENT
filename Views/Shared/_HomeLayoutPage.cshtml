@@ -64,12 +64,12 @@
                 <div id="collapseStudent" class="collapse" aria-labelledby="headingStudent" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        @Html.ActionLink("Current Academic Status", "#", "#", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Current Academic Status", "Index", "current_academic", null, new { @class = "collapse-item" })
 
-                        @Html.ActionLink("Previous Academic Status", "#", "#", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Previous Academic Status", "Index", "previous_academic", null, new { @class = "collapse-item" })
 
-                        @Html.ActionLink("Co-Curricular Activities", "#", "#", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Result", "#", "#", null, new { @class = "collapse-item" })
+                       
+                        @Html.ActionLink("Result", "Index", "results", null, new { @class = "collapse-item" })
                     </div>
 
                 </div>
@@ -90,8 +90,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
 
 
-                        @Html.ActionLink("Profile", "#", "#", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Career", "#", "#", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Profile", "Index", "teachers", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Career", "Index", "teacher_career", null, new { @class = "collapse-item" })
 
                     </div>
                 </div>
@@ -109,9 +109,9 @@
                 <div id="collapseUser" class="collapse" aria-labelledby="headingUser" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        @Html.ActionLink("Profile", "Index", "usertypes", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Profile", "Index", "Staffs", null, new { @class = "collapse-item" })
 
-                        @Html.ActionLink("Career", "Index", "users", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Career", "Index", "staff_career", null, new { @class = "collapse-item" })
 
                     </div>
 
@@ -130,16 +130,19 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="/Books/Index">
                     <i class='fas fa-book-open' style='font-size:24px'></i>
-                    <span>E-Library</span>
+                    <span>E-Library </span>
+                    
                 </a>
+
+            
 
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/materials/Index" >
                     <i class='fas fa-laptop-code' style='font-size:24px'></i>
                     <span>Class Materials</span>
                 </a>
@@ -148,7 +151,7 @@
 
             <!-- Nav Item - Sessions Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSessions" aria-expanded="true" aria-controls="collapseSessions">
+                <a class="nav-link collapsed" href="/notices/Index" >
                     <i class='fas fa-chalkboard' style='font-size:24px'></i>
                     <span>E-Notice</span>
                 </a>
@@ -156,7 +159,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClass" aria-expanded="true" aria-controls="collapseClass">
+                <a class="nav-link collapsed" href="/routines/Index" >
                     <i class='far fa-calendar-alt' style='font-size:24px'></i>
                     <span>Class Routine</span>
                 </a>

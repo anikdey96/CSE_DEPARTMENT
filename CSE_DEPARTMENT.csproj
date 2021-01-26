@@ -375,6 +375,22 @@
     <Compile Include="Migrations\202101141917038_RoleSelected.designer.cs">
       <DependentUpon>202101141917038_RoleSelected.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101251646058_current_academic.cs" />
+    <Compile Include="Migrations\202101251646058_current_academic.designer.cs">
+      <DependentUpon>202101251646058_current_academic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101251649367_previous_academic.cs" />
+    <Compile Include="Migrations\202101251649367_previous_academic.designer.cs">
+      <DependentUpon>202101251649367_previous_academic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101261614486_semester_name%28delete%29.cs" />
+    <Compile Include="Migrations\202101261614486_semester_name%28delete%29.designer.cs">
+      <DependentUpon>202101261614486_semester_name%28delete%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101261630183_teacher_name%28update%29.cs" />
+    <Compile Include="Migrations\202101261630183_teacher_name%28update%29.designer.cs">
+      <DependentUpon>202101261630183_teacher_name%28update%29.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\activities.cs" />
@@ -2407,11 +2423,6 @@
     <Content Include="Views\books\Details.cshtml" />
     <Content Include="Views\books\Edit.cshtml" />
     <Content Include="Views\books\Index.cshtml" />
-    <Content Include="Views\current_academic\Create.cshtml" />
-    <Content Include="Views\current_academic\Delete.cshtml" />
-    <Content Include="Views\current_academic\Details.cshtml" />
-    <Content Include="Views\current_academic\Edit.cshtml" />
-    <Content Include="Views\current_academic\Index.cshtml" />
     <Content Include="Views\materials\Create.cshtml" />
     <Content Include="Views\materials\Delete.cshtml" />
     <Content Include="Views\materials\Details.cshtml" />
@@ -2422,11 +2433,6 @@
     <Content Include="Views\notices\Details.cshtml" />
     <Content Include="Views\notices\Edit.cshtml" />
     <Content Include="Views\notices\Index.cshtml" />
-    <Content Include="Views\previous_academic\Create.cshtml" />
-    <Content Include="Views\previous_academic\Delete.cshtml" />
-    <Content Include="Views\previous_academic\Details.cshtml" />
-    <Content Include="Views\previous_academic\Edit.cshtml" />
-    <Content Include="Views\previous_academic\Index.cshtml" />
     <Content Include="Views\results\Create.cshtml" />
     <Content Include="Views\results\Delete.cshtml" />
     <Content Include="Views\results\Details.cshtml" />
@@ -2497,6 +2503,16 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\ManageUsers\UsersWithRoles.cshtml" />
     <Content Include="Views\Account\CreateUser.cshtml" />
+    <Content Include="Views\current_academic\Create.cshtml" />
+    <Content Include="Views\current_academic\Delete.cshtml" />
+    <Content Include="Views\current_academic\Details.cshtml" />
+    <Content Include="Views\current_academic\Edit.cshtml" />
+    <Content Include="Views\current_academic\Index.cshtml" />
+    <Content Include="Views\previous_academic\Create.cshtml" />
+    <Content Include="Views\previous_academic\Delete.cshtml" />
+    <Content Include="Views\previous_academic\Details.cshtml" />
+    <Content Include="Views\previous_academic\Edit.cshtml" />
+    <Content Include="Views\previous_academic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2533,6 +2549,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101141917038_RoleSelected.resx">
       <DependentUpon>202101141917038_RoleSelected.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101251646058_current_academic.resx">
+      <DependentUpon>202101251646058_current_academic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101251649367_previous_academic.resx">
+      <DependentUpon>202101251649367_previous_academic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101261614486_semester_name%28delete%29.resx">
+      <DependentUpon>202101261614486_semester_name%28delete%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101261630183_teacher_name%28update%29.resx">
+      <DependentUpon>202101261630183_teacher_name%28update%29.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

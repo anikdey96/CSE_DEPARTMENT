@@ -16,6 +16,8 @@ namespace CSE_DEPARTMENT.Models
         public int? session_id { get; set; }
         public System.DateTime admission_date { get; set; }
         public string dept { get; set; }
+
+        public string co_curricular_activities { get; set; }
         public int? year_id { get; set; }
         public int? result_id { get; set; }
 
