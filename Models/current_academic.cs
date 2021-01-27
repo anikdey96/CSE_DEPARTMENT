@@ -13,7 +13,10 @@ namespace CSE_DEPARTMENT.Models
         public int currentacademic_id { get; set; }
         
         public int? student_id { get; set; }
+
         public int? session_id { get; set; }
+        
+        [DataType(DataType.Date)]
         public System.DateTime admission_date { get; set; }
         public string dept { get; set; }
 

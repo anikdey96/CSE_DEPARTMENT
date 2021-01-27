@@ -31,7 +31,7 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#" style="position:relative">
                 <div class="d-flex justify-content-start">
                     <img src="~/Content/Admin Template/img/varsity-logo.png" />
                 </div>
@@ -67,9 +67,9 @@
                         @Html.ActionLink("Current Academic Status", "Index", "current_academic", null, new { @class = "collapse-item" })
 
                         @Html.ActionLink("Previous Academic Status", "Index", "previous_academic", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Profile", "Index", "Students", null, new { @class = "collapse-item" })
 
-                       
-                        @Html.ActionLink("Result", "Index", "results", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Semester Results", "Index", "results", null, new { @class = "collapse-item" })
                     </div>
 
                 </div>

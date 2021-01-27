@@ -445,7 +445,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Admin Template\css\about.css" />
-    <Content Include="Content\Admin Template\css\login.css" />
     <Content Include="Content\Admin Template\css\sb-admin-2.css" />
     <Content Include="Content\Admin Template\css\sb-admin-2.min.css" />
     <Content Include="Content\Admin Template\img\about.jpg" />
