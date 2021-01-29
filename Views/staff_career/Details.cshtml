@@ -2,81 +2,96 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
 }
 
-<h2>Details</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
 
-<div>
-    <h4>staff_career</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Staff.staff_name)
-        </dt>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h3 class="m-0 font-weight-bold text-primary">Details</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <dl class="dl-horizontal">
+                    <dt>
+                        Staff Name
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Staff.staff_name)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Staff.staff_name)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.joining_date)
-        </dt>
+                    <dt>
+                        Joining Date
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.joining_date)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.joining_date)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.diploma_result)
-        </dt>
+                    <dt>
+                        Diploma Result
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.diploma_result)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.diploma_result)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.diploma_institute)
-        </dt>
+                    <dt>
+                        Diploma Institute
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.diploma_institute)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.diploma_institute)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.hsc_result)
-        </dt>
+                    <dt>
+                        HSC Result
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.hsc_result)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.hsc_result)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.hsc_institute)
-        </dt>
+                    <dt>
+                        HSC Institute
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.hsc_institute)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.hsc_institute)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ssc_result)
-        </dt>
+                    <dt>
+                        SSC Result
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ssc_result)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.ssc_result)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ssc_institute)
-        </dt>
+                    <dt>
+                        SSC Institute
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ssc_institute)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.ssc_institute)
+                    </dd>
 
-    </dl>
+                </dl>
+            </table>
+        </div>
+
+    </div>
+
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.staffcareer_id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.staffcareer_id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
 </p>

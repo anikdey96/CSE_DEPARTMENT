@@ -2,81 +2,97 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
 }
 
-<h2>Details</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
 
-<div>
-    <h4>teacher</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.teacher_name)
-        </dt>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h3 class="m-0 font-weight-bold text-primary">Details</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-        <dd>
-            @Html.DisplayFor(model => model.teacher_name)
-        </dd>
+                <dl class="dl-horizontal">
+                    <dt>
+                        Teacher Name
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.designation)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.teacher_name)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.designation)
-        </dd>
+                    <dt>
+                        Designation
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.favorite_quote)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.designation)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.favorite_quote)
-        </dd>
+                    <dt>
+                        Favorite Quote
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.work_area)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.favorite_quote)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.work_area)
-        </dd>
+                    <dt>
+                        Work Area
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.achievement)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.work_area)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.achievement)
-        </dd>
+                    <dt>
+                       Achievement
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.publication)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.achievement)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.publication)
-        </dd>
+                    <dt>
+                        Publication
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.publication_links)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.publication)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.publication_links)
-        </dd>
+                    <dt>
+                        Publication Links
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.website)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.publication_links)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.website)
-        </dd>
+                    <dt>
+                        Personal Website
+                    </dt>
 
-    </dl>
+                    <dd>
+                        @Html.DisplayFor(model => model.website)
+                    </dd>
+
+                </dl>
+            </table>
+
+        </div>
+
+    </div>
+
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.teacher_id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.teacher_id }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
 </p>
