@@ -9,12 +9,16 @@
 <br />
 <br />
 <br />
+<br />
+<br />
 
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h3 class="m-0 font-weight-bold text-primary">Staffs Profile</h3>
+
     </div>
+
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -29,7 +33,9 @@
                         <th>
                             Designation
                         </th>
-                        <th></th>
+                        <th>
+                            Actions
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,6 +68,6 @@
 </div>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Create A New Entry", "Create", null, new { @class = "btn btn-success" })
 
 </p>

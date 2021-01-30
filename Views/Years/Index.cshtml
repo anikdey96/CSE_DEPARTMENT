@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
@@ -14,7 +15,6 @@
         <th>
             @Html.DisplayNameFor(model => model.year_name)
         </th>
-        
         <th></th>
     </tr>
 
@@ -23,7 +23,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.year_name)
         </td>
-      
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.year_id }) |
             @Html.ActionLink("Details", "Details", new { id=item.year_id }) |
