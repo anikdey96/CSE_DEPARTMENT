@@ -7,7 +7,6 @@
         #div1 {
             font-size: 48px;
         }
-       
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -37,7 +36,7 @@
                 </div>
 
 
-                
+
             </a>
 
             <!-- Divider -->
@@ -138,16 +137,16 @@
                 <a class="nav-link collapsed" href="/Books/Index">
                     <i class='fas fa-book-open' style='font-size:24px'></i>
                     <span>E-Library </span>
-                    
+
                 </a>
 
-            
+
 
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/materials/Index" >
+                <a class="nav-link collapsed" href="/materials/Index">
                     <i class='fas fa-laptop-code' style='font-size:24px'></i>
                     <span>Class Materials</span>
                 </a>
@@ -156,7 +155,7 @@
 
             <!-- Nav Item - Sessions Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/notices/Index" >
+                <a class="nav-link collapsed" href="/notices/Index">
                     <i class='fas fa-chalkboard' style='font-size:24px'></i>
                     <span>E-Notice</span>
                 </a>
@@ -164,7 +163,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/routines/Index" >
+                <a class="nav-link collapsed" href="/routines/Index">
                     <i class='far fa-calendar-alt' style='font-size:24px'></i>
                     <span>Class Routine</span>
                 </a>
@@ -244,7 +243,7 @@
                             }
                             @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
                             {
-                                @Html.ActionLink("Admin Arena", "Index", "Admin", null, new { @class = "btn btn-info" })
+                                @Html.ActionLink("Go Back To Admin Arena", "Index", "Admin", null, new { @class = "btn btn-info" })
                             }
 
 
