@@ -8,7 +8,7 @@
 <style>
     body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         color: #050100;
     }
 
@@ -30,7 +30,7 @@
     <div class="panel panel-primary">
         <div class="panel-heading">
 
-            <h2>Users List</h2>
+            <h3>Users List</h3>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -172,11 +172,11 @@
     </div>
 
     <div class=" buttonback">
-        @Html.ActionLink("Go Back", "CreateUser", "Account", null, new { @class = "btn btn-info" })
+        @Html.ActionLink("Go Back", "Index", "Admin", null, new { @class = "btn btn-info" }) |
+        @Html.ActionLink("Create A New User", "CreateUser", "Account", null, new { @class = "btn btn-success" })
     </div>
 
     @*<a class="scroll-to-top rounded" href="#page">
             <i class="fas fa-angle-double-up"></i>
         </a>*@
 </body>
-

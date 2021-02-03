@@ -247,6 +247,7 @@ namespace CSE_DEPARTMENT.Controllers
                     //return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
+               
             }
 
             // If we got this far, something failed, redisplay form

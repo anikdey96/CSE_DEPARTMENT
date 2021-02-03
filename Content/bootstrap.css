@@ -1087,7 +1087,7 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #050100;
-    /*background-color: #ffffff;*/
+   /* background-color: #ffffff;*/
     background-image: url('../Images/background.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1149,10 +1149,10 @@ img {
   border-radius: 50%;
 }
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #eeeeee;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #000000;
 }
 .sr-only {
   position: absolute;

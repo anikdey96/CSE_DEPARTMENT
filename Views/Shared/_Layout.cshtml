@@ -7,53 +7,53 @@
     <title>@ViewBag.Title/ CSE Department</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-  
     <link href="~/Content/bootstrap-chosen.css" rel="stylesheet" />
+
+
+
 
 
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
+
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
 
-                @Html.ActionLink("Computer Science & Engineering Department", "#", "#", new { area = "" }, new { @class = "navbar-brand", onclick = "javascript:return false;" })
-                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp;
+                <div>
+
+
+                    @Html.ActionLink("Computer Science & Engineering Department, JUST ", "", "", new { area = "" }, new { @class = "navbar-brand", onclick = "javascript:return false;" })
+                </div>
+
 
 
             </div>
-            @*<h4 style="color:white">Computer Science & Engineering Department</h4>*@
 
 
             @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
             {
-
                 <div class="navbar-collapse collapse">
-
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Admin Home", "Index", "Home")</li>
                         @*<li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                         <li>@Html.ActionLink("Admin Arena", "Index", "Admin")</li>
 
-                        @Html.Partial("_LoginPartial")
-                    </ul>
 
+                    </ul>
+                    @Html.Partial("_LoginPartial")
                 </div>
             }
 
-
-
         </div>
-
-
     </div>
 
 
@@ -65,13 +65,10 @@
             <p>&copy; @*@DateTime.Now.Year*@ DEVELOPERS TEAM, CSE</p>
         </footer>
     </div>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/chosen.jquery.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-
-
 </body>
 </html>
