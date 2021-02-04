@@ -449,6 +449,7 @@
     <Content Include="Content\Admin Template\css\sb-admin-2.min.css" />
     <Content Include="Content\Admin Template\img\about.jpg" />
     <Content Include="Content\Admin Template\img\department-pic.jpeg" />
+    <Content Include="Content\Admin Template\img\just-logo.png" />
     <Content Include="Content\Admin Template\img\just.png" />
     <Content Include="Content\Admin Template\img\login%282%29.jpg" />
     <Content Include="Content\Admin Template\img\source-404.jpg" />

@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<CSE_DEPARTMENT.Models.Year>
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
-}
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_HomeLayoutPage.cshtml"; }
 <br />
 <br />
 <br />
@@ -12,6 +10,7 @@
 
 
 <div class="card shadow mb-4">
+
     <div class="card-header py-3">
         <h3 class="m-0 font-weight-bold text-primary">Year-Semester</h3>
 
@@ -34,17 +33,16 @@
 
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.year_name)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.year_id }, new { @class = "btn btn-primary" }) 
-                                @Html.ActionLink("Details", "Details", new { id = item.year_id }, new { @class = "btn btn-info" }) 
-                                @Html.ActionLink("Delete", "Delete", new { id = item.year_id }, new { @class = "btn btn-danger" })
-                            </td>
-                        </tr>
-                    }
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.year_name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.year_id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Details", "Details", new { id = item.year_id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.year_id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>}
                 </tbody>
             </table>
 

@@ -1149,10 +1149,9 @@ img {
   border-radius: 50%;
 }
 hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
     border: 0;
-    border-top: 1px solid #000000;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(255, 0, 255), rgba(0, 0, 255), rgba(0, 255, 255));
 }
 .sr-only {
   position: absolute;

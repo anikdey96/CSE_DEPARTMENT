@@ -8,7 +8,7 @@
 <style>
     body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         color: #050100;
     }
 
@@ -30,7 +30,7 @@
     <div class="panel panel-primary">
         <div class="panel-heading">
 
-            <h2>Users List</h2>
+            <h3>Users With Roles List</h3>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -104,7 +104,7 @@
 
                         <li data-page="prev">
 
-                            <span> previous <span class="sr-only">(current)</span></span>
+                            <span> Previous <span class="sr-only">(current)</span></span>
 
                         </li>
 
@@ -112,7 +112,7 @@
 
                         <li data-page="next" id="prev">
 
-                            <span> next <span class="sr-only">(current)</span></span>
+                            <span> Next <span class="sr-only">(current)</span></span>
 
                         </li>
 
@@ -164,9 +164,12 @@
         @Html.ActionLink("Create A New User", "CreateUser", "Account", null, new { @class = "btn btn-success" }) |
 
         @Html.ActionLink("Create A New Role", "CreateRole", "Admin", null, new { @class = "btn btn-primary" })
+
+
     </div>
 
+
     @*<a class="scroll-to-top rounded" href="#page">
-            <i class="fas fa-angle-double-up"></i>
+              <i class="fas fa-angle-double-up"></i>
         </a>*@
 </body>
