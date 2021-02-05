@@ -7,7 +7,7 @@
         #div1 {
             font-size: 48px;
         }
-
+      
 
     </style>
 
@@ -31,7 +31,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #3333CC">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #0066CC">
 
 
             <!-- Divider -->
@@ -56,7 +56,7 @@
                     <span>Student Information</span>
                 </a>
                 <div id="collapseStudent" class="collapse" aria-labelledby="headingStudent" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #efe9e2">
 
                         @Html.ActionLink("Current Academic Status", "Index", "current_academic", null, new { @class = "collapse-item" })
 
@@ -78,19 +78,19 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Teacher Section
+                Faculty Section
             </div>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmployee" aria-expanded="true" aria-controls="collapseEmployee">
                     <i class='fas fa-user-tie' style='font-size:24px'></i>
-                    <span>Teacher Information</span>
+                    <span>Faculty Information</span>
                 </a>
                 <div id="collapseEmployee" class="collapse" aria-labelledby="headingEmployee" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #efe9e2">
 
 
-                        @Html.ActionLink("Profile", "Index", "teachers", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Career", "Index", "teacher_career", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Faculty Profile", "Index", "teachers", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Faculty Career", "Index", "teacher_career", null, new { @class = "collapse-item" })
 
                     </div>
                 </div>
@@ -106,11 +106,11 @@
                     <span>Staff Information</span>
                 </a>
                 <div id="collapseUser" class="collapse" aria-labelledby="headingUser" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #efe9e2">
 
-                        @Html.ActionLink("Profile", "Index", "Staffs", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Staff Profile", "Index", "Staffs", null, new { @class = "collapse-item" })
 
-                        @Html.ActionLink("Career", "Index", "staff_career", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Staff Career", "Index", "staff_career", null, new { @class = "collapse-item" })
 
                     </div>
 
@@ -324,8 +324,14 @@
                 </div>
                 <div class="modal-body">Select <b>"Logout"</b> below if you are ready to end your current session</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    @Html.ActionLink("Logout", "Login", "Account", null, new { @class = "btn btn-info" })
+                    <button class="btn btn-outline-secondary btn-lg" data-dismiss="modal" type="button">Cancel</button>
+
+                    <button class="btn btn-outline-warning" type="button"> @Html.Partial("_UserLoginPartial")</button>
+
+                    @*@Html.ActionLink("LogOff", "Index", "UserLogin",new { @class= "btn btn-outline-warning" })*@
+
+
+
 
                 </div>
             </div>

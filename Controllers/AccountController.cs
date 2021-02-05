@@ -12,7 +12,8 @@ using CSE_DEPARTMENT.Models;
 using System.Web.Security;
 using System.Collections.Generic;
 using System.IO;
-
+using static CSE_DEPARTMENT.MvcApplication;
+using System.Web.UI;
 
 namespace CSE_DEPARTMENT.Controllers
 {
@@ -69,6 +70,7 @@ namespace CSE_DEPARTMENT.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
+        
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -82,6 +84,7 @@ namespace CSE_DEPARTMENT.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+       
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
            
@@ -478,11 +481,12 @@ namespace CSE_DEPARTMENT.Controllers
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
+      
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
      
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //
