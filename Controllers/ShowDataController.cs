@@ -10,6 +10,7 @@ using PagedList;
 
 namespace CSE_DEPARTMENT.Controllers
 {
+    [Authorize]
     public class ShowDataController : Controller
     {
         CSE_DEPARTMENT_DBEntities obj = new CSE_DEPARTMENT_DBEntities();

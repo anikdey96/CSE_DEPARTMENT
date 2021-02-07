@@ -7,8 +7,6 @@
         #div1 {
             font-size: 48px;
         }
-
-     
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +29,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #0066CC">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #3529b3">
 
 
             <!-- Divider -->
@@ -56,7 +54,9 @@
                     <span>Student Information</span>
                 </a>
                 <div id="collapseStudent" class="collapse" aria-labelledby="headingStudent" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #efe9e2">
+
+                   
+                    <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
 
                         @Html.ActionLink("Current Academic Status", "Index", "current_academic", null, new { @class = "collapse-item" })
 
@@ -86,7 +86,7 @@
                     <span>Faculty Information</span>
                 </a>
                 <div id="collapseEmployee" class="collapse" aria-labelledby="headingEmployee" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #efe9e2">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
 
 
                         @Html.ActionLink("Faculty Profile", "Index", "teachers", null, new { @class = "collapse-item" })
@@ -106,7 +106,7 @@
                     <span>Staff Information</span>
                 </a>
                 <div id="collapseUser" class="collapse" aria-labelledby="headingUser" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #efe9e2">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
 
                         @Html.ActionLink("Staff Profile", "Index", "Staffs", null, new { @class = "collapse-item" })
 
@@ -217,8 +217,8 @@
 
                     <!-- Sidebar Toggle (Topbar) -->
                     @*<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>*@
+                            <i class="fa fa-bars"></i>
+                        </button>*@
 
                     <!-- Topbar Search -->
                     <!-- Topbar Navbar -->
@@ -238,14 +238,12 @@
 
                         <li class="nav-item dropdown no-arrow">
                             @*@if (User.Identity.IsAuthenticated && !User.IsInRole("SuperAdmin"))
-                            {
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>Welcome, @User.Identity.Name</b></span>
-                                    <img class="img-profile rounded-circle" src="~/Content/Admin Template/img/welcome.gif">
-
-                                </a>
-
-                            }*@
+                                {
+                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>Welcome, @User.Identity.Name</b></span>
+                                        <img class="img-profile rounded-circle" src="~/Content/Admin Template/img/welcome.gif">
+                                    </a>
+                                }*@
 
                             @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
                             {
@@ -253,17 +251,17 @@
                             }
 
 
-                           else
+                            else
                             {
-                        <div class="navbar-collapse collapse">
-                             <ul class="nav navbar-nav">
-                                 <li>
-                                     @Html.Partial("_UserLoginPartial")
-                                 </li>
-                            </ul>
-                            
-                        
-                        </div>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li>
+                                            @Html.Partial("_UserLoginPartial")
+                                        </li>
+                                    </ul>
+
+
+                                </div>
                             }
 
 
@@ -271,7 +269,7 @@
                             @*<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">*@
 
 
-                                @*&nbsp; &nbsp;&nbsp;&nbsp;
+                            @*&nbsp; &nbsp;&nbsp;&nbsp;
                                 <a href="@Url.Action("Index", "Manage")">
                                     <i class="fas fa-user text-gray"></i>
                                     <span>
@@ -279,17 +277,13 @@
                                     </span>
                                 </a>*@
 
-                                @*<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-
-
-                                    <i class="fas fa-sign-out-alt  text-gray"></i>
-                                    <span>
-                                        <strong>Logout</strong>
-                                    </span>
-
-
-                                </a>
-                            </div>*@
+                            @*<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt  text-gray"></i>
+                                        <span>
+                                            <strong>Logout</strong>
+                                        </span>
+                                    </a>
+                                </div>*@
                         </li>
 
 
@@ -340,17 +334,17 @@
                 <div class="modal-footer">
                     <button class="btn btn-outline-secondary btn-lg" data-dismiss="modal" type="button">Cancel</button>*@
 
-                    @*<button class="btn btn-outline-warning" id="log-off" type="button"> @Html.Partial("_UserLoginPartial")</button>*@
+    @*<button class="btn btn-outline-warning" id="log-off" type="button"> @Html.Partial("_UserLoginPartial")</button>*@
 
-                    @*@Html.ActionLink("LogOff", "Index", "UserLogin",new { @class= "btn btn-outline-warning" })*@
-
-
+    @*@Html.ActionLink("LogOff", "Index", "UserLogin",new { @class= "btn btn-outline-warning" })*@
 
 
-                @*</div>
+
+
+    @*</div>
+                </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
 
 
 
