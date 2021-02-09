@@ -84,8 +84,7 @@
 <p>
     @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
     {
-@Html.ActionLink("Edit", "Edit", new { id = Model.activities_id }, new { @class = "btn btn-info" }) 
+        @Html.ActionLink("Edit", "Edit", new { id = Model.activities_id }, new { @class = "btn btn-info" }) 
     }
-
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
 </p>

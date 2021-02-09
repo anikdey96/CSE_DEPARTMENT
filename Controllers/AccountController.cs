@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.IO;
 using static CSE_DEPARTMENT.MvcApplication;
 using System.Web.UI;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CSE_DEPARTMENT.Controllers
 {
@@ -181,11 +182,10 @@ namespace CSE_DEPARTMENT.Controllers
         }
 
         // GET: /Account/CreateUser
-
+      
         public ActionResult CreateUser()
         {
-            ApplicationDbContext context = new ApplicationDbContext();
-            ViewBag.Roles = context.Roles.Select(r => new SelectListItem { Value = r.Name, Text = r.Name }).ToList();
+           
 
             return View();
         }
@@ -224,37 +224,25 @@ namespace CSE_DEPARTMENT.Controllers
         }
 
 
-        
+       
         [HttpPost]
-       [ValidateAntiForgeryToken]
-        public async Task<ActionResult> CreateUser(RegisterViewModel model)
+        public ActionResult CreateUser(FormCollection form)
         {
-            if (ModelState.IsValid)
-            {
+            var usermanager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            string UserName = form["txtEmail"];
+            string Email = form["txtEmail"];
+            string pwd = form["txtPassword"];
 
+            string confirmPwd = form["txtConfirmPassword"];
 
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
-                var result = await UserManager.CreateAsync(user, model.Password);
+            //Create Default Users
+            var user = new ApplicationUser();
+            user.UserName = UserName;
+            user.Email = Email;
 
-                if (result.Succeeded)
-                {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+            var newuser = usermanager.Create(user, pwd);
 
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "<a href=\"" + callbackUrl + "\"</a>");
-
-                    return RedirectToAction("Multidata2", "ShowData");
-                    //return RedirectToAction("Index", "Home");
-                }
-                AddErrors(result);
-               
-            }
-
-            // If we got this far, something failed, redisplay form
-            return View(model);
+            return RedirectToAction("Multidata2", "ShowData");
         }
 
 

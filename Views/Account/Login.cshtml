@@ -5,7 +5,7 @@
     ViewBag.Title = "Log in";
 }
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <br />
 <div class="row">
     <div class="col-md-8">
@@ -20,14 +20,16 @@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-6 input-group ">
+                    <div class="col-md-5 input-group ">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            <span class="input-group-addon"><i class="fa fa-envelope" style="color:cornflowerblue"></i></span>
+                        </div>
+                          
+                            @Html.ValidationMessageFor(m => m.Email, ""@*, new { @class = "text-danger" }*@, new { @style = "color: black" })
 
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        <br /><br />
-                        @Html.ValidationMessageFor(m => m.Email, ""@*, new { @class = "text-danger" }*@, new { @style = "color: black" })
-
+                        </div>
                     </div>
-                </div>
 
                 <div class="form-group">
                     @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
