@@ -5,7 +5,7 @@
     ViewBag.Title = "Log in";
 }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <br />
 <div class="row">
     <div class="col-md-8">
@@ -25,18 +25,19 @@
                             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                             <span class="input-group-addon"><i class="fa fa-envelope" style="color:cornflowerblue"></i></span>
                         </div>
-                          
-                            @Html.ValidationMessageFor(m => m.Email, ""@*, new { @class = "text-danger" }*@, new { @style = "color: black" })
 
-                        </div>
+                        @Html.ValidationMessageFor(m => m.Email, ""@*, new { @class = "text-danger" }*@, new { @style = "color: black" })
+
                     </div>
+                </div>
 
                 <div class="form-group">
                     @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
                     <div class="col-md-5 input-group">
                         <div class="input-group">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            <span class="input-group-addon"><img id="btnShow" src="~/Images/eye-icon.png" /></span>
+                            @Html.PasswordFor(m => m.Password,new { @class = "form-control", @id="txtPassword" })
+                     
+                            <span class="input-group-addon"><img src="~/Images/eye-icon.png" /></span>
                         </div>
 
                         @Html.ValidationMessageFor(m => m.Password, "", new { @style = "color: black" })
@@ -44,7 +45,10 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
+                        
                         <div class="checkbox">
+                            <input type="checkbox" id="cbShowPassword" />&nbsp; &nbsp; &nbsp;Show Password?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp; &nbsp; &nbsp;<br />
                             @Html.CheckBoxFor(m => m.RememberMe)
                             @Html.LabelFor(m => m.RememberMe)
                         </div>
@@ -93,6 +97,19 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <script src="~/Scripts/Site.js"></script>
+    @*<script src="~/Scripts/Site.js"></script>*@
+
+    <script>
+        $(document).ready(function () {
+            $('#cbShowPassword').click(function () {
+                $('#txtPassword').attr('type', $(this).is(':checked') ? 'text' : 'password');
+
+            });
+
+
+        });
+
+
+    </script>
 
 }
