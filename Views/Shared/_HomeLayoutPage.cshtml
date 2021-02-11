@@ -41,6 +41,8 @@
                 </a>
             </li>
 
+          
+
             @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Student") || User.IsInRole("Faculty")))
             {
                 <hr class="sidebar-divider">
@@ -220,32 +222,32 @@
             <hr class="sidebar-divider">
             @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
             {
-                  <div class="sidebar-heading">
-                     <b>Discussion Section</b>
-                  </div>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="https://www.facebook.com/">
-                            <i class='fab fa-facebook-messenger' style='font-size:24px'></i>
-                            <span>Messaging</span>
-                        </a>
+                <div class="sidebar-heading">
+                    <b>Discussion Section</b>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="https://www.facebook.com/">
+                        <i class='fab fa-facebook-messenger' style='font-size:24px'></i>
+                        <span>Messaging</span>
+                    </a>
 
-                    </li>
-             }
+                </li>
+            }
 
-                    <!-- Divider -->
-                    @*<hr class="sidebar-divider d-none d-md-block">*@
+            <!-- Divider -->
+            @*<hr class="sidebar-divider d-none d-md-block">*@
 
-                    <!-- Sidebar Toggler (Sidebar) -->
-                    @*<div class="text-center d-none d-md-inline">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>*@
-
-
+            <!-- Sidebar Toggler (Sidebar) -->
+            @*<div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>*@
 
 
 
 
-            </ul>
+
+
+        </ul>
 
 
 
@@ -348,7 +350,7 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    
                     @RenderBody()
                 </div>
                 <!-- /.container-fluid -->
