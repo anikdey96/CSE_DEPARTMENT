@@ -109,7 +109,7 @@ namespace CSE_DEPARTMENT.Controllers
                         return RedirectToAction("Index", "Admin");
                         
                     }
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "HomePage");
 
                 
 
