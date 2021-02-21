@@ -10,7 +10,6 @@ using CSE_DEPARTMENT.Models;
 
 namespace CSE_DEPARTMENT.Controllers
 {
-    [Authorize]
     public class activitiesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -40,7 +39,7 @@ namespace CSE_DEPARTMENT.Controllers
         // GET: activities/Create
         public ActionResult Create()
         {
-            ViewBag.student_id = new SelectList(db.students, "student_id", "Roll_No");
+            ViewBag.student_id = new SelectList(db.students, "student_id", "Name");
             return View();
         }
 
@@ -49,7 +48,7 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "activities_id,student_id,club_membership,club_name,designation,achievement,others_co_curricular_activities,description")] activities activities)
+        public ActionResult Create([Bind(Include = "activities_id,Name,student_id,club_membership,club_name,designation,achievement,others_co_curricular_activities,description")] activities activities)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +57,7 @@ namespace CSE_DEPARTMENT.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.student_id = new SelectList(db.students, "student_id", "Roll_No", activities.student_id);
+            ViewBag.student_id = new SelectList(db.students, "student_id", "Name", activities.student_id);
             return View(activities);
         }
 
@@ -74,7 +73,7 @@ namespace CSE_DEPARTMENT.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.student_id = new SelectList(db.students, "student_id", "Roll_No", activities.student_id);
+            ViewBag.student_id = new SelectList(db.students, "student_id", "Name", activities.student_id);
             return View(activities);
         }
 
@@ -83,7 +82,7 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "activities_id,student_id,club_membership,club_name,designation,achievement,others_co_curricular_activities,description")] activities activities)
+        public ActionResult Edit([Bind(Include = "activities_id,Name,student_id,club_membership,club_name,designation,achievement,others_co_curricular_activities,description")] activities activities)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +90,7 @@ namespace CSE_DEPARTMENT.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.student_id = new SelectList(db.students, "student_id", "Roll_No", activities.student_id);
+            ViewBag.student_id = new SelectList(db.students, "student_id", "Name", activities.student_id);
             return View(activities);
         }
 

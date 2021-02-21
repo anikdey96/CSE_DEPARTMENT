@@ -337,6 +337,7 @@
     <Compile Include="Controllers\teachersController.cs" />
     <Compile Include="Controllers\teacher_careerController.cs" />
     <Compile Include="Controllers\YearsController.cs" />
+    <Compile Include="FileHelper\UploadFile.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -391,6 +392,26 @@
     <Compile Include="Migrations\202101261630183_teacher_name%28update%29.cs" />
     <Compile Include="Migrations\202101261630183_teacher_name%28update%29.designer.cs">
       <DependentUpon>202101261630183_teacher_name%28update%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102191818425_photoField.cs" />
+    <Compile Include="Migrations\202102191818425_photoField.designer.cs">
+      <DependentUpon>202102191818425_photoField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102200721239_PhotoField2.cs" />
+    <Compile Include="Migrations\202102200721239_PhotoField2.designer.cs">
+      <DependentUpon>202102200721239_PhotoField2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102200812343_photoField3.cs" />
+    <Compile Include="Migrations\202102200812343_photoField3.designer.cs">
+      <DependentUpon>202102200812343_photoField3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102212014046_NameField21.cs" />
+    <Compile Include="Migrations\202102212014046_NameField21.designer.cs">
+      <DependentUpon>202102212014046_NameField21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102212017131_NameAdd2.cs" />
+    <Compile Include="Migrations\202102212017131_NameAdd2.designer.cs">
+      <DependentUpon>202102212017131_NameAdd2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2434,21 +2455,11 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Account\CreateUser.cshtml" />
     <Content Include="Views\Shared\_UserLoginPartial.cshtml" />
-    <Content Include="Views\activities\Create.cshtml" />
-    <Content Include="Views\activities\Delete.cshtml" />
-    <Content Include="Views\activities\Details.cshtml" />
-    <Content Include="Views\activities\Edit.cshtml" />
-    <Content Include="Views\activities\Index.cshtml" />
     <Content Include="Views\books\Create.cshtml" />
     <Content Include="Views\books\Delete.cshtml" />
     <Content Include="Views\books\Details.cshtml" />
     <Content Include="Views\books\Edit.cshtml" />
     <Content Include="Views\books\Index.cshtml" />
-    <Content Include="Views\current_academic\Create.cshtml" />
-    <Content Include="Views\current_academic\Delete.cshtml" />
-    <Content Include="Views\current_academic\Details.cshtml" />
-    <Content Include="Views\current_academic\Edit.cshtml" />
-    <Content Include="Views\current_academic\Index.cshtml" />
     <Content Include="Views\ManageUsers\UsersWithRoles.cshtml" />
     <Content Include="Views\materials\Create.cshtml" />
     <Content Include="Views\materials\Delete.cshtml" />
@@ -2460,16 +2471,6 @@
     <Content Include="Views\notices\Details.cshtml" />
     <Content Include="Views\notices\Edit.cshtml" />
     <Content Include="Views\notices\Index.cshtml" />
-    <Content Include="Views\previous_academic\Create.cshtml" />
-    <Content Include="Views\previous_academic\Delete.cshtml" />
-    <Content Include="Views\previous_academic\Details.cshtml" />
-    <Content Include="Views\previous_academic\Edit.cshtml" />
-    <Content Include="Views\previous_academic\Index.cshtml" />
-    <Content Include="Views\results\Create.cshtml" />
-    <Content Include="Views\results\Delete.cshtml" />
-    <Content Include="Views\results\Details.cshtml" />
-    <Content Include="Views\results\Edit.cshtml" />
-    <Content Include="Views\results\Index.cshtml" />
     <Content Include="Views\routines\Create.cshtml" />
     <Content Include="Views\routines\Delete.cshtml" />
     <Content Include="Views\routines\Details.cshtml" />
@@ -2516,9 +2517,32 @@
     <Content Include="Views\Years\Edit.cshtml" />
     <Content Include="Views\Years\Index.cshtml" />
     <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\current_academic\Create.cshtml" />
+    <Content Include="Views\current_academic\Delete.cshtml" />
+    <Content Include="Views\current_academic\Details.cshtml" />
+    <Content Include="Views\current_academic\Edit.cshtml" />
+    <Content Include="Views\current_academic\Index.cshtml" />
+    <Content Include="Views\previous_academic\Create.cshtml" />
+    <Content Include="Views\previous_academic\Delete.cshtml" />
+    <Content Include="Views\previous_academic\Details.cshtml" />
+    <Content Include="Views\previous_academic\Edit.cshtml" />
+    <Content Include="Views\previous_academic\Index.cshtml" />
+    <Content Include="Views\activities\Create.cshtml" />
+    <Content Include="Views\activities\Delete.cshtml" />
+    <Content Include="Views\activities\Details.cshtml" />
+    <Content Include="Views\activities\Edit.cshtml" />
+    <Content Include="Views\activities\Index.cshtml" />
+    <Content Include="Views\results\Create.cshtml" />
+    <Content Include="Views\results\Delete.cshtml" />
+    <Content Include="Views\results\Details.cshtml" />
+    <Content Include="Views\results\Edit.cshtml" />
+    <Content Include="Views\results\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\FacultyPhoto\" />
+    <Folder Include="Content\StaffPhoto\" />
+    <Folder Include="Content\StudentPhoto\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -2564,6 +2588,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101261630183_teacher_name%28update%29.resx">
       <DependentUpon>202101261630183_teacher_name%28update%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102191818425_photoField.resx">
+      <DependentUpon>202102191818425_photoField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102200721239_PhotoField2.resx">
+      <DependentUpon>202102200721239_PhotoField2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102200812343_photoField3.resx">
+      <DependentUpon>202102200812343_photoField3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102212014046_NameField21.resx">
+      <DependentUpon>202102212014046_NameField21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102212017131_NameAdd2.resx">
+      <DependentUpon>202102212017131_NameAdd2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

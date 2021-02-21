@@ -14,6 +14,10 @@ namespace CSE_DEPARTMENT.Models
         
         public int? student_id { get; set; }
 
+        public string Name { get; set; }
+
+        public string Roll { get; set; }
+
         public int? session_id { get; set; }
         
         [DataType(DataType.Date)]

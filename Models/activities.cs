@@ -13,6 +13,7 @@ namespace CSE_DEPARTMENT.Models
     {
         [Key]
         public int activities_id { get; set; }
+        public string Name { get; set; }
         public int? student_id { get; set; }
         public bool club_membership { get; set; }
         public string club_name { get; set; }

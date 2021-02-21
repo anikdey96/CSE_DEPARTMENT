@@ -27,6 +27,16 @@
                         @Html.DisplayFor(model => model.teacher_name)
                     </dd>
 
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Photo)
+                    </dt>
+
+                    <dd>
+                        @{ string imagepath = Model.Photo;
+                <img src="@Url.Content(imagepath)" alt="Image" style="width:100px;height:150px;max-width:100%;height:auto" /> }
+                    </dd>
+
                     <dt>
                         Designation
                     </dt>
@@ -35,13 +45,7 @@
                         @Html.DisplayFor(model => model.designation)
                     </dd>
 
-                    <dt>
-                        Favorite Quote
-                    </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.favorite_quote)
-                    </dd>
 
                     <dt>
                         Work Area

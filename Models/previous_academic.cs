@@ -12,6 +12,9 @@ namespace CSE_DEPARTMENT.Models
         [Key]
         public int previousacademic_id { get; set; }
         public int? student_id { get; set; }
+
+        public string Name { get; set; }
+
         public int hsc_roll { get; set; }
         public int hsc_reg { get; set; }
         public double hsc_result { get; set; }
