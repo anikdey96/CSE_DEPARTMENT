@@ -31,6 +31,9 @@
                             Name
                         </th>
                         <th>
+                            Roll
+                        </th>
+                        <th>
                             Session
                         </th>
                         <th>
@@ -42,7 +45,7 @@
                         <th>
                             Department
                         </th>
-                       
+
                         <th>
                             Actions
                         </th>
@@ -57,7 +60,9 @@
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
 
-
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Roll)
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Session.session_name)
                         </td>
@@ -70,7 +75,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.dept)
                         </td>
-                  
+
                         <td class="btn-group">
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
                             {

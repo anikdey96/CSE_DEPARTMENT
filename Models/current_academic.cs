@@ -16,7 +16,7 @@ namespace CSE_DEPARTMENT.Models
 
         public string Name { get; set; }
 
-        public string Roll { get; set; }
+        public int Roll { get; set; }
 
         public int? session_id { get; set; }
         

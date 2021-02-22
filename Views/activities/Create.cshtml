@@ -36,10 +36,10 @@
 
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.student.Roll_No, "Roll No", htmlAttributes: new { @class = "control-label col-md-5" })
+                    @Html.LabelFor(model => model.Roll, "Roll No", htmlAttributes: new { @class = "control-label col-md-5" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.student.Roll_No, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.student.Roll_No, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Roll, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Roll, "", new { @class = "text-danger" })
                     </div>
                 </div>
 

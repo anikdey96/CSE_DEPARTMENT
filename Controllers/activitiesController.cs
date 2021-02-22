@@ -10,6 +10,7 @@ using CSE_DEPARTMENT.Models;
 
 namespace CSE_DEPARTMENT.Controllers
 {
+    [Authorize]
     public class activitiesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -48,7 +49,7 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "activities_id,Name,student_id,club_membership,club_name,designation,achievement,others_co_curricular_activities,description")] activities activities)
+        public ActionResult Create([Bind(Include = "activities_id,Roll,Name,student_id,club_membership,club_name,designation,achievement,others_co_curricular_activities,description")] activities activities)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +83,7 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "activities_id,Name,student_id,club_membership,club_name,designation,achievement,others_co_curricular_activities,description")] activities activities)
+        public ActionResult Edit([Bind(Include = "activities_id,Roll,Name,student_id,club_membership,club_name,designation,achievement,others_co_curricular_activities,description")] activities activities)
         {
             if (ModelState.IsValid)
             {
