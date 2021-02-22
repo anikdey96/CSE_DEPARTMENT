@@ -417,6 +417,14 @@
     <Compile Include="Migrations\202102221626501_ActivitiesName.designer.cs">
       <DependentUpon>202102221626501_ActivitiesName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102221839191_subject-credit.cs" />
+    <Compile Include="Migrations\202102221839191_subject-credit.designer.cs">
+      <DependentUpon>202102221839191_subject-credit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102221854427_subject-Course2.cs" />
+    <Compile Include="Migrations\202102221854427_subject-Course2.designer.cs">
+      <DependentUpon>202102221854427_subject-Course2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\activities.cs" />
@@ -2485,42 +2493,22 @@
     <Content Include="Views\Sessions\Details.cshtml" />
     <Content Include="Views\Sessions\Edit.cshtml" />
     <Content Include="Views\Sessions\Index.cshtml" />
-    <Content Include="Views\Staffs\Create.cshtml" />
-    <Content Include="Views\Staffs\Delete.cshtml" />
-    <Content Include="Views\Staffs\Details.cshtml" />
-    <Content Include="Views\Staffs\Edit.cshtml" />
-    <Content Include="Views\Staffs\Index.cshtml" />
-    <Content Include="Views\staff_career\Create.cshtml" />
-    <Content Include="Views\staff_career\Delete.cshtml" />
-    <Content Include="Views\staff_career\Details.cshtml" />
-    <Content Include="Views\staff_career\Edit.cshtml" />
-    <Content Include="Views\staff_career\Index.cshtml" />
-    <Content Include="Views\students\Create.cshtml" />
-    <Content Include="Views\students\Delete.cshtml" />
-    <Content Include="Views\students\Details.cshtml" />
-    <Content Include="Views\students\Edit.cshtml" />
-    <Content Include="Views\students\Index.cshtml" />
-    <Content Include="Views\Subjects\Create.cshtml" />
-    <Content Include="Views\Subjects\Delete.cshtml" />
-    <Content Include="Views\Subjects\Details.cshtml" />
-    <Content Include="Views\Subjects\Edit.cshtml" />
-    <Content Include="Views\Subjects\Index.cshtml" />
-    <Content Include="Views\teachers\Create.cshtml" />
-    <Content Include="Views\teachers\Delete.cshtml" />
-    <Content Include="Views\teachers\Details.cshtml" />
-    <Content Include="Views\teachers\Edit.cshtml" />
-    <Content Include="Views\teachers\Index.cshtml" />
-    <Content Include="Views\teacher_career\Create.cshtml" />
-    <Content Include="Views\teacher_career\Delete.cshtml" />
-    <Content Include="Views\teacher_career\Details.cshtml" />
-    <Content Include="Views\teacher_career\Edit.cshtml" />
-    <Content Include="Views\teacher_career\Index.cshtml" />
     <Content Include="Views\Years\Create.cshtml" />
     <Content Include="Views\Years\Delete.cshtml" />
     <Content Include="Views\Years\Details.cshtml" />
     <Content Include="Views\Years\Edit.cshtml" />
     <Content Include="Views\Years\Index.cshtml" />
     <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\Subjects\Create.cshtml" />
+    <Content Include="Views\Subjects\Delete.cshtml" />
+    <Content Include="Views\Subjects\Details.cshtml" />
+    <Content Include="Views\Subjects\Edit.cshtml" />
+    <Content Include="Views\Subjects\Index.cshtml" />
+    <Content Include="Views\activities\Create.cshtml" />
+    <Content Include="Views\activities\Delete.cshtml" />
+    <Content Include="Views\activities\Details.cshtml" />
+    <Content Include="Views\activities\Edit.cshtml" />
+    <Content Include="Views\activities\Index.cshtml" />
     <Content Include="Views\current_academic\Create.cshtml" />
     <Content Include="Views\current_academic\Delete.cshtml" />
     <Content Include="Views\current_academic\Details.cshtml" />
@@ -2536,11 +2524,31 @@
     <Content Include="Views\results\Details.cshtml" />
     <Content Include="Views\results\Edit.cshtml" />
     <Content Include="Views\results\Index.cshtml" />
-    <Content Include="Views\activities\Create.cshtml" />
-    <Content Include="Views\activities\Delete.cshtml" />
-    <Content Include="Views\activities\Details.cshtml" />
-    <Content Include="Views\activities\Edit.cshtml" />
-    <Content Include="Views\activities\Index.cshtml" />
+    <Content Include="Views\Staffs\Create.cshtml" />
+    <Content Include="Views\Staffs\Delete.cshtml" />
+    <Content Include="Views\Staffs\Details.cshtml" />
+    <Content Include="Views\Staffs\Edit.cshtml" />
+    <Content Include="Views\Staffs\Index.cshtml" />
+    <Content Include="Views\students\Create.cshtml" />
+    <Content Include="Views\students\Delete.cshtml" />
+    <Content Include="Views\students\Details.cshtml" />
+    <Content Include="Views\students\Edit.cshtml" />
+    <Content Include="Views\students\Index.cshtml" />
+    <Content Include="Views\teachers\Create.cshtml" />
+    <Content Include="Views\teachers\Delete.cshtml" />
+    <Content Include="Views\teachers\Details.cshtml" />
+    <Content Include="Views\teachers\Edit.cshtml" />
+    <Content Include="Views\teachers\Index.cshtml" />
+    <Content Include="Views\staff_career\Create.cshtml" />
+    <Content Include="Views\staff_career\Delete.cshtml" />
+    <Content Include="Views\staff_career\Details.cshtml" />
+    <Content Include="Views\staff_career\Edit.cshtml" />
+    <Content Include="Views\staff_career\Index.cshtml" />
+    <Content Include="Views\teacher_career\Create.cshtml" />
+    <Content Include="Views\teacher_career\Delete.cshtml" />
+    <Content Include="Views\teacher_career\Details.cshtml" />
+    <Content Include="Views\teacher_career\Edit.cshtml" />
+    <Content Include="Views\teacher_career\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2610,6 +2618,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102221626501_ActivitiesName.resx">
       <DependentUpon>202102221626501_ActivitiesName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102221839191_subject-credit.resx">
+      <DependentUpon>202102221839191_subject-credit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102221854427_subject-Course2.resx">
+      <DependentUpon>202102221854427_subject-Course2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
