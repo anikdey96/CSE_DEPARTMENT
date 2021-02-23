@@ -39,6 +39,7 @@ namespace CSE_DEPARTMENT
                     usermanager.AddToRole(user.Id, "SuperAdmin");
                 }
             }
+
         }
     }
 }
