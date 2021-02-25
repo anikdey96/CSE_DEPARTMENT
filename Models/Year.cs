@@ -19,6 +19,7 @@ namespace CSE_DEPARTMENT.Models
 
         [Key]
         public int year_id { get; set; }
+        [Required(ErrorMessage = "This Is A Required Field!!")]
         public string year_name { get; set; }
    
 

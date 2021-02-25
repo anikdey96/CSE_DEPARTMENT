@@ -425,6 +425,26 @@
     <Compile Include="Migrations\202102221854427_subject-Course2.designer.cs">
       <DependentUpon>202102221854427_subject-Course2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102241953254_Required.cs" />
+    <Compile Include="Migrations\202102241953254_Required.designer.cs">
+      <DependentUpon>202102241953254_Required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102242024074_Required2.cs" />
+    <Compile Include="Migrations\202102242024074_Required2.designer.cs">
+      <DependentUpon>202102242024074_Required2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102242035242_required3.cs" />
+    <Compile Include="Migrations\202102242035242_required3.designer.cs">
+      <DependentUpon>202102242035242_required3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102242040580_required4.cs" />
+    <Compile Include="Migrations\202102242040580_required4.designer.cs">
+      <DependentUpon>202102242040580_required4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102251420002_RemoveIcollection.cs" />
+    <Compile Include="Migrations\202102251420002_RemoveIcollection.designer.cs">
+      <DependentUpon>202102251420002_RemoveIcollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\activities.cs" />
@@ -2624,6 +2644,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102221854427_subject-Course2.resx">
       <DependentUpon>202102221854427_subject-Course2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102241953254_Required.resx">
+      <DependentUpon>202102241953254_Required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102242024074_Required2.resx">
+      <DependentUpon>202102242024074_Required2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102242035242_required3.resx">
+      <DependentUpon>202102242035242_required3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102242040580_required4.resx">
+      <DependentUpon>202102242040580_required4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102251420002_RemoveIcollection.resx">
+      <DependentUpon>202102251420002_RemoveIcollection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
