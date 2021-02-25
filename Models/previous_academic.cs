@@ -17,7 +17,7 @@ namespace CSE_DEPARTMENT.Models
         [Required(ErrorMessage = "This Is A Required Field!!")]
         public int hsc_roll { get; set; }
         [Required(ErrorMessage = "This Is A Required Field!!")]
-        public int hsc_reg { get; set; }
+        public Int64 hsc_reg { get; set; }
         [Required(ErrorMessage = "This Is A Required Field!!")]
         public double hsc_result { get; set; }
         [Required(ErrorMessage = "This Is A Required Field!!")]
@@ -29,7 +29,7 @@ namespace CSE_DEPARTMENT.Models
         [Required(ErrorMessage = "This Is A Required Field!!")]
         public int ssc_roll { get; set; }
         [Required(ErrorMessage = "This Is A Required Field!!")]
-        public int ssc_reg { get; set; }
+        public Int64 ssc_reg { get; set; }
         [Required(ErrorMessage = "This Is A Required Field!!")]
         public double ssc_result { get; set; }
         [Required(ErrorMessage = "This Is A Required Field!!")]
