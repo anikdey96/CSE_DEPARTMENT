@@ -40,6 +40,7 @@ namespace CSE_DEPARTMENT.Controllers
         // GET: students/Create
         public ActionResult Create()
         {
+
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name");
             ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name");
             return View();

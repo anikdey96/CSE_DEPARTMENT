@@ -41,6 +41,8 @@ namespace CSE_DEPARTMENT.Controllers
         public ActionResult Create()
         {
             ViewBag.student_id = new SelectList(db.students, "student_id", "Name");
+           
+
             return View();
         }
 
@@ -59,6 +61,7 @@ namespace CSE_DEPARTMENT.Controllers
             }
 
             ViewBag.student_id = new SelectList(db.students, "student_id", "Name", previous_academic.student_id);
+           
             return View(previous_academic);
         }
 
@@ -75,6 +78,7 @@ namespace CSE_DEPARTMENT.Controllers
                 return HttpNotFound();
             }
             ViewBag.student_id = new SelectList(db.students, "student_id", "Name", previous_academic.student_id);
+           
             return View(previous_academic);
         }
 
@@ -92,6 +96,7 @@ namespace CSE_DEPARTMENT.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.student_id = new SelectList(db.students, "student_id", "Name", previous_academic.student_id);
+           
             return View(previous_academic);
         }
 
