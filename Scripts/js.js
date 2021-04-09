@@ -146,5 +146,3 @@ $(function () {
     });
 });
 
-//  Developed By Yasser Mas
-// yasser.mas2@gmail.com

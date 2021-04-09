@@ -97,7 +97,7 @@
             </table>
 
 
-            <div class="pagination-container">
+            <div class="pagination-container" id="pag">
 
                 <nav>
 
@@ -125,30 +125,45 @@
 
 
 
-            @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-                <script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+            @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+            @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
             <script src="~/Scripts/js.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
             <script type="text/javascript">
                 getPagination('#UsersWithRoles');
+                
             </script>
 
             <script>
-                $("#txtsearch").on("keyup", function () {
-                    var txtenter = $(this).val();
-                    $("table tr").each(function (results) {
-                        if (results !== 0) {
-                            var id = $(this).find("td:nth-child(2)").text();
-                            if (id.indexOf(txtenter) !== 0 && id.toLowerCase().indexOf(txtenter.toLowerCase()) < 0) {
-                                $(this).hide();
+
+                 $("#txtsearch").on("keyup", function () {
+                        var txtenter = $(this).val();
+                        $("table tr").each(function (results) {
+                            if (results !== 0) {
+                                var id = $(this).find("td:nth-child(2)").text();
+                                if (id.indexOf(txtenter) !== 0 && id.toLowerCase().indexOf(txtenter.toLowerCase()) < 0) {
+                                    $(this).hide();
+
+                                }
+
+                                else {
+
+                                    $(this).show();
+                                    if (txtenter == 0) {
+                                         var url = '@Url.Action("UsersWithRoles", "ManageUsers")';
+                                         window.location.href = url;
+                                    }
+
+
+                                }
                             }
-                            else {
-                                $(this).show();
-                            }
-                        }
-                    });
-                });
+
+                        });
+                 });
+
+
+
             </script>
 
 
