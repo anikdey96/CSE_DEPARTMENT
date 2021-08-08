@@ -51,29 +51,35 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.1.43.0\lib\net45\Google.Apis.dll</HintPath>
+    <Reference Include="Google.Apis, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.51.0\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Auth, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    <Reference Include="Google.Apis.Auth, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.51.0\lib\net45\Google.Apis.Auth.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.51.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Core, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.Core.1.43.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    <Reference Include="Google.Apis.Classroom.v1, Version=1.51.0.2235, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Classroom.v1.1.51.0.2235\lib\net45\Google.Apis.Classroom.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Core.1.51.0\lib\net45\Google.Apis.Core.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis.Gmail.v1, Version=1.43.0.1859, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>packages\Google.Apis.Gmail.v1.1.43.0.1859\lib\net45\Google.Apis.Gmail.v1.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.PlatformServices, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.1.43.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.51.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
@@ -319,6 +325,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\booksController.cs" />
     <Compile Include="Controllers\current_academicController.cs" />
+    <Compile Include="Controllers\GoogleClassRoomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -481,6 +488,54 @@
     <Compile Include="Migrations\202103010837442_in.designer.cs">
       <DependentUpon>202103010837442_in.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106111952230_filesUpload.cs" />
+    <Compile Include="Migrations\202106111952230_filesUpload.designer.cs">
+      <DependentUpon>202106111952230_filesUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106181905495_upload-download.cs" />
+    <Compile Include="Migrations\202106181905495_upload-download.designer.cs">
+      <DependentUpon>202106181905495_upload-download.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106251623559_allpdfdownload.cs" />
+    <Compile Include="Migrations\202106251623559_allpdfdownload.designer.cs">
+      <DependentUpon>202106251623559_allpdfdownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106291505181_previous-book-view.cs" />
+    <Compile Include="Migrations\202106291505181_previous-book-view.designer.cs">
+      <DependentUpon>202106291505181_previous-book-view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301638032_book-upload.cs" />
+    <Compile Include="Migrations\202106301638032_book-upload.designer.cs">
+      <DependentUpon>202106301638032_book-upload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107041621246_bookModelUpdate.cs" />
+    <Compile Include="Migrations\202107041621246_bookModelUpdate.designer.cs">
+      <DependentUpon>202107041621246_bookModelUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107190436366_noticePdf.cs" />
+    <Compile Include="Migrations\202107190436366_noticePdf.designer.cs">
+      <DependentUpon>202107190436366_noticePdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107250658214_PdfDownloadUpdate.cs" />
+    <Compile Include="Migrations\202107250658214_PdfDownloadUpdate.designer.cs">
+      <DependentUpon>202107250658214_PdfDownloadUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107291155290_pdfBOOK.cs" />
+    <Compile Include="Migrations\202107291155290_pdfBOOK.designer.cs">
+      <DependentUpon>202107291155290_pdfBOOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108031824008_noticeUploadDownload.cs" />
+    <Compile Include="Migrations\202108031824008_noticeUploadDownload.designer.cs">
+      <DependentUpon>202108031824008_noticeUploadDownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108050852528_MaterialsPdfDownload.cs" />
+    <Compile Include="Migrations\202108050852528_MaterialsPdfDownload.designer.cs">
+      <DependentUpon>202108050852528_MaterialsPdfDownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108071907180_RoutinePdfDownload.cs" />
+    <Compile Include="Migrations\202108071907180_RoutinePdfDownload.designer.cs">
+      <DependentUpon>202108071907180_RoutinePdfDownload.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\activities.cs" />
@@ -498,6 +553,8 @@
     </Compile>
     <Compile Include="Models\book.cs" />
     <Compile Include="Models\current_academic.cs" />
+    <Compile Include="Models\ErrorViewModel.cs" />
+    <Compile Include="Models\GoogleInvite.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\materials.cs" />
@@ -512,6 +569,7 @@
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\teacher.cs" />
     <Compile Include="Models\teacher_career.cs" />
+    <Compile Include="Models\Token.cs" />
     <Compile Include="Models\UserRoleAssign.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2219,6 +2277,29 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chosen-sprite%402x.png" />
     <Content Include="Content\chosen-sprite.png" />
+    <Content Include="Content\Classroom\css\site.css" />
+    <Content Include="Content\Classroom\favicon.ico" />
+    <Content Include="Content\Classroom\js\site.js" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\Classroom\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Classroom\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Classroom\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <Content Include="Content\Classroom\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Content\Classroom\lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="Content\Classroom\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Content\Classroom\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Content\Classroom\lib\jquery\dist\jquery.js" />
+    <Content Include="Content\Classroom\lib\jquery\dist\jquery.min.js" />
+    <Content Include="Content\Classroom\lib\jquery\LICENSE.txt" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -2449,6 +2530,19 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="Content\Classroom\lib\bootstrap\LICENSE" />
+    <Content Include="Content\Classroom\lib\jquery-validation\LICENSE.md" />
+    <Content Include="Content\Classroom\lib\jquery\dist\jquery.min.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\chosen.jquery.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />
@@ -2523,12 +2617,26 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Account\CreateUser.cshtml" />
     <Content Include="Views\Shared\_UserLoginPartial.cshtml" />
+    <Content Include="Views\ManageUsers\UsersWithRoles.cshtml" />
+    <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Include="Views\Shared\_ClassroomLayoutPage.cshtml" />
+    <Content Include="Views\GoogleClassRoom\Index.cshtml" />
+    <Content Include="Views\activities\Create.cshtml" />
+    <Content Include="Views\activities\Delete.cshtml" />
+    <Content Include="Views\activities\Details.cshtml" />
+    <Content Include="Views\activities\Edit.cshtml" />
+    <Content Include="Views\activities\Index.cshtml" />
     <Content Include="Views\books\Create.cshtml" />
     <Content Include="Views\books\Delete.cshtml" />
     <Content Include="Views\books\Details.cshtml" />
     <Content Include="Views\books\Edit.cshtml" />
     <Content Include="Views\books\Index.cshtml" />
-    <Content Include="Views\ManageUsers\UsersWithRoles.cshtml" />
+    <Content Include="Views\current_academic\Create.cshtml" />
+    <Content Include="Views\current_academic\Delete.cshtml" />
+    <Content Include="Views\current_academic\Details.cshtml" />
+    <Content Include="Views\current_academic\Edit.cshtml" />
+    <Content Include="Views\current_academic\Index.cshtml" />
     <Content Include="Views\materials\Create.cshtml" />
     <Content Include="Views\materials\Delete.cshtml" />
     <Content Include="Views\materials\Details.cshtml" />
@@ -2539,32 +2647,6 @@
     <Content Include="Views\notices\Details.cshtml" />
     <Content Include="Views\notices\Edit.cshtml" />
     <Content Include="Views\notices\Index.cshtml" />
-    <Content Include="Views\routines\Create.cshtml" />
-    <Content Include="Views\routines\Delete.cshtml" />
-    <Content Include="Views\routines\Details.cshtml" />
-    <Content Include="Views\routines\Edit.cshtml" />
-    <Content Include="Views\routines\Index.cshtml" />
-    <Content Include="Views\Sessions\Create.cshtml" />
-    <Content Include="Views\Sessions\Delete.cshtml" />
-    <Content Include="Views\Sessions\Details.cshtml" />
-    <Content Include="Views\Sessions\Edit.cshtml" />
-    <Content Include="Views\Sessions\Index.cshtml" />
-    <Content Include="Views\Years\Create.cshtml" />
-    <Content Include="Views\Years\Delete.cshtml" />
-    <Content Include="Views\Years\Details.cshtml" />
-    <Content Include="Views\Years\Edit.cshtml" />
-    <Content Include="Views\Years\Index.cshtml" />
-    <Content Include="Views\HomePage\Index.cshtml" />
-    <Content Include="Views\Subjects\Create.cshtml" />
-    <Content Include="Views\Subjects\Delete.cshtml" />
-    <Content Include="Views\Subjects\Details.cshtml" />
-    <Content Include="Views\Subjects\Edit.cshtml" />
-    <Content Include="Views\Subjects\Index.cshtml" />
-    <Content Include="Views\activities\Create.cshtml" />
-    <Content Include="Views\activities\Delete.cshtml" />
-    <Content Include="Views\activities\Details.cshtml" />
-    <Content Include="Views\activities\Edit.cshtml" />
-    <Content Include="Views\activities\Index.cshtml" />
     <Content Include="Views\previous_academic\Create.cshtml" />
     <Content Include="Views\previous_academic\Delete.cshtml" />
     <Content Include="Views\previous_academic\Details.cshtml" />
@@ -2575,42 +2657,62 @@
     <Content Include="Views\results\Details.cshtml" />
     <Content Include="Views\results\Edit.cshtml" />
     <Content Include="Views\results\Index.cshtml" />
+    <Content Include="Views\routines\Create.cshtml" />
+    <Content Include="Views\routines\Delete.cshtml" />
+    <Content Include="Views\routines\Details.cshtml" />
+    <Content Include="Views\routines\Edit.cshtml" />
+    <Content Include="Views\routines\Index.cshtml" />
+    <Content Include="Views\Sessions\Create.cshtml" />
+    <Content Include="Views\Sessions\Delete.cshtml" />
+    <Content Include="Views\Sessions\Details.cshtml" />
+    <Content Include="Views\Sessions\Edit.cshtml" />
+    <Content Include="Views\Sessions\Index.cshtml" />
     <Content Include="Views\Staffs\Create.cshtml" />
     <Content Include="Views\Staffs\Delete.cshtml" />
     <Content Include="Views\Staffs\Details.cshtml" />
     <Content Include="Views\Staffs\Edit.cshtml" />
     <Content Include="Views\Staffs\Index.cshtml" />
-    <Content Include="Views\students\Create.cshtml" />
-    <Content Include="Views\students\Delete.cshtml" />
-    <Content Include="Views\students\Details.cshtml" />
-    <Content Include="Views\students\Edit.cshtml" />
-    <Content Include="Views\students\Index.cshtml" />
-    <Content Include="Views\teachers\Create.cshtml" />
-    <Content Include="Views\teachers\Delete.cshtml" />
-    <Content Include="Views\teachers\Details.cshtml" />
-    <Content Include="Views\teachers\Edit.cshtml" />
-    <Content Include="Views\teachers\Index.cshtml" />
     <Content Include="Views\staff_career\Create.cshtml" />
     <Content Include="Views\staff_career\Delete.cshtml" />
     <Content Include="Views\staff_career\Details.cshtml" />
     <Content Include="Views\staff_career\Edit.cshtml" />
     <Content Include="Views\staff_career\Index.cshtml" />
+    <Content Include="Views\students\Create.cshtml" />
+    <Content Include="Views\students\Delete.cshtml" />
+    <Content Include="Views\students\Details.cshtml" />
+    <Content Include="Views\students\Edit.cshtml" />
+    <Content Include="Views\students\Index.cshtml" />
+    <Content Include="Views\Subjects\Create.cshtml" />
+    <Content Include="Views\Subjects\Delete.cshtml" />
+    <Content Include="Views\Subjects\Details.cshtml" />
+    <Content Include="Views\Subjects\Edit.cshtml" />
+    <Content Include="Views\Subjects\Index.cshtml" />
+    <Content Include="Views\teachers\Create.cshtml" />
+    <Content Include="Views\teachers\Delete.cshtml" />
+    <Content Include="Views\teachers\Details.cshtml" />
+    <Content Include="Views\teachers\Edit.cshtml" />
+    <Content Include="Views\teachers\Index.cshtml" />
     <Content Include="Views\teacher_career\Create.cshtml" />
     <Content Include="Views\teacher_career\Delete.cshtml" />
     <Content Include="Views\teacher_career\Details.cshtml" />
     <Content Include="Views\teacher_career\Edit.cshtml" />
     <Content Include="Views\teacher_career\Index.cshtml" />
-    <Content Include="Views\current_academic\Create.cshtml" />
-    <Content Include="Views\current_academic\Delete.cshtml" />
-    <Content Include="Views\current_academic\Details.cshtml" />
-    <Content Include="Views\current_academic\Edit.cshtml" />
-    <Content Include="Views\current_academic\Index.cshtml" />
+    <Content Include="Views\Years\Create.cshtml" />
+    <Content Include="Views\Years\Delete.cshtml" />
+    <Content Include="Views\Years\Details.cshtml" />
+    <Content Include="Views\Years\Edit.cshtml" />
+    <Content Include="Views\Years\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Books\" />
     <Folder Include="Content\FacultyPhoto\" />
     <Folder Include="Content\StaffPhoto\" />
     <Folder Include="Content\StudentPhoto\" />
+    <Folder Include="Files\" />
+    <Folder Include="Materials\" />
+    <Folder Include="Notices\" />
+    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -2722,6 +2824,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103010837442_in.resx">
       <DependentUpon>202103010837442_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106111952230_filesUpload.resx">
+      <DependentUpon>202106111952230_filesUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106181905495_upload-download.resx">
+      <DependentUpon>202106181905495_upload-download.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106251623559_allpdfdownload.resx">
+      <DependentUpon>202106251623559_allpdfdownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291505181_previous-book-view.resx">
+      <DependentUpon>202106291505181_previous-book-view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301638032_book-upload.resx">
+      <DependentUpon>202106301638032_book-upload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107041621246_bookModelUpdate.resx">
+      <DependentUpon>202107041621246_bookModelUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107190436366_noticePdf.resx">
+      <DependentUpon>202107190436366_noticePdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107250658214_PdfDownloadUpdate.resx">
+      <DependentUpon>202107250658214_PdfDownloadUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107291155290_pdfBOOK.resx">
+      <DependentUpon>202107291155290_pdfBOOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108031824008_noticeUploadDownload.resx">
+      <DependentUpon>202108031824008_noticeUploadDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108050852528_MaterialsPdfDownload.resx">
+      <DependentUpon>202108050852528_MaterialsPdfDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108071907180_RoutinePdfDownload.resx">
+      <DependentUpon>202108071907180_RoutinePdfDownload.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

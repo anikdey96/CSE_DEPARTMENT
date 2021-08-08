@@ -37,5 +37,9 @@ namespace CSE_DEPARTMENT.Models
         public virtual Subject Subject { get; set; }
         [ForeignKey("teacher_id")]
         public virtual teacher teacher { get; set; }
+
+        
+    
+   
     }
 }

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Classroom/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Classroom/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.3.1023/styles/kendo.default-v2.min.css" />
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/Content/Classroom/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Classroom/js/site.js"></script>
+    <script src="~/Content/Classroom/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.3.1023/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js//jszip.min.js"></script>
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+</html>

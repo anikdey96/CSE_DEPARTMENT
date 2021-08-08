@@ -1,0 +1,24 @@
+Basic PHP & Laravel:
+-------------------
+
+(Q1)Ans:
+
+<?php
+$message_1 = "Hello";
+$message_2 = "This Is Anik Dey Joy";
+echo $message_1." ". $message_2;
+?> 
+
+(Q2)Ans:
+
+ <?php 
+ $a=4;
+ $b=9;
+ $sum=$a+$b;
+ echo $sum;
+ ?>
+
+
+
+
+

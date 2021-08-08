@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -47,17 +48,40 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "notice_id,notice_upload,notice_topic,published_by,publish_date,created_by,created_date,updated_by,updated_date,deadline,priority,specification")] notice notice)
+        public ActionResult Create(notice notice)
         {
             if (ModelState.IsValid)
             {
-                db.notices.Add(notice);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                foreach (var file in notice.files)
+                {
+
+                    if (file.ContentLength < 5000000)
+                    {
+                        var fileName = Path.GetFileName(file.FileName);
+                        var filePath = Path.Combine(Server.MapPath("~/Notices"), fileName);
+                        file.SaveAs(filePath);
+                    }
+
+                    db.notices.Add(notice);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+
             }
 
             return View(notice);
         }
+
+        public FileResult Download(string fileName)
+        {
+            string fullPath = Path.Combine(Server.MapPath("~/Notices"), fileName);
+            byte[] fileBytes = System.IO.File.ReadAllBytes(fullPath);
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+
+
+
 
         // GET: notices/Edit/5
         public ActionResult Edit(int? id)

@@ -1,0 +1,244 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ClassroomLayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html {
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <title></title>
+    <script src="https://kendo.cdn.telerik.com/2019.3.1023/js/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+
+</head>
+<body>
+    <div id="example">
+
+        <button id="btnSignIn" class="btn-default" onclick="GoogleAuthenticationPage()">Sign in</button>
+        <button class="btn btn-default" id="googleAuth">Get Course</button>
+        <div id="grid"></div>
+        <div id="inviteWindow">
+            <input id="studentList" type="text" placeholder="Student Email1, Student Email2, ....." />
+            <button type="button" id="btnSendInvite" class="k-button">Send Invite</button>
+        </div>
+        <br />
+        <button type="button" id="btnSelectRow" value="GetValue" class="k-button">Get Student</button>
+        <button type="button" id="btnOpenSendInvite" class="k-button">Send Invite</button>
+        <button type="button" id="btnGetClasswork" class="k-button">Get Classwork</button>
+        <button type="button" id="btnGetClassworkGrade" class="k-button">Get ClassworkGrade</button>
+        <br />
+        <div id="StudentList"></div>
+        <div id="classWorkGrid"></div>
+        <div id="classWorkGradeGrid"></div>
+        <script type="text/javascript">
+            $("#inviteWindow").hide();
+            function start() {
+                gapi.load('auth2', function () {
+                    auth2 = gapi.auth2.init({
+                        client_id: "747972369256-ju83mkjfubsnme12s0a1rfpbiet19g6c.apps.googleusercontent.com",
+                        scope: 'https://www.googleapis.com/auth/classroom.courses.readonly https://www.googleapis.com/auth/classroom.coursework.students https://www.googleapis.com/auth/classroom.coursework.me',
+                    });
+                });
+            }
+            function GoogleAuthenticationPage() {
+                auth2.grantOfflineAccess().then(signInCallback);
+            }
+            function IsSignedIn() {
+                $.ajax({
+                    url: "/GoogleClassRoom/IsSignedIn", success: function (result) {
+                        if (result) {
+                            $("#btnSignIn").hide();
+                        }
+
+                    }
+                })
+            }
+            function signInCallback(authResult) {
+                var token = authResult['code'];
+                var access_token = '';
+                var refresh_token = '';
+                $.ajax({
+                    url: 'https://www.googleapis.com/oauth2/v4/token',
+                    type: "post",
+                    datatype: "json",
+                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                    async: true,
+                    data: {
+                        code: authResult['code'], client_id: "747972369256-ju83mkjfubsnme12s0a1rfpbiet19g6c.apps.googleusercontent.com", client_secret: "p3OWD-e8IAa7UqgGpJGAcDp5", redirect_uri: 'https://localhost:44317', grant_type: 'authorization_code'
+                    },
+                    success: function (response) {
+                        debugger;
+                        access_token = response.access_token;
+                        refresh_token = response.refresh_token;
+                        googleCallback(token, access_token, refresh_token);
+                    }
+                })
+                    .fail(function (err) {
+                        alert("error" + err);
+                        console.log("error" + err);
+                    });
+            }
+            function googleCallback(authCode, accessToken, refreshToken) {
+                if (authCode) {
+                    $.ajax({
+                        url: '/GoogleClassRoom/GoogleAuthorizationCallback',
+                        type: "POST",
+                        contentType: 'application/json',
+                        data: JSON.stringify({ Auth_Code: authCode, Access_token: accessToken, Refresh_token: refreshToken }),
+                        success: function (res) {
+                            location.reload();
+                        },
+                        error: function (xhr) {
+                            alert("Error" + xhr.responseText);
+                        }
+                    });
+                } else {
+                    alert('error');
+                }
+            }
+            $("#btnSendInvite").click(function () {
+                var sendInviteList = [];
+                var studentList = $("#studentList").val().split(',');
+                for (var i = 0; i < studentList.length; i++) {
+                    var student = new Student()
+                    student.StudentID = i;
+                    student.EmailID = studentList[i]
+                    sendInviteList.push(student);
+                }
+                var grid = $("#grid").data("kendoGrid");
+                var selectedItem = grid.dataItem(grid.select());
+                sendInvite(sendInviteList, selectedItem.id);
+            });
+            $("#btnGetClasswork").click(function () {
+                var grid = $("#grid").data("kendoGrid");
+                var selectedItem = grid.dataItem(grid.select());
+                $("#classWorkGrid").kendoGrid({
+                    dataSource: {
+                        type: "json",
+                        transport: {
+                            read: "/GoogleClassRoom/GetClassWork?courseId=" + selectedItem.id
+                        },
+                        pageSize: 20
+                    },
+                    selectable: "true",
+                    toolbar: ["search"],
+                    columns: [{
+                        field: "title",
+                        title: "Name"
+                    },]
+                });
+            })
+            $("#btnGetClassworkGrade").click(function () {
+                debugger;
+                var grid = $("#grid").data("kendoGrid");
+                var selectedItem = grid.dataItem(grid.select());
+                var grid = $("#classWorkGrid").data("kendoGrid");
+                var selectedClassWorkItem = grid.dataItem(grid.select());
+                $("#classWorkGradeGrid").kendoGrid({
+                    dataSource: {
+                        type: "json",
+                        transport: {
+                            read: "/GoogleClassRoom/GetClassWorkGrades?courseId=" + selectedItem.id + '&' + "courseWorkId=" + selectedClassWorkItem.id
+                        },
+                        pageSize: 20
+                    },
+                    selectable: "true",
+                    toolbar: ["search"],
+                    columns: [{
+                        field: "userId",
+                        title: "User ID"
+                    },
+                    {
+                        field: "assignedGrade",
+                        title: "Grade"
+                    }]
+                });
+            })
+            function sendInvite(sentInviteList, ClassId) {
+                var param = {
+                    StudentList: sentInviteList,
+                    CourseId: ClassId,
+                    Role: "STUDENT",
+                }
+                $.ajax({
+                    url: "/GoogleClassRoom/SendInvite",
+                    data: JSON.stringify(param),
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        $("#inviteWindow").data("kendoWindow").close();
+                    },
+                    error: function (xhr) {
+                    }
+                })
+            }
+            $("#googleAuth").click(function (e) {
+                $("#grid").kendoGrid({
+
+                    dataSource: {
+                        type: "json",
+                        transport: {
+                            read: "/GoogleClassRoom/GetCourse"
+                        },
+                        pageSize: 20
+
+                    },
+                    selectable: "true",
+                    toolbar: ["search"],
+                    columns: [{
+                        field: "name",
+                        title: "Name"
+                    },]
+
+
+                });
+            })
+            $("#btnSelectRow").click(function () {
+                var grid = $("#grid").data("kendoGrid");
+                var selectedItem = grid.dataItem(grid.select());
+                $("#StudentList").kendoGrid({
+                    dataSource: {
+                        type: "json",
+                        transport: {
+                            read: "/GoogleClassRoom/GetStudents?courseId=" + selectedItem.id
+                        },
+                        pageSize: 20
+                    },
+                    selectable: "true",
+                    columns: [{
+                        field: "profile.name.fullName",
+                        title: "Name"
+                    },]
+                });
+            })
+            $("#btnOpenSendInvite").click(function () {
+                $("#inviteWindow").kendoWindow({
+                    width: "600px",
+                    title: "Send Invite",
+                    visible: false,
+                    actions: [
+                        "Pin",
+                        "Minimize",
+                        "Maximize",
+                        "Close"
+                    ],
+                    close: onClose
+                }).data("kendoWindow").center().open();
+            });
+            function onClose() {
+                $("#inviteWindow").data("kendoWindow").close();
+            }
+            function Student() {
+                this.StudentID = 1;
+                this.EmailID = '';
+            }
+        </script>
+    </div>
+</body>
+</html>
