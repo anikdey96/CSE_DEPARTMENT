@@ -24,7 +24,7 @@
                 <thead>
                     <tr>
                         <th>
-                            Notice
+                            Notice(PDF Version)
                         </th>
                         <th>
                             Notice Tags
@@ -106,7 +106,7 @@
                                 @Html.ActionLink("Edit", "Edit", new { id = item.notice_id }, new { @class = "btn btn-primary" })
                             }
                             @Html.ActionLink("Details", "Details", new { id = item.notice_id }, new { @class = "btn btn-info" })
-                            @Html.ActionLink("Download", "Download", new { fileName = item.notice_upload}, new { @class = "btn btn-info" })
+                            @Html.ActionLink("Download", "Download", new { fileName = item.notice_upload}, new { @class = "btn btn-success" })
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
                             {
                                 @Html.ActionLink("Delete", "Delete", new { id = item.notice_id }, new { @class = "btn btn-danger" })

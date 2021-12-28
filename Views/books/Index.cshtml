@@ -40,7 +40,7 @@
                             Type
                         </th>*@
                         <th>
-                            Book Name
+                            Book Name(PDF Version)
                         </th>
                         <th>
                             Book Author
@@ -95,7 +95,7 @@
                         @Html.ActionLink("Edit", "Edit", new { id = item.book_id }, new { @class = "btn btn-primary" })}
                             @Html.ActionLink("Details", "Details", new { id = item.book_id }, new { @class = "btn btn-info" })
                         
-                            @Html.ActionLink("Download", "Download", new { fileName = item.book_name }, new { @class = "btn btn-info" })
+                            @Html.ActionLink("Download", "Download", new { fileName = item.book_name }, new { @class = "btn btn-success" })
                           
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
                             {

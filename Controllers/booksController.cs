@@ -55,35 +55,6 @@ namespace CSE_DEPARTMENT.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(book book)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    db.books.Add(book);
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
-            //book.Pdf = "/Content/Books";
-
-            //if (ModelState.IsValid)
-            //{
-            //    db.books.Add(book);
-            //    db.SaveChanges();
-
-            //    if (book.PdfFile != null && book.PdfFile.ContentLength < 5000000)
-            //    {
-            //        var folder = "/Content/Books";
-            //        var file = string.Format("{0}.pdf",book.book_name);
-            //        var response = FileHelper.UploadFile.UploadPhoto(book.PdfFile, folder, file);
-            //        if (response)
-            //        {
-            //            var pic = string.Format("{0}/{1}",folder, file);
-            //            book.Pdf = pic;
-            //            db.Entry(book).State = EntityState.Modified;
-            //            db.SaveChanges();
-            //        }
-            //    }
-
-            //   return RedirectToAction("Index");
-            //}
 
             if (ModelState.IsValid)
             {
@@ -120,49 +91,7 @@ namespace CSE_DEPARTMENT.Controllers
         }
 
 
-        //private string GetFileTypeByExtension(string fileExtension)
-        //{
-        //    switch (fileExtension.ToLower())
-        //    {
-        //        case ".docx":
-        //        case ".doc":
-        //            return "Microsoft Word Document";
-        //        case ".pdf":
-        //            return "Portable Document Format";
-        //        case ".xlsx":
-        //        case ".xls":
-        //            return "Microsoft Excel Document";
-        //        case ".pptx":
-        //            return "Microsoft PowerPoint Document";
-        //        case ".txt":
-        //            return "Text Document";
-        //        case ".jpg":
-        //        case ".png":
-        //        case ".jpeg":
-        //            return "Image";
-        //        case ".gif":
-        //            return "Graphics Interchange Format file";
-        //        case ".c":
-        //            return "C language file";
-        //        case ".CPP":
-        //            return "C++ language file";
-        //        case ".php":
-        //            return "PHP language file";
-        //        case ".py":
-        //            return "Python language file";
-        //        case ".zip":
-        //            return "Zip file";
-        //        default:
-        //            return "Unknown";
-        //    }
-        //}
-
-
-
-
-
-
-        // GET: books/Edit/5
+       // GET: books/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)

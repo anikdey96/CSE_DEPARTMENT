@@ -23,9 +23,6 @@ namespace CSE_DEPARTMENT.Controllers
             return View();
         }
 
-
-       
-
         public ActionResult AssignRole()
         {
 

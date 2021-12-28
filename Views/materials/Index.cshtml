@@ -31,7 +31,7 @@
                             Year Name
                         </th>
                         <th>
-                            Materials Name
+                            Materials Name(PDF Version)
                         </th>
                         <th>
                             Arranged By
@@ -82,7 +82,7 @@
                     @Html.ActionLink("Edit", "Edit", new { id = item.materials_id}, new { @class = "btn btn-primary" })}
                             @Html.ActionLink("Details", "Details", new { id = item.materials_id }, new { @class = "btn btn-info" })
 
-                            @Html.ActionLink("Download", "Download", new { fileName = item.materials_topic }, new { @class = "btn btn-info" })
+                            @Html.ActionLink("Download", "Download", new { fileName = item.materials_topic }, new { @class = "btn btn-success"})
 
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
                             {

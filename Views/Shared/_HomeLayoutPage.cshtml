@@ -61,7 +61,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStudent" aria-expanded="true" aria-controls="collapseStudent">
                             <i class='fas fa-user-graduate' style='font-size:24px'></i>
-                            <span>Student Information</span>
+                            <span>Student Info</span>
                         </a>
                         <div id="collapseStudent" class="collapse" aria-labelledby="headingStudent" data-parent="#accordionSidebar">
 
@@ -106,7 +106,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmployee" aria-expanded="true" aria-controls="collapseEmployee">
                             <i class='fas fa-user-tie' style='font-size:24px'></i>
-                            <span>Faculty Information</span>
+                            <span>Faculty Info</span>
                         </a>
                         <div id="collapseEmployee" class="collapse" aria-labelledby="headingEmployee" data-parent="#accordionSidebar">
                             <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
@@ -135,7 +135,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
                             <i class='fas fa-user-alt' style='font-size:24px'></i>
-                            <span>Staff Information</span>
+                            <span>Staff Info</span>
                         </a>
                         <div id="collapseUser" class="collapse" aria-labelledby="headingUser" data-parent="#accordionSidebar">
                             <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
@@ -180,16 +180,16 @@
                             {
                                 @Html.ActionLink("E-Notice", "Index", "notices", null, new { @class = "collapse-item" })
                             }
-                            @Html.ActionLink("Semester Results", "Index", "results", null, new { @class = "collapse-item" })
+                            @*@Html.ActionLink("Semester Results", "Index", "results", null, new { @class = "collapse-item" })*@
 
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
                             {
                                 @Html.ActionLink("Class Routine", "Index", "routines", null, new { @class = "collapse-item" })
                             }
-                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Student") || User.IsInRole("Faculty")))
+                            @*@if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Student") || User.IsInRole("Faculty")))
                             {
                                 @Html.ActionLink("Google Class Room", "Index", "GoogleClassRoom", null, new { @class = "collapse-item" })
-                            }
+                            }*@
                         </div>
 
                     </div>
@@ -201,7 +201,7 @@
 
 
 
-                <hr class="sidebar-divider">
+                @*<hr class="sidebar-divider">
                 @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
                 {
                     <div class="sidebar-heading">
@@ -214,7 +214,7 @@
                         </a>
 
                     </li>
-                }
+                }*@
 
                 @*Divider*@
                 <hr class="sidebar-divider d-none d-md-block">
