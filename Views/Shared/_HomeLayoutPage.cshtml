@@ -153,15 +153,21 @@
 
                 <hr class="sidebar-divider">
                 <!-- Heading -->
-                <div class="sidebar-heading">
-                    <b>Academic Section</b>
-                </div>
-                <li class="nav-item">
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
+                  { 
+                    <div class="sidebar-heading">
+                        <b>Academic Section</b>
+                    </div>
+                  }
+              <li class="nav-item">
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
+                {
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAcademic" aria-expanded="true" aria-controls="collapseAcademic">
-                     
+
                         <i style="font-size:24px" class="fa">&#xf19c;</i>
                         <span>Academic Info</span>
                     </a>
+                   }
                     <div id="collapseAcademic" class="collapse" aria-labelledby="headingAcademic" data-parent="#accordionSidebar">
 
 
@@ -187,9 +193,9 @@
                                 @Html.ActionLink("Class Routine", "Index", "routines", null, new { @class = "collapse-item" })
                             }
                             @*@if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Student") || User.IsInRole("Faculty")))
-                            {
-                                @Html.ActionLink("Google Class Room", "Index", "GoogleClassRoom", null, new { @class = "collapse-item" })
-                            }*@
+                    {
+                        @Html.ActionLink("Google Class Room", "Index", "GoogleClassRoom", null, new { @class = "collapse-item" })
+                    }*@
                         </div>
 
                     </div>
@@ -202,19 +208,19 @@
 
 
                 @*<hr class="sidebar-divider">
-                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
-                {
-                    <div class="sidebar-heading">
-                        <b>Discussion Section</b>
-                    </div>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="https://www.facebook.com/">
-                            <i class='fab fa-facebook-messenger' style='font-size:24px'></i>
-                            <span>Messaging</span>
-                        </a>
+        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
+        {
+            <div class="sidebar-heading">
+                <b>Discussion Section</b>
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="https://www.facebook.com/">
+                    <i class='fab fa-facebook-messenger' style='font-size:24px'></i>
+                    <span>Messaging</span>
+                </a>
 
-                    </li>
-                }*@
+            </li>
+        }*@
 
                 @*Divider*@
                 <hr class="sidebar-divider d-none d-md-block">
