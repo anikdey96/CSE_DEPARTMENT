@@ -49,12 +49,13 @@
 
 
 
-                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Student") || User.IsInRole("Faculty")))
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
                 {
                     <hr class="sidebar-divider">
 
 
                     <!-- Heading -->
+
                     <div class="sidebar-heading">
                         <b>Student Section</b>
                     </div>
@@ -70,29 +71,21 @@
 
                                 @Html.ActionLink("Current Academics", "Index", "current_academic", null, new { @class = "collapse-item" })
 
+
                                 @Html.ActionLink("Previous Academics", "Index", "previous_academic", null, new { @class = "collapse-item" })
 
                                 @Html.ActionLink("Student Profile", "Index", "students", null, new { @class = "collapse-item" })
 
                                 @Html.ActionLink("Semester Results", "Index", "results", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("Campus Activities", "Index", "activities", null, new { @class = "collapse-item" })
-                                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
-                                {
-                                    @Html.ActionLink("Year-Semester", "Index", "Years", null, new { @class = "collapse-item" })
-                                    @Html.ActionLink("Session", "Index", "Sessions", null, new { @class = "collapse-item" })
-                                }
+                                @Html.ActionLink("Year-Semester", "Index", "Years", null, new { @class = "collapse-item" })
+                                @Html.ActionLink("Session", "Index", "Sessions", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("Courses", "Index", "Subjects", null, new { @class = "collapse-item" })
                             </div>
 
                         </div>
                     </li>
                 }
-
-
-
-
-
-
 
 
                 @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
@@ -154,20 +147,20 @@
                 <hr class="sidebar-divider">
                 <!-- Heading -->
                 @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
-                  { 
+                {
                     <div class="sidebar-heading">
                         <b>Academic Section</b>
                     </div>
-                  }
-              <li class="nav-item">
-                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
-                {
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAcademic" aria-expanded="true" aria-controls="collapseAcademic">
+                }
+                <li class="nav-item">
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
+                    {
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAcademic" aria-expanded="true" aria-controls="collapseAcademic">
 
-                        <i style="font-size:24px" class="fa">&#xf19c;</i>
-                        <span>Academic Info</span>
-                    </a>
-                   }
+                            <i style="font-size:24px" class="fa">&#xf19c;</i>
+                            <span>Academic Info</span>
+                        </a>
+                    }
                     <div id="collapseAcademic" class="collapse" aria-labelledby="headingAcademic" data-parent="#accordionSidebar">
 
 
@@ -202,7 +195,112 @@
                 </li>
 
 
+                <hr class="sidebar-divider">
+                <!-- Heading -->
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
+                {
+                    <div class="sidebar-heading">
+                        <b>Application Section</b>
+                    </div>
+                }
+                <li class="nav-item">
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
+                    {
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAppli" aria-expanded="true" aria-controls="collapseAppli">
 
+                            <i style="font-size:24px" class="fa">&#xf19c;</i>
+                            <span>Apply For Leave</span>
+                        </a>
+                    }
+                    <div id="collapseAppli" class="collapse" aria-labelledby="headingAppli" data-parent="#accordionSidebar">
+
+
+                        <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
+
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
+                            {
+                                @Html.ActionLink("Faculty Section", "Index", "Faculty_Application", null, new { @class = "collapse-item" })
+                            }
+
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Student")))
+                            {
+                                @Html.ActionLink("Student Section", "Index", "Applications", null, new { @class = "collapse-item" })
+                            }
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff")))
+                            {
+                                @Html.ActionLink("Staff Section", "Index", "Staff_Application", null, new { @class = "collapse-item" })
+                            }
+                        </div>
+                    </div>
+
+
+
+
+
+                    <hr class="sidebar-divider">
+                    <!-- Heading -->
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
+                    {
+                        <div class="sidebar-heading">
+                            <b>Task Assign Section</b>
+                        </div>
+                    }
+                <li class="nav-item">
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student")))
+                    {
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTask" aria-expanded="true" aria-controls="collapseTask">
+
+                            <i style="font-size:24px" class="fa">&#xf19c;</i>
+                            <span>Assign Task</span>
+                        </a>
+                    }
+                    <div id="collapseTask" class="collapse" aria-labelledby="headingTask" data-parent="#accordionSidebar">
+
+
+                        <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
+
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
+                            {
+                                @Html.ActionLink("Faculty Section", "Index", "faculty_task_assign", null, new { @class = "collapse-item" })
+                                @Html.ActionLink("Student Section", "Index", "student_task_assign", null, new { @class = "collapse-item" })
+                                @Html.ActionLink("Staff Section", "Index", "staff_task_assign", null, new { @class = "collapse-item" })
+                            }
+
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("Student")))
+                            {
+                                @Html.ActionLink("Student Section", "Index", "student_task_assign", null, new { @class = "collapse-item" })
+                            }
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("Staff")))
+                            {
+                                @Html.ActionLink("Staff Section", "Index", "staff_task_assign", null, new { @class = "collapse-item" })
+                            }
+                        </div>
+                    </div>
+
+
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                    {
+                        <hr class="sidebar-divider">
+
+                        <div class="sidebar-heading">
+                            <b>Mail Section</b>
+                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMail" aria-expanded="true" aria-controls="collapseMail">
+                            <i class='fas fa-user-alt' style='font-size:24px'></i>
+                            <span>Send Mail</span>
+                        </a>
+                        <div id="collapseMail" class="collapse" aria-labelledby="headingMail" data-parent="#accordionSidebar">
+                            <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
+
+                                @Html.ActionLink("Send mail to user", "Index", "Mail", null, new { @class = "collapse-item" })
+
+     
+                            </div>
+
+                        </div>
+                    </li>
+                }
 
 
 
@@ -223,19 +321,19 @@
         }*@
 
                 @*Divider*@
-                <hr class="sidebar-divider d-none d-md-block">
+                    <hr class="sidebar-divider d-none d-md-block">
 
-                @*Sidebar Toggler (Sidebar)*@
-                <div class="text-center d-none d-md-inline">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
-
-
+                    @*Sidebar Toggler (Sidebar)*@
+                    <div class="text-center d-none d-md-inline">
+                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                    </div>
 
 
 
 
-            </ul>
+
+
+                </ul>
 
 
 
@@ -387,7 +485,6 @@
             @*<a class="scroll-to-top rounded" href="#page-top">
                 <i class="fas fa-angle-up"></i>
             </a>*@
-
             <a class="scroll-to-top rounded" href="#page">
                 <i class="fas fa-angle-double-up"></i>
             </a>

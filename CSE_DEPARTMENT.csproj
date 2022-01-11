@@ -323,11 +323,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\activitiesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ApplicationsController.cs" />
     <Compile Include="Controllers\booksController.cs" />
     <Compile Include="Controllers\current_academicController.cs" />
+    <Compile Include="Controllers\Faculty_ApplicationController.cs" />
+    <Compile Include="Controllers\faculty_task_assignController.cs" />
     <Compile Include="Controllers\GoogleClassRoomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\materialsController.cs" />
@@ -338,8 +342,11 @@
     <Compile Include="Controllers\SessionsController.cs" />
     <Compile Include="Controllers\ShowDataController.cs" />
     <Compile Include="Controllers\StaffsController.cs" />
+    <Compile Include="Controllers\Staff_ApplicationController.cs" />
     <Compile Include="Controllers\staff_careerController.cs" />
+    <Compile Include="Controllers\staff_task_assignController.cs" />
     <Compile Include="Controllers\studentsController.cs" />
+    <Compile Include="Controllers\student_task_assignController.cs" />
     <Compile Include="Controllers\SubjectsController.cs" />
     <Compile Include="Controllers\teachersController.cs" />
     <Compile Include="Controllers\teacher_careerController.cs" />
@@ -536,9 +543,74 @@
     <Compile Include="Migrations\202108071907180_RoutinePdfDownload.designer.cs">
       <DependentUpon>202108071907180_RoutinePdfDownload.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201040829203_rouup.cs" />
+    <Compile Include="Migrations\202201040829203_rouup.designer.cs">
+      <DependentUpon>202201040829203_rouup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201041044196_rouup2.cs" />
+    <Compile Include="Migrations\202201041044196_rouup2.designer.cs">
+      <DependentUpon>202201041044196_rouup2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201041957567_rou3.cs" />
+    <Compile Include="Migrations\202201041957567_rou3.designer.cs">
+      <DependentUpon>202201041957567_rou3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201042029074_rou4.cs" />
+    <Compile Include="Migrations\202201042029074_rou4.designer.cs">
+      <DependentUpon>202201042029074_rou4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201050642521_ca1.cs" />
+    <Compile Include="Migrations\202201050642521_ca1.designer.cs">
+      <DependentUpon>202201050642521_ca1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201060715088_notice1.cs" />
+    <Compile Include="Migrations\202201060715088_notice1.designer.cs">
+      <DependentUpon>202201060715088_notice1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201060747241_notice-2.cs" />
+    <Compile Include="Migrations\202201060747241_notice-2.designer.cs">
+      <DependentUpon>202201060747241_notice-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201071706084_application1.cs" />
+    <Compile Include="Migrations\202201071706084_application1.designer.cs">
+      <DependentUpon>202201071706084_application1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201080708431_FacStaUpdate1.cs" />
+    <Compile Include="Migrations\202201080708431_FacStaUpdate1.designer.cs">
+      <DependentUpon>202201080708431_FacStaUpdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201091837380_assignTask.cs" />
+    <Compile Include="Migrations\202201091837380_assignTask.designer.cs">
+      <DependentUpon>202201091837380_assignTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201100630405_taskUp1.cs" />
+    <Compile Include="Migrations\202201100630405_taskUp1.designer.cs">
+      <DependentUpon>202201100630405_taskUp1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201100714575_taskAssignStudent1.cs" />
+    <Compile Include="Migrations\202201100714575_taskAssignStudent1.designer.cs">
+      <DependentUpon>202201100714575_taskAssignStudent1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201100912044_studenttask2.cs" />
+    <Compile Include="Migrations\202201100912044_studenttask2.designer.cs">
+      <DependentUpon>202201100912044_studenttask2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201101120597_carec1.cs" />
+    <Compile Include="Migrations\202201101120597_carec1.designer.cs">
+      <DependentUpon>202201101120597_carec1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201101138294_taskassign4.cs" />
+    <Compile Include="Migrations\202201101138294_taskassign4.designer.cs">
+      <DependentUpon>202201101138294_taskassign4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201110639551_big1.cs" />
+    <Compile Include="Migrations\202201110639551_big1.designer.cs">
+      <DependentUpon>202201110639551_big1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\activities.cs" />
+    <Compile Include="Models\Application.cs" />
     <Compile Include="Models\AspNetRole.cs">
       <DependentUpon>UserRoleAssign.tt</DependentUpon>
     </Compile>
@@ -554,8 +626,11 @@
     <Compile Include="Models\book.cs" />
     <Compile Include="Models\current_academic.cs" />
     <Compile Include="Models\ErrorViewModel.cs" />
+    <Compile Include="Models\Faculty_Application.cs" />
+    <Compile Include="Models\faculty_task_assign.cs" />
     <Compile Include="Models\GoogleInvite.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Mail_info.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\materials.cs" />
     <Compile Include="Models\notice.cs" />
@@ -564,8 +639,11 @@
     <Compile Include="Models\routine.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\Staff.cs" />
+    <Compile Include="Models\Staff_Application.cs" />
     <Compile Include="Models\staff_career.cs" />
+    <Compile Include="Models\staff_task_assign.cs" />
     <Compile Include="Models\student.cs" />
+    <Compile Include="Models\student_task_assign.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\teacher.cs" />
     <Compile Include="Models\teacher_career.cs" />
@@ -2632,11 +2710,6 @@
     <Content Include="Views\books\Details.cshtml" />
     <Content Include="Views\books\Edit.cshtml" />
     <Content Include="Views\books\Index.cshtml" />
-    <Content Include="Views\current_academic\Create.cshtml" />
-    <Content Include="Views\current_academic\Delete.cshtml" />
-    <Content Include="Views\current_academic\Details.cshtml" />
-    <Content Include="Views\current_academic\Edit.cshtml" />
-    <Content Include="Views\current_academic\Index.cshtml" />
     <Content Include="Views\materials\Create.cshtml" />
     <Content Include="Views\materials\Delete.cshtml" />
     <Content Include="Views\materials\Details.cshtml" />
@@ -2702,6 +2775,43 @@
     <Content Include="Views\Years\Details.cshtml" />
     <Content Include="Views\Years\Edit.cshtml" />
     <Content Include="Views\Years\Index.cshtml" />
+    <Content Include="Views\Applications\Create.cshtml" />
+    <Content Include="Views\Applications\Delete.cshtml" />
+    <Content Include="Views\Applications\Details.cshtml" />
+    <Content Include="Views\Applications\Edit.cshtml" />
+    <Content Include="Views\Applications\Index.cshtml" />
+    <Content Include="Views\Staff_Application\Create.cshtml" />
+    <Content Include="Views\Staff_Application\Delete.cshtml" />
+    <Content Include="Views\Staff_Application\Details.cshtml" />
+    <Content Include="Views\Staff_Application\Edit.cshtml" />
+    <Content Include="Views\Staff_Application\Index.cshtml" />
+    <Content Include="Views\Faculty_Application\Create.cshtml" />
+    <Content Include="Views\Faculty_Application\Delete.cshtml" />
+    <Content Include="Views\Faculty_Application\Details.cshtml" />
+    <Content Include="Views\Faculty_Application\Edit.cshtml" />
+    <Content Include="Views\Faculty_Application\Index.cshtml" />
+    <Content Include="Views\current_academic\Create.cshtml" />
+    <Content Include="Views\current_academic\Delete.cshtml" />
+    <Content Include="Views\current_academic\Details.cshtml" />
+    <Content Include="Views\current_academic\Edit.cshtml" />
+    <Content Include="Views\current_academic\Index.cshtml" />
+    <Content Include="Views\faculty_task_assign\Create.cshtml" />
+    <Content Include="Views\staff_task_assign\Create.cshtml" />
+    <Content Include="Views\student_task_assign\Create.cshtml" />
+    <Content Include="Views\student_task_assign\Delete.cshtml" />
+    <Content Include="Views\student_task_assign\Details.cshtml" />
+    <Content Include="Views\student_task_assign\Edit.cshtml" />
+    <Content Include="Views\student_task_assign\Index.cshtml" />
+    <Content Include="Views\staff_task_assign\Delete.cshtml" />
+    <Content Include="Views\staff_task_assign\Details.cshtml" />
+    <Content Include="Views\staff_task_assign\Edit.cshtml" />
+    <Content Include="Views\staff_task_assign\Index.cshtml" />
+    <Content Include="Views\faculty_task_assign\Delete.cshtml" />
+    <Content Include="Views\faculty_task_assign\Details.cshtml" />
+    <Content Include="Views\faculty_task_assign\Edit.cshtml" />
+    <Content Include="Views\faculty_task_assign\Index.cshtml" />
+    <Content Include="Views\Mail\Index.cshtml" />
+    <Content Include="Views\Mail\Send.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2713,6 +2823,7 @@
     <Folder Include="Materials\" />
     <Folder Include="Notices\" />
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Routines\" />
     <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
@@ -2861,6 +2972,54 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108071907180_RoutinePdfDownload.resx">
       <DependentUpon>202108071907180_RoutinePdfDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201040829203_rouup.resx">
+      <DependentUpon>202201040829203_rouup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201041044196_rouup2.resx">
+      <DependentUpon>202201041044196_rouup2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201041957567_rou3.resx">
+      <DependentUpon>202201041957567_rou3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201042029074_rou4.resx">
+      <DependentUpon>202201042029074_rou4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201050642521_ca1.resx">
+      <DependentUpon>202201050642521_ca1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201060715088_notice1.resx">
+      <DependentUpon>202201060715088_notice1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201060747241_notice-2.resx">
+      <DependentUpon>202201060747241_notice-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201071706084_application1.resx">
+      <DependentUpon>202201071706084_application1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201080708431_FacStaUpdate1.resx">
+      <DependentUpon>202201080708431_FacStaUpdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201091837380_assignTask.resx">
+      <DependentUpon>202201091837380_assignTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201100630405_taskUp1.resx">
+      <DependentUpon>202201100630405_taskUp1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201100714575_taskAssignStudent1.resx">
+      <DependentUpon>202201100714575_taskAssignStudent1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201100912044_studenttask2.resx">
+      <DependentUpon>202201100912044_studenttask2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201101120597_carec1.resx">
+      <DependentUpon>202201101120597_carec1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201101138294_taskassign4.resx">
+      <DependentUpon>202201101138294_taskassign4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201110639551_big1.resx">
+      <DependentUpon>202201110639551_big1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

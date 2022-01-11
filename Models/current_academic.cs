@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CSE_DEPARTMENT.Models
 {
     public partial class current_academic
     {
+ 
+
         [Key]
         public int currentacademic_id { get; set; }
 
@@ -37,5 +40,14 @@ namespace CSE_DEPARTMENT.Models
         [ForeignKey("year_id")]
 
         public virtual Year Year { get; set; }
+
+
+        //[Required]
+        //[RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
+        //ErrorMessage = "Please enter correct email address format")]
+        //[Display(Name = "Email Address")]
+        //public string Email { get; set; }
     }
+
+ 
 }

@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
 }
 
+<style>
+    .card{
+        width:50%;
+        text-align:center;
+   
+    }
+</style>
+
 <br />
 <br />
 <br />
@@ -16,22 +24,19 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h3 class="m-0 font-weight-bold text-primary">Class Routine</h3>
-
-
-
-    </div>
+</div>
 
     <div class="card-body">
 
         <div class="table-responsive">
 
-            <table class="table table-condensed" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-active" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>
                             Session
                         </th>
-                        <th>
+                        @*<th>
                             Subject Name
                         </th>
                  
@@ -53,13 +58,13 @@
                         </th>
                         <th>
                             Duration
-                        </th>
+                        </th>*@
                         <th>
-                            Comment
+                            Title
                         </th>
-                        <th>
+                        @*<th>
                             Actions
-                        </th>
+                        </th>*@
                     </tr>
                 </thead>
                 <tbody>
@@ -70,7 +75,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Session.session_name)
                         </td>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.Subject.Subject_Name)
                         </td>
                      
@@ -91,20 +96,21 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.duration)
-                        </td>
+                        </td>*@
                         <td>
                             @Html.DisplayFor(modelItem => item.comment)
                         </td>
-                        <td class="btn-group">
-                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
-                            {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.routine_id }, new { @class = "btn btn-primary" })}
-                            @Html.ActionLink("Details", "Details", new { id = item.routine_id }, new { @class = "btn btn-info" })
-
-                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
-                            {
-                    @Html.ActionLink("Delete", "Delete", new { id = item.routine_id }, new { @class = "btn btn-danger" })}
-                        </td>
+                    <td class="btn-group">
+                        @*@if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {*@
+                            @*@Html.ActionLink("Edit", "Edit", new { id = item.routine_id }, new { @class = "btn btn-primary" })}*@
+                        @*@Html.ActionLink("Details", "Details", new { id = item.routine_id }, new { @class = "btn btn-info" })*@
+                        @Html.ActionLink("Download", "Download", new { fileName = item.comment}, new { @class = "btn btn-success" })
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Delete", "Delete", new { id = item.routine_id }, new { @class = "btn btn-danger" })
+                        }
+                    </td>
                     </tr>
                     }
 

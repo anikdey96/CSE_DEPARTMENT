@@ -87,10 +87,22 @@ namespace CSE_DEPARTMENT.Models
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.teacher_career> teacher_career { get; set; }
 
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.Application> Applications { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.Staff_Application> Staff_Application { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.Faculty_Application> Faculty_Application { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.student_task_assign> student_task_assign { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.faculty_task_assign> faculty_task_assign { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.staff_task_assign> staff_task_assign { get; set; }
+
         //public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.RoleViewModel> RoleViewModels { get; set; }
 
 
 
-     
+
     }
 }

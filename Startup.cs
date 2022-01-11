@@ -30,9 +30,9 @@ namespace CSE_DEPARTMENT
 
                 //Create Default Users
                 var user = new ApplicationUser();
-                user.UserName = "anik.adj82@gmail.com";
-                user.Email = "anik.adj82@gmail.com";
-                string pwd = "@Anik123";
+                user.UserName = "galib.cse@just.edu.bd";
+                user.Email = "galib.cse@just.edu.bd";
+                string pwd = "@galib123";
                 var newuser = usermanager.Create(user, pwd);
                 if (newuser.Succeeded)
                 {

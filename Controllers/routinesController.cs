@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -18,7 +19,7 @@ namespace CSE_DEPARTMENT.Controllers
         // GET: routines
         public ActionResult Index()
         {
-            var routines = db.routines.Include(r => r.Session).Include(r => r.Subject).Include(r => r.teacher);
+            var routines = db.routines.Include(r => r.Session)/*.Include(r => r.Subject).Include(r => r.teacher)*/;
             return View(routines.ToList());
         }
 
@@ -41,8 +42,8 @@ namespace CSE_DEPARTMENT.Controllers
         public ActionResult Create()
         {
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name");
-            ViewBag.subject_id = new SelectList(db.Subjects, "subject_id", "Subject_Name");
-            ViewBag.teacher_id = new SelectList(db.teachers, "teacher_id", "teacher_name");
+            //ViewBag.subject_id = new SelectList(db.Subjects, "subject_id", "Subject_Name");
+            //ViewBag.teacher_id = new SelectList(db.teachers, "teacher_id", "teacher_name");
             return View();
         }
 
@@ -51,20 +52,40 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "routine_id,routine_upload,class_date,day,teacher_id,subject_id,session_id,start_time,end_time,duration,comment")] routine routine)
+        public ActionResult Create(routine routine)
         {
             if (ModelState.IsValid)
             {
+                    foreach (var file in routine.files)
+                    {
+
+                        if (file.ContentLength < 5000000)
+                        {
+                            var fileName = Path.GetFileName(file.FileName);
+                            var filePath = Path.Combine(Server.MapPath("~/Routines"), fileName);
+                            file.SaveAs(filePath);
+                        }
+                    }
+
+
                 db.routines.Add(routine);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name", routine.session_id);
-            ViewBag.subject_id = new SelectList(db.Subjects, "subject_id", "Subject_Name", routine.subject_id);
-            ViewBag.teacher_id = new SelectList(db.teachers, "teacher_id", "teacher_name", routine.teacher_id);
+            //ViewBag.subject_id = new SelectList(db.Subjects, "subject_id", "Subject_Name", routine.subject_id);
+            //ViewBag.teacher_id = new SelectList(db.teachers, "teacher_id", "teacher_name", routine.teacher_id);
             return View(routine);
         }
+
+        public FileResult Download(string fileName)
+        {
+            string fullPath = Path.Combine(Server.MapPath("~/Routines"), fileName);
+            byte[] fileBytes = System.IO.File.ReadAllBytes(fullPath);
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+
 
         // GET: routines/Edit/5
         public ActionResult Edit(int? id)
@@ -79,8 +100,8 @@ namespace CSE_DEPARTMENT.Controllers
                 return HttpNotFound();
             }
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name", routine.session_id);
-            ViewBag.subject_id = new SelectList(db.Subjects, "subject_id", "Subject_Name", routine.subject_id);
-            ViewBag.teacher_id = new SelectList(db.teachers, "teacher_id", "teacher_name", routine.teacher_id);
+            //ViewBag.subject_id = new SelectList(db.Subjects, "subject_id", "Subject_Name", routine.subject_id);
+            //ViewBag.teacher_id = new SelectList(db.teachers, "teacher_id", "teacher_name", routine.teacher_id);
             return View(routine);
         }
 
@@ -98,8 +119,8 @@ namespace CSE_DEPARTMENT.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name", routine.session_id);
-            ViewBag.subject_id = new SelectList(db.Subjects, "subject_id", "Subject_Name", routine.subject_id);
-            ViewBag.teacher_id = new SelectList(db.teachers, "teacher_id", "teacher_name", routine.teacher_id);
+            //ViewBag.subject_id = new SelectList(db.Subjects, "subject_id", "Subject_Name", routine.subject_id);
+            //ViewBag.teacher_id = new SelectList(db.teachers, "teacher_id", "teacher_name", routine.teacher_id);
             return View(routine);
         }
 
