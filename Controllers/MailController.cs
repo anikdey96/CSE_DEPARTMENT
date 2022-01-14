@@ -44,6 +44,7 @@ namespace CSE_DEPARTMENT.Controllers
             }
             mail.Send(message);
             return View("Send");
+           
 
         }
         public ActionResult Active()

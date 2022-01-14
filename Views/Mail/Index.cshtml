@@ -7,15 +7,52 @@
     ViewBag.Title = "Index";
 }
 
-<body>
-    <form action="Send" method="post" enctype="multipart/form-data">
-        <h2>Sent Email With Attachment</h2>
-        <div>From: </div><input name="From" />
-        <div>To: </div><input name="To" />
-        <div>Subject: </div><input name="Subject" />
-        <div>Attachment:</div>
-        <input name="document" type="file" value="Attach"/>
-        <div>Notes:</div><textarea name="Body" rows="9" cols="50"></textarea><br/>
-        <input type="submit" value="submit" name="Send"/>
+<style>
+    .form-group{
+        align-content: center;
+        margin-left: 450px;
+
+    }
+</style>
+    <body>
+        <form action="Send" method="post" enctype="multipart/form-data">
+            @*<h2>Sent Email With Attachment</h2>
+        <hr />
+        <div>From: </div><input name="From" /><br />
+        <div>To: </div><input name="To" /><br />
+        <div>Subject: </div><input name="Subject" /><br />
+        <div>Attachment: </div>
+        <input name="document" type="file" value="Attach" /><br />
+        <div>Notes:</div><textarea name="Body" rows="9" cols="70"></textarea>
+        <input type="submit" value="submit" name="Send" />*@
+            <div class="form-group">
+          <br /><br /><br />
+                <div class="mb-3">
+                    <label for="From" class="form-label" style="margin-left:120px">From </label>
+                    <input type="text" class="form-control" name="From">
+                </div><br />
+                <div class="mb-3">
+                    <label for="To" class="form-label" style="margin-left:130px">To </label>
+                    <input type="text" class="form-control" name="To">
+                </div><br />
+
+                <div class="mb-3">
+                    <label for="Subject" class="form-label" style="margin-left:110px">Subject </label>
+                    <input type="text" class="form-control" name="Subject">
+                </div><br />
+                <div class="mb-3">
+                    <label for="Attach" class="form-label" style="margin-left:100px">Attachment </label>
+                    <input name="document" type="file" value="Attach" class="form-control">
+                </div><br />
+                <div class="mb-3">
+                    <label for="Notes" class="form-label" style="margin-left:120px">Notes </label>
+                    <textarea class="form-control" name="Body" rows="4" cols="70"></textarea>
+                </div><br />
+                <div class="mb-3">
+                    <input name="Send" type="submit" value="Send" class="form-control btn btn-success">
+                </div>
+
+                @*<input type="submit" value="submit" name="Send" />*@
+            </div>
     </form>
 </body>

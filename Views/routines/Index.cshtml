@@ -6,10 +6,10 @@
 }
 
 <style>
-    .card{
-        width:50%;
-        text-align:center;
-   
+    .card {
+        width: 50%;
+        text-align: center;
+        margin-left: 250px;
     }
 </style>
 
@@ -24,7 +24,7 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h3 class="m-0 font-weight-bold text-primary">Class Routine</h3>
-</div>
+    </div>
 
     <div class="card-body">
 
@@ -37,81 +37,81 @@
                             Session
                         </th>
                         @*<th>
-                            Subject Name
-                        </th>
-                 
-                        <th>
-                            Teacher Name
-                        </th>
+                                Subject Name
+                            </th>
 
-                        <th>
-                            Date
-                        </th>
-                        <th>
-                            Day
-                        </th>
-                        <th>
-                            Start Time
-                        </th>
-                        <th>
-                            End Time
-                        </th>
-                        <th>
-                            Duration
-                        </th>*@
+                            <th>
+                                Teacher Name
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Day
+                            </th>
+                            <th>
+                                Start Time
+                            </th>
+                            <th>
+                                End Time
+                            </th>
+                            <th>
+                                Duration
+                            </th>*@
                         <th>
                             Title
                         </th>
                         @*<th>
-                            Actions
-                        </th>*@
+                                Actions
+                            </th>*@
                     </tr>
                 </thead>
                 <tbody>
 
                     @foreach (var item in Model)
                     {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Session.session_name)
-                        </td>
-                        @*<td>
-                            @Html.DisplayFor(modelItem => item.Subject.Subject_Name)
-                        </td>
-                     
-                        <td>
-                            @Html.DisplayFor(modelItem => item.teacher.teacher_name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.class_date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.day)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.start_time)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.end_time)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.duration)
-                        </td>*@
-                        <td>
-                            @Html.DisplayFor(modelItem => item.comment)
-                        </td>
-                    <td class="btn-group">
-                        @*@if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
-                        {*@
-                            @*@Html.ActionLink("Edit", "Edit", new { id = item.routine_id }, new { @class = "btn btn-primary" })}*@
-                        @*@Html.ActionLink("Details", "Details", new { id = item.routine_id }, new { @class = "btn btn-info" })*@
-                        @Html.ActionLink("Download", "Download", new { fileName = item.comment}, new { @class = "btn btn-success" })
-                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
-                        {
-                            @Html.ActionLink("Delete", "Delete", new { id = item.routine_id }, new { @class = "btn btn-danger" })
-                        }
-                    </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Session.session_name)
+                            </td>
+                            @*<td>
+                                    @Html.DisplayFor(modelItem => item.Subject.Subject_Name)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.teacher.teacher_name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.class_date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.day)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.start_time)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.end_time)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.duration)
+                                </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.comment)
+                            </td>
+                            <td class="btn-group">
+                                @*@if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                                    {*@
+                                @*@Html.ActionLink("Edit", "Edit", new { id = item.routine_id }, new { @class = "btn btn-primary" })}*@
+                                @*@Html.ActionLink("Details", "Details", new { id = item.routine_id }, new { @class = "btn btn-info" })*@
+                                @Html.ActionLink("Download", "Download", new { fileName = item.comment }, new { @class = "btn btn-success" })
+                                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                                {
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.routine_id }, new { @class = "btn btn-danger" })
+                                }
+                            </td>
+                        </tr>
                     }
 
                 </tbody>
@@ -126,7 +126,7 @@
 
 
 
-<p>
+<p style="text-align:center">
     @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
     {
         @Html.ActionLink("Create A New Entry", "Create", null, new { @class = "btn btn-success" })

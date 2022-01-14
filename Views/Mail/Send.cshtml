@@ -1,9 +1,21 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Send";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Send Email</h2>
-<h2>Email Sent Successfully</h2>
-
+<head>
+    <style>
+        .form-group{
+            text-align:center;
+        }
+    </style>
+</head>
+<br />
+<br />
+<br />
+<body>
+    <hr />
+    <div class="form-group">
+        <h2>Email Sent Successfully</h2>
+        @Html.ActionLink("Go Back", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+</body>
