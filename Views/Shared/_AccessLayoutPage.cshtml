@@ -1,0 +1,511 @@
+﻿@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Access Control Page(Academics)";
+}
+<head>
+    <style>
+        #div1 {
+            font-size: 48px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/Admin Template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/Content/Admin Template/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="~/Content/Admin Template/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/Content/Admin Template/css/about.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery.dataTables.js"></script>
+    <link href="css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+</head>
+
+
+
+
+<body id="page">
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #3529b3">
+
+
+            <!-- Divider -->
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <br />
+                    <i class='fas fa-desktop' style='font-size:24px'></i>
+                    <span>CSE Department</span>
+                </a>
+            </li>
+
+
+
+
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+            {
+                <div class="sidebar-heading">
+                    <b>Academic Section</b>
+                </div>
+            }
+            <li class="nav-item">
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                {
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAcademic" aria-expanded="true" aria-controls="collapseAcademic">
+
+                        <i style="font-size:24px" class="fa">&#xf19c;</i>
+                        <span>Academic Info</span>
+                    </a>
+                }
+                <div id="collapseAcademic" class="collapse" aria-labelledby="headingAcademic" data-parent="#accordionSidebar">
+
+
+                    <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
+
+
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Library", "Index", "Book11", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Library", "Index", "Book12", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Library", "Index", "Book21", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Library", "Index", "Book22", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Library", "Index", "Book31", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Library", "Index", "Book32", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Library", "Index", "Book41", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Library", "Index", "Book42", null, new { @class = "collapse-item" })
+
+                        }
+
+
+
+
+
+
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Materials", "Index", "materials11", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Materials", "Index", "materials12", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Materials", "Index", "materials21", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Materials", "Index", "materials22", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Materials", "Index", "materials31", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Materials", "Index", "materials32", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Materials", "Index", "materials41", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Materials", "Index", "materials42", null, new { @class = "collapse-item" })
+
+                        }
+
+
+
+
+
+
+
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Notice", "Index", "notice11", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Notice", "Index", "notice12", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Notice", "Index", "notice21", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Notice", "Index", "notice22", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Notice", "Index", "notice31", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Notice", "Index", "notice32", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Notice", "Index", "notice41", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("E-Notice", "Index", "notice42", null, new { @class = "collapse-item" })
+
+                        }
+
+
+
+
+
+
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Routine", "Index", "routine11", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Routine", "Index", "routine12", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Routine", "Index", "routine21", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Routine", "Index", "routine22", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Routine", "Index", "routine31", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Routine", "Index", "routine32", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Routine", "Index", "routine41", null, new { @class = "collapse-item" })
+
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                        {
+                            @Html.ActionLink("Class Routine", "Index", "routine42", null, new { @class = "collapse-item" })
+
+                        }
+
+                    </div>
+
+                </div>
+            </li>
+
+
+               
+        
+               
+                @*@if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                {
+                    <div class="text-center d-none d-md-inline">
+                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                    </div>
+                }*@
+
+
+
+
+
+            </ul>
+
+
+
+            <!-- End of Sidebar -->
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow " id="navbar" style="position: fixed; top: 0; width: 98%; height:auto;transition: top 0.1s;">
+
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#" style="position:relative">
+                            <div class="d-flex justify-content-start">
+                                <img src="~/Content/Admin Template/img/varsity-logo.png" />
+
+
+
+                            </div>
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <ul class="navbar-nav ml-auto">
+
+
+                            <li class="nav-item dropdown no-arrow" style="margin-top:15px">
+
+                                @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                                {
+
+                                    <button type="button" class="btn btn-outline-info">
+                                <li>@Html.ActionLink("Admin Home", "Index", "HomePage", null, new { style = "text-decoration:none" })</li>
+                                </button>
+
+
+
+                                <button type="button" class="btn btn-outline-success">
+                                    <li>@Html.ActionLink("Go Back To Admin Arena", "Index", "Admin", null, new { style = "text-decoration:none" })</li>
+                                </button>
+
+
+
+
+
+                            }
+
+
+                            else
+                            {
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li>
+                                            @Html.Partial("_UserLoginPartial")
+                                        </li>
+                                    </ul>
+
+
+                                </div>
+                            }
+
+                                </li>
+                            </ul>
+
+
+
+                            <!-- Sidebar Toggle (Topbar) -->
+                            @*<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                                    <i class="fa fa-bars"></i>
+                                </button>*@
+
+                            <!-- Topbar Search -->
+                            <!-- Topbar Navbar -->
+                            <ul class="navbar-nav ml-auto">
+
+                                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                                <li class="nav-item dropdown no-arrow d-sm-none">
+                                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-search fa-fw"></i>
+                                    </a>
+
+                                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                                    <!-- Nav Item - User Information -->
+
+
+
+                                <li class="nav-item dropdown no-arrow">
+                                    @*@if (User.Identity.IsAuthenticated && !User.IsInRole("SuperAdmin"))
+                                        {
+                                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>Welcome, @User.Identity.Name</b></span>
+                                                <img class="img-profile rounded-circle" src="~/Content/Admin Template/img/welcome.gif">
+                                            </a>
+                                        }*@
+
+
+
+                                    <!-- Dropdown - User Information -->
+                                    @*<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">*@
+
+
+                                    @*&nbsp; &nbsp;&nbsp;&nbsp;
+                                        <a href="@Url.Action("Index", "Manage")">
+                                            <i class="fas fa-user text-gray"></i>
+                                            <span>
+                                                <strong>Manage Profile</strong>
+                                            </span>
+                                        </a>*@
+
+                                    @*<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                <i class="fas fa-sign-out-alt  text-gray"></i>
+                                                <span>
+                                                    <strong>Logout</strong>
+                                                </span>
+                                            </a>
+                                        </div>*@
+                                </li>
+
+
+
+                            </ul>
+
+                        </nav>
+
+                        <!-- End of Topbar -->
+                        <!-- Begin Page Content -->
+                        <div class="container-fluid ">
+
+                            @RenderBody()
+                        </div>
+                        <!-- /.container-fluid -->
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- End of Content Wrapper -->
+            <!-- End of Page Wrapper -->
+            <!-- Scroll to Top Button-->
+            @*<a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>*@
+            <a class="scroll-to-top rounded" href="#page">
+                <i class="fas fa-angle-double-up"></i>
+            </a>
+
+
+            @*<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select <b>"Logout"</b> below if you are ready to end your current session</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-outline-secondary btn-lg" data-dismiss="modal" type="button">Cancel</button>*@
+
+            @*<button class="btn btn-outline-warning" id="log-off" type="button"> @Html.Partial("_UserLoginPartial")</button>*@
+
+            @*@Html.ActionLink("LogOff", "Index", "UserLogin",new { @class= "btn btn-outline-warning" })*@
+
+
+
+
+            @*</div>
+                        </div>
+                    </div>
+                </div>*@
+
+
+
+
+
+            @*<div class="text-center">
+                    <footer>
+
+                        <p><b> &copy;DEVELOPERS TEAM, CSE-16 </b></p>
+
+                    </footer>
+                </div>*@
+
+
+            <script>
+                var prevScrollpos = window.pageYOffset;
+                window.onscroll = function () {
+                    var currentScrollPos = window.pageYOffset;
+                    if (prevScrollpos > currentScrollPos) {
+                        document.getElementById("navbar").style.top = "0";
+                    } else {
+                        document.getElementById("navbar").style.top = "-100px";
+                    }
+                    prevScrollpos = currentScrollPos;
+                }
+            </script>
+
+            <!-- Bootstrap core JavaScript-->
+            <script src="~/Content/Admin Template/vendor/jquery/jquery.min.js"></script>
+            <script src="~/Content/Admin Template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="~/Content/Admin Template/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="~/Content/Admin Template/js/sb-admin-2.min.js"></script>
+
+            <!-- Page level plugins -->
+            <script src="~/Content/Admin Template/vendor/chart.js/Chart.min.js"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="~/Content/Admin Template/js/demo/chart-area-demo.js"></script>
+            <script src="~/Content/Admin Template/js/demo/chart-pie-demo.js"></script>
+
+
+            <!-- Page level plugins -->
+            <script src="~/Content/Admin Template/vendor/datatables/jquery.dataTables.min.js"></script>
+            <script src="~/Content/Admin Template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="~/Content/Admin Template/js/demo/datatables-demo.js"></script>
+
+
+
+        </body>

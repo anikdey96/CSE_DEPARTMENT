@@ -14,5 +14,9 @@ namespace CSE_DEPARTMENT.Controllers
         {
             return View();
         }
+        public ActionResult Access()
+        {
+            return View();
+        }
     }
 }

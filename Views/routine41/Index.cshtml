@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CSE_DEPARTMENT.Models.routine41>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Session.session_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Session.session_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.routine_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.routine_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.routine_id })
+        </td>
+    </tr>
+}
+
+</table>

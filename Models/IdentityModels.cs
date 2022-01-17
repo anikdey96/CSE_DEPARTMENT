@@ -99,6 +99,70 @@ namespace CSE_DEPARTMENT.Models
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.staff_task_assign> staff_task_assign { get; set; }
 
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.book12> book12 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.book21> book21 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.book22> book22 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.book31> book31 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.book32> book32 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.book41> book41 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.book42> book42 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials12> materials12 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials21> materials21 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials22> materials22 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials31> materials31 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials32> materials32 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials41> materials41 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials42> materials42 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine12> routine12 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine21> routine21 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine22> routine22 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine31> routine31 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine32> routine32 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine41> routine41 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine42> routine42 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.book11> book11 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials11> materials11 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine11> routine11 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice11> notice11 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice12> notice12 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice21> notice21 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice22> notice22 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice31> notice31 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice32> notice32 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice41> notice41 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice42> notice42 { get; set; }
+
         //public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.RoleViewModel> RoleViewModels { get; set; }
 
 

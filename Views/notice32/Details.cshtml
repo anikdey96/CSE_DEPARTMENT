@@ -1,0 +1,119 @@
+﻿@model CSE_DEPARTMENT.Models.notice32
+
+@{ ViewBag.Title = "Details";
+                Layout = "~/Views/Shared/_HomeLayoutPage.cshtml"; }
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h3 class="m-0 font-weight-bold text-primary">Details</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                <dl class="dl-horizontal">
+                    <dt>
+                        Notice
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.notice_upload)
+                    </dd>
+
+                    <dt>
+                        Notice Tags
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.notice_topic)
+                    </dd>
+
+                    <dt>
+                        Published By
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.published_by)
+                    </dd>
+
+                    <dt>
+                        Publish Date
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.publish_date)
+                    </dd>
+
+                    <dt>
+                        Created By
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.created_by)
+                    </dd>
+
+                    <dt>
+                        Created Date
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.created_date)
+                    </dd>
+
+                    <dt>
+                        Updated By
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.updated_by)
+                    </dd>
+
+                    <dt>
+                        Updated Date
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.updated_date)
+                    </dd>
+
+                    <dt>
+                        Deadline
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.deadline)
+                    </dd>
+
+                    <dt>
+                        Priority
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.priority)
+                    </dd>
+
+                    <dt>
+                        Specification
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.specification)
+                    </dd>
+
+                </dl>
+            </table>
+        </div>
+
+    </div>
+</div>
+<p>
+    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+    {
+@Html.ActionLink("Edit", "Edit", new { id = Model.notice_id }, new { @class = "btn btn-info" })} |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+</p>

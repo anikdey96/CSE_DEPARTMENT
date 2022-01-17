@@ -1,0 +1,121 @@
+﻿@model IEnumerable<CSE_DEPARTMENT.Models.book22>
+
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml"; }
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h3 class="m-0 font-weight-bold text-primary">E-Library</h3>
+
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-condensed" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Subject Name
+                        </th>
+                        <th>
+                            Year Name
+                        </th>
+                        @*<th>
+                                @Html.DisplayNameFor(model => model.File)
+                            </th>*@
+                        @*<th>
+                                Size
+                            </th>
+                            <th>
+                                Type
+                            </th>*@
+                        <th>
+                            Book Name(PDF Version)
+                        </th>
+                        <th>
+                            Book Author
+                        </th>
+                        <th>
+                            Specification
+                        </th>
+                        <th>
+                            Edition
+                        </th>
+                        <th>
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject.Subject_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year.year_name)
+            </td>
+
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.File)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>*@
+
+            <td>
+                @Html.DisplayFor(modelItem => item.book_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.book_author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.specification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edition)
+            </td>
+            <td class="btn-group">
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                {
+@Html.ActionLink("Edit", "Edit", new { id = item.book_id }, new { @class = "btn btn-primary" })}
+                @Html.ActionLink("Details", "Details", new { id = item.book_id }, new { @class = "btn btn-info" })
+
+                @Html.ActionLink("Download", "Download", new { fileName = item.book_name }, new { @class = "btn btn-success" })
+
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                {
+@Html.ActionLink("Delete", "Delete", new { id = item.book_id }, new { @class = "btn btn-danger" })}
+            </td>
+        </tr>
+}
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<p>
+    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+    {
+@Html.ActionLink("Create A New Entry", "Create", null, new { @class = "btn btn-success" })}
+
+</p>
