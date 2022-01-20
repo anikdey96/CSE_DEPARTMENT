@@ -1,5 +1,4 @@
-# CSE_DEPARTMENT
-This is my final year project. In this web application project I've used HTML,CSS,Bootstrap for frontend and C#, Asp .net MVC, JavaScript, JQUERY for backend.
+In this web application project I've used HTML,CSS,Bootstrap for frontend and C#, Asp .net MVC, JavaScript, JQUERY for backend.
 
 This web applications has the following functionalities & features->
 
