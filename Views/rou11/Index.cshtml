@@ -1,0 +1,92 @@
+﻿@model IEnumerable<CSE_DEPARTMENT.Models.rou11>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
+}
+
+<style>
+    .card {
+        width: 50%;
+        text-align: center;
+        margin-left: 250px;
+    }
+</style>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h3 class="m-0 font-weight-bold text-primary">Class Routine</h3>
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+
+            <table class="table table-active" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Session
+                        </th>
+                        <th>
+                            Year-Semester
+                        </th>
+                        <th>
+                            Title
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Session.session_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Year.year_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.comment)
+                            </td>
+                            <td class="btn-group">
+                                @*@if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                                    {*@
+                                @*@Html.ActionLink("Edit", "Edit", new { id = item.routine_id }, new { @class = "btn btn-primary" })}*@
+                                @*@Html.ActionLink("Details", "Details", new { id = item.routine_id }, new { @class = "btn btn-info" })*@
+                                @Html.ActionLink("Download", "Download", new { fileName = item.comment }, new { @class = "btn btn-success" })
+                                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                                {
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.routine_id }, new { @class = "btn btn-danger" })
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<p style="text-align:center">
+    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+    {
+        @Html.ActionLink("Create A New Entry", "Create", null, new { @class = "btn btn-success" })
+    }
+</p>

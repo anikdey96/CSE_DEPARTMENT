@@ -20,6 +20,10 @@ namespace CSE_DEPARTMENT.Controllers
             return View(db.Staff_Application.ToList());
         }
 
+        public ActionResult Success()
+        {
+            return View();
+        }
         // GET: Staff_Application/Details/5
         public ActionResult Details(int? id)
         {
@@ -46,13 +50,22 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "application_id,name,title,tag,description,status")] Staff_Application staff_Application)
+        public ActionResult Create(Staff_Application staff_Application)
         {
             if (ModelState.IsValid)
             {
-                db.Staff_Application.Add(staff_Application);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (User.IsInRole("SuperAdmin"))
+                {
+                    db.Staff_Application.Add(staff_Application);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    db.Staff_Application.Add(staff_Application);
+                    db.SaveChanges();
+                    return RedirectToAction("Success");
+                }
             }
 
             return View(staff_Application);
@@ -78,7 +91,7 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "application_id,name,title,tag,description,status")] Staff_Application staff_Application)
+        public ActionResult Edit(Staff_Application staff_Application)
         {
             if (ModelState.IsValid)
             {

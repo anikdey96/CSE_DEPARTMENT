@@ -21,6 +21,12 @@ namespace CSE_DEPARTMENT.Controllers
             return View(faculty_task_assign.ToList());
         }
 
+        public ActionResult Success()
+        {
+          
+            return View();
+        }
+
         // GET: faculty_task_assign/Details/5
         public ActionResult Details(int? id)
         {
@@ -52,9 +58,19 @@ namespace CSE_DEPARTMENT.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.faculty_task_assign.Add(faculty_task_assign);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (User.IsInRole("SuperAdmin"))
+                {
+                    db.faculty_task_assign.Add(faculty_task_assign);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    db.faculty_task_assign.Add(faculty_task_assign);
+                    db.SaveChanges();
+                    return RedirectToAction("Success");
+                }
+                
             }
 
             ViewBag.teacher_id = new SelectList(db.teachers, "teacher_id", "teacher_name", faculty_task_assign.teacher_id);

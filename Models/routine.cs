@@ -21,6 +21,7 @@ namespace CSE_DEPARTMENT.Models
         //public int? teacher_id { get; set; }
         //public int? subject_id { get; set; }
         public int? session_id { get; set; }
+        public int? year_id { get; set; }
         //[Required(ErrorMessage = "This Is A Required Field!!")]
         //[DataType(DataType.Time)]
         //public System.TimeSpan start_time { get; set; }
@@ -33,6 +34,8 @@ namespace CSE_DEPARTMENT.Models
 
         [ForeignKey("session_id")]
         public virtual Session Session { get; set; }
+        [ForeignKey("year_id")]
+        public virtual Year Year { get; set; }
         //[ForeignKey("subject_id")]
         //public virtual Subject Subject { get; set; }
         //[ForeignKey("teacher_id")]

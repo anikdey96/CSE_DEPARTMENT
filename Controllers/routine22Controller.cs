@@ -11,7 +11,6 @@ using CSE_DEPARTMENT.Models;
 
 namespace CSE_DEPARTMENT.Controllers
 {
-    [Authorize]
     public class routine22Controller : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -19,7 +18,7 @@ namespace CSE_DEPARTMENT.Controllers
         // GET: routine22
         public ActionResult Index()
         {
-            var routine22 = db.routine22.Include(r => r.Session);
+            var routine22 = db.routine22.Include(r => r.Session).Include(r => r.Year);
             return View(routine22.ToList());
         }
 
@@ -42,6 +41,7 @@ namespace CSE_DEPARTMENT.Controllers
         public ActionResult Create()
         {
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name");
+            ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name");
             return View();
         }
 
@@ -72,14 +72,13 @@ namespace CSE_DEPARTMENT.Controllers
             }
 
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name", routine22.session_id);
+            ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name", routine22.year_id);
             return View(routine22);
         }
 
-
-
         public FileResult Download(string fileName)
         {
-            string fullPath = Path.Combine(Server.MapPath("~/Materials"), fileName);
+            string fullPath = Path.Combine(Server.MapPath("~/Routines"), fileName);
             byte[] fileBytes = System.IO.File.ReadAllBytes(fullPath);
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
@@ -97,6 +96,7 @@ namespace CSE_DEPARTMENT.Controllers
                 return HttpNotFound();
             }
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name", routine22.session_id);
+            ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name", routine22.year_id);
             return View(routine22);
         }
 
@@ -114,6 +114,7 @@ namespace CSE_DEPARTMENT.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name", routine22.session_id);
+            ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name", routine22.year_id);
             return View(routine22);
         }
 

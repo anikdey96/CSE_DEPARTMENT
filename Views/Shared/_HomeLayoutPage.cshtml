@@ -80,7 +80,7 @@
                                 @Html.ActionLink("Campus Activities", "Index", "activities", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("Year-Semester", "Index", "Years", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("Session", "Index", "Sessions", null, new { @class = "collapse-item" })
-                                @Html.ActionLink("Courses", "Index", "Subjects", null, new { @class = "collapse-item" })
+                               
                             </div>
 
                         </div>
@@ -88,7 +88,7 @@
                 }
 
 
-                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
                 {
                     <hr class="sidebar-divider">
 
@@ -118,7 +118,7 @@
 
 
 
-                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
                 {
                     <hr class="sidebar-divider">
 
@@ -168,6 +168,7 @@
 
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty")))
                             {
+                                @Html.ActionLink("Courses", "Index", "Subjects", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("E-Library", "Index", "Books", null, new { @class = "collapse-item" })
                             }
 
@@ -218,7 +219,7 @@
 
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty")))
                             {
-                                @Html.ActionLink("E-Library", "Index", "materials", null, new { @class = "collapse-item" })
+                                @Html.ActionLink("Class Materials", "Index", "materials", null, new { @class = "collapse-item" })
                             }
 
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("Student11")))
@@ -322,7 +323,7 @@
                             }
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("Student11")))
                             {
-                                @Html.ActionLink("Class Routine", "Index", "routine11", null, new { @class = "collapse-item" })
+                                @Html.ActionLink("Class Routine", "Index", "rou11", null, new { @class = "collapse-item" })
 
                             }
                             @if (User.Identity.IsAuthenticated && (User.IsInRole("Student12")))
@@ -396,18 +397,25 @@
 
                         <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
 
-                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
                             {
                                 @Html.ActionLink("Faculty Section", "Index", "Faculty_Application", null, new { @class = "collapse-item" })
+                                @Html.ActionLink("Student Section", "Index", "Applications", null, new { @class = "collapse-item" })
+                                @Html.ActionLink("Staff Section", "Index", "Staff_Application", null, new { @class = "collapse-item" })
                             }
 
-                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Student11") || User.IsInRole("Student12") || User.IsInRole("Student21") || User.IsInRole("Student22") || User.IsInRole("Student31") || User.IsInRole("Student32") || User.IsInRole("Student41") || User.IsInRole("Student42")))
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("Faculty"))
                             {
-                                @Html.ActionLink("Student Section", "Index", "Applications", null, new { @class = "collapse-item" })
+                                @Html.ActionLink("Faculty Section", "Create", "Faculty_Application", null, new { @class = "collapse-item" })
                             }
-                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff")))
+
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("Student11") || User.IsInRole("Student12") || User.IsInRole("Student21") || User.IsInRole("Student22") || User.IsInRole("Student31") || User.IsInRole("Student32") || User.IsInRole("Student41") || User.IsInRole("Student42")))
                             {
-                                @Html.ActionLink("Staff Section", "Index", "Staff_Application", null, new { @class = "collapse-item" })
+                                @Html.ActionLink("Student Section", "Create", "Applications", null, new { @class = "collapse-item" })
+                            }
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("Staff")))
+                            {
+                                @Html.ActionLink("Staff Section", "Create", "Staff_Application", null, new { @class = "collapse-item" })
                             }
                         </div>
                     </div>
@@ -418,14 +426,14 @@
 
                     <hr class="sidebar-divider">
                     <!-- Heading -->
-                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student11") || User.IsInRole("Student12") || User.IsInRole("Student21") || User.IsInRole("Student22") || User.IsInRole("Student31") || User.IsInRole("Student32") || User.IsInRole("Student41") || User.IsInRole("Student42")))
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
                     {
                         <div class="sidebar-heading">
                             <b>Task Assign Section</b>
                         </div>
                     }
                 <li class="nav-item">
-                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Staff") || User.IsInRole("Faculty") || User.IsInRole("Student11") || User.IsInRole("Student12") || User.IsInRole("Student21") || User.IsInRole("Student22") || User.IsInRole("Student31") || User.IsInRole("Student32") || User.IsInRole("Student41") || User.IsInRole("Student42")))
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
                     {
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTask" aria-expanded="true" aria-controls="collapseTask">
 
@@ -438,21 +446,27 @@
 
                         <div class="py-2 collapse-inner rounded" style="background-color: #bcd4c0">
 
-                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
                             {
                                 @Html.ActionLink("Faculty Section", "Index", "faculty_task_assign", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("Student Section", "Index", "student_task_assign", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("Staff Section", "Index", "staff_task_assign", null, new { @class = "collapse-item" })
                             }
-
-                            @if (User.Identity.IsAuthenticated && (User.IsInRole("Student11") || User.IsInRole("Student12") || User.IsInRole("Student21") || User.IsInRole("Student22") || User.IsInRole("Student31") || User.IsInRole("Student32") || User.IsInRole("Student41") || User.IsInRole("Student42")))
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("Faculty")))
                             {
+                                @Html.ActionLink("Faculty Section", "Create", "faculty_task_assign", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("Student Section", "Index", "student_task_assign", null, new { @class = "collapse-item" })
-                            }
-                            @if (User.Identity.IsAuthenticated && (User.IsInRole("Staff")))
-                            {
                                 @Html.ActionLink("Staff Section", "Index", "staff_task_assign", null, new { @class = "collapse-item" })
                             }
+
+                            @*@if (User.Identity.IsAuthenticated && (User.IsInRole("Student11") || User.IsInRole("Student12") || User.IsInRole("Student21") || User.IsInRole("Student22") || User.IsInRole("Student31") || User.IsInRole("Student32") || User.IsInRole("Student41") || User.IsInRole("Student42")))
+        {
+            @Html.ActionLink("Student Section", "Index", "student_task_assign", null, new { @class = "collapse-item" })
+        }
+        @if (User.Identity.IsAuthenticated && (User.IsInRole("Staff")))
+        {
+            @Html.ActionLink("Staff Section", "Index", "staff_task_assign", null, new { @class = "collapse-item" })
+        }*@
                         </div>
                     </div>
 

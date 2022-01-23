@@ -20,6 +20,11 @@ namespace CSE_DEPARTMENT.Controllers
             return View(db.Faculty_Application.ToList());
         }
 
+        public ActionResult Success()
+        {
+            return View();
+        }
+
         // GET: Faculty_Application/Details/5
         public ActionResult Details(int? id)
         {
@@ -46,15 +51,24 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "application_id,name,title,tag,description,status")] Faculty_Application faculty_Application)
+        public ActionResult Create(Faculty_Application faculty_Application)
         {
+
             if (ModelState.IsValid)
             {
-                db.Faculty_Application.Add(faculty_Application);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (User.IsInRole("SuperAdmin"))
+                {
+                    db.Faculty_Application.Add(faculty_Application);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    db.Faculty_Application.Add(faculty_Application);
+                    db.SaveChanges();
+                    return RedirectToAction("Success");
+                }
             }
-
             return View(faculty_Application);
         }
 
@@ -78,7 +92,7 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "application_id,name,title,tag,description,status")] Faculty_Application faculty_Application)
+        public ActionResult Edit(Faculty_Application faculty_Application)
         {
             if (ModelState.IsValid)
             {

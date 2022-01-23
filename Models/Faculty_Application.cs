@@ -18,5 +18,6 @@ namespace CSE_DEPARTMENT.Models
         [Required(ErrorMessage = "Please Specify Your Task!!")]
         public string description { get; set; }
         public string status { get; set; }
+        public bool Accepted_Rejected { get; set; }
     }
 }

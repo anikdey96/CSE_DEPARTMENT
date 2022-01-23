@@ -1,9 +1,8 @@
 ﻿@model CSE_DEPARTMENT.Models.routine
 
-@{
-    ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
-}
+
+@{ ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml"; }
 
 <br />
 <br />
@@ -18,6 +17,7 @@
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
                 <dl class="dl-horizontal">
                     <dt>
                         Session
@@ -27,61 +27,13 @@
                         @Html.DisplayFor(model => model.Session.session_name)
                     </dd>
 
-                    @*<dt>
-                        Subject Name
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Subject.Subject_Name)
-                    </dd>
-
                     <dt>
-                        Teacher Name
+                        Year-Semester
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.teacher.teacher_name)
+                        @Html.DisplayFor(model => model.Year.year_name)
                     </dd>
-
-                    <dt>
-                        Date
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.class_date)
-                    </dd>
-
-                    <dt>
-                        Day
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.day)
-                    </dd>
-
-                    @*<dt>
-                        Start Time
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.start_time)
-                    </dd>
-
-                    <dt>
-                        End Time
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.end_time)
-                    </dd>
-
-                    <dt>
-                        Duration
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.duration)
-                    </dd>*@
 
                     <dt>
                         Title
@@ -92,7 +44,6 @@
                     </dd>
 
                 </dl>
-
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()

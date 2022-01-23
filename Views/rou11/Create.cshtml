@@ -1,0 +1,124 @@
+﻿@model CSE_DEPARTMENT.Models.rou11
+
+@{ ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml"; }
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@using (Html.BeginForm("Create", "rou11", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="card mb-4 shadow">
+            <div class="card-header py-3">
+                <h3 class="m-0 font-weight-bold text-primary">Create</h3>
+
+            </div>
+
+            <div class="card-body">
+                @*<div class="form-group">
+            @Html.LabelFor(model => model.class_date, "Date", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.class_date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.class_date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.day, "Day", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.day, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.day, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.teacher_id, "Teacher Name", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-10">
+                @Html.DropDownList("teacher_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.teacher_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.subject_id, "Subject Name", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-10">
+                @Html.DropDownList("subject_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.subject_id, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.session_id, "Session", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("session_id", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.session_id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.year_id, "Year-Semester", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("year_id", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.year_id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.files, "Upload Routine(Note: For downloading the uploaded routine you will have to provide uploaded document name as same as the Title of the document & Maximum 5 MB file is allowed for uploading)", htmlAttributes: new { @class = "control-label" })
+                        <div class="col-md-10">
+                            <span class="btn btn-default btn-file">
+
+                                @Html.TextBoxFor(model => model.files, new { type = "file", @id = "files", @name = "files" })
+                                @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+            @Html.LabelFor(model => model.start_time, "Start Time", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.start_time, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.start_time, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.end_time, "End Time", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.end_time, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.end_time, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.duration, "Duration", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.duration, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.duration, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.comment, "Title", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.comment, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-success" /> |
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>}
+

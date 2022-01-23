@@ -20,7 +20,7 @@ namespace CSE_DEPARTMENT.Models
         public string tag { get; set; }
         [Required(ErrorMessage = "Please Specify Your Task!!")]
         public string description { get; set; }
-  
+        public bool Accepted_Rejected { get; set; }
         public string status { get; set; }
         public int? year_id { get; set; }
 

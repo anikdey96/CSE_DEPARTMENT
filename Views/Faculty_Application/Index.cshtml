@@ -35,7 +35,10 @@
                             Application Description
                         </th>
                         <th>
-                            Application Status
+                            Accepted/Rejected
+                        </th>
+                        <th>
+                            Comment
                         </th>
                         <th>Actions</th>
                     </tr>
@@ -43,30 +46,33 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.title)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.tag)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.description)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.status)
-                            </td>
-                            <td class="btn-group">
-                                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
-                                {
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.application_id }, new { @class = "btn btn-primary" })
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.application_id }, new { @class = "btn btn-danger" })
-                                }
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tag)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.Accepted_Rejected)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.status)
+                        </td>
+                        <td class="btn-group">
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Faculty")))
+                            {
+                                @Html.ActionLink("Edit", "Edit", new { id = item.application_id }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.application_id }, new { @class = "btn btn-danger" })
+                            }
+                        </td>
+                    </tr>
                     }
 
                 </tbody>

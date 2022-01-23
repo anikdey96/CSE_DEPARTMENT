@@ -21,6 +21,11 @@ namespace CSE_DEPARTMENT.Controllers
             return View(applications.ToList());
         }
 
+        public ActionResult Success()
+        {
+            return View();
+        }
+
         // GET: Applications/Details/5
         public ActionResult Details(int? id)
         {
@@ -48,13 +53,22 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "application_id,name,roll,title,tag,description,status,year_id")] Application application)
+        public ActionResult Create(Application application)
         {
             if (ModelState.IsValid)
             {
-                db.Applications.Add(application);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (User.IsInRole("SuperAdmin"))
+                {
+                    db.Applications.Add(application);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    db.Applications.Add(application);
+                    db.SaveChanges();
+                    return RedirectToAction("Success");
+                }
             }
 
             ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name", application.year_id);
@@ -82,7 +96,7 @@ namespace CSE_DEPARTMENT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "application_id,name,roll,title,tag,description,status,year_id")] Application application)
+        public ActionResult Edit(Application application)
         {
             if (ModelState.IsValid)
             {

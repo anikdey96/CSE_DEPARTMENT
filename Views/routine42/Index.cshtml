@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<CSE_DEPARTMENT.Models.routine42>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
@@ -6,9 +7,9 @@
 
 <style>
     .card {
-        width: 50%;
+        width: 70%;
         text-align: center;
-        margin-left: 250px;
+        margin-left: 100px;
     }
 </style>
 
@@ -35,67 +36,25 @@
                         <th>
                             Session
                         </th>
-                        @*<th>
-                                Subject Name
-                            </th>
-
-                            <th>
-                                Teacher Name
-                            </th>
-
-                            <th>
-                                Date
-                            </th>
-                            <th>
-                                Day
-                            </th>
-                            <th>
-                                Start Time
-                            </th>
-                            <th>
-                                End Time
-                            </th>
-                            <th>
-                                Duration
-                            </th>*@
+                        <th>
+                            Year-Semester
+                        </th>
                         <th>
                             Title
                         </th>
-                        @*<th>
-                                Actions
-                            </th>*@
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-
                     @foreach (var item in Model)
                     {
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Session.session_name)
                             </td>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.Subject.Subject_Name)
-                                </td>
-
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.teacher.teacher_name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.class_date)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.day)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.start_time)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.end_time)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.duration)
-                                </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Year.year_name)
+                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.comment)
                             </td>

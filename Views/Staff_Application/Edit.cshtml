@@ -28,7 +28,7 @@
             <div class="card-body">
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.name, "Name", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <b>@Html.LabelFor(model => model.name, "Name", htmlAttributes: new { @class = "control-label col-md-5" })</b>
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.title, "Application Title", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <b>@Html.LabelFor(model => model.title, "Application Title", htmlAttributes: new { @class = "control-label col-md-5" })</b>
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.tag, "Tag", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <b>@Html.LabelFor(model => model.tag, "Tag", htmlAttributes: new { @class = "control-label col-md-5" })</b>
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.tag, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.tag, "", new { @class = "text-danger" })
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.description, "Description", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <b>@Html.LabelFor(model => model.description, "Description", htmlAttributes: new { @class = "control-label col-md-5" })</b>
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
@@ -61,7 +61,16 @@
                 @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
                 {
                     <div class="form-group">
-                        @Html.LabelFor(model => model.status, "Status", htmlAttributes: new { @class = "control-label col-md-5" })
+                        <b>@Html.LabelFor(model => model.Accepted_Rejected, "Accepted/Rejected", htmlAttributes: new { @class = "control-label col-md-5" })</b>
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.Accepted_Rejected)
+                                @Html.ValidationMessageFor(model => model.Accepted_Rejected, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <b>@Html.LabelFor(model => model.status, "Comment", htmlAttributes: new { @class = "control-label col-md-5" })</b>
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.status, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
@@ -69,13 +78,13 @@
                     </div>
                 }
 
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Save" class="btn btn-success" /> |
-                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
-                        </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-success" /> |
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
                     </div>
                 </div>
+            </div>
 
         </div>
 

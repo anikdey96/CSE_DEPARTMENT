@@ -1,0 +1,43 @@
+﻿@*@model CSE_DEPARTMENT.Models.rou11
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>rou11</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Session.session_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Session.session_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year.year_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year.year_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.routine_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

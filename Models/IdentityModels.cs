@@ -145,8 +145,6 @@ namespace CSE_DEPARTMENT.Models
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials11> materials11 { get; set; }
 
-        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine11> routine11 { get; set; }
-
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice11> notice11 { get; set; }
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice12> notice12 { get; set; }
@@ -162,6 +160,9 @@ namespace CSE_DEPARTMENT.Models
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice41> notice41 { get; set; }
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice42> notice42 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.rou11> rou11 { get; set; }
+
 
         //public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.RoleViewModel> RoleViewModels { get; set; }
 

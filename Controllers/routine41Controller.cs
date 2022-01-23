@@ -11,7 +11,6 @@ using CSE_DEPARTMENT.Models;
 
 namespace CSE_DEPARTMENT.Controllers
 {
-    [Authorize]
     public class routine41Controller : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -19,7 +18,7 @@ namespace CSE_DEPARTMENT.Controllers
         // GET: routine41
         public ActionResult Index()
         {
-            var routine41 = db.routine41.Include(r => r.Session);
+            var routine41 = db.routine41.Include(r => r.Session).Include(r => r.Year);
             return View(routine41.ToList());
         }
 
@@ -42,6 +41,7 @@ namespace CSE_DEPARTMENT.Controllers
         public ActionResult Create()
         {
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name");
+            ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name");
             return View();
         }
 
@@ -71,18 +71,16 @@ namespace CSE_DEPARTMENT.Controllers
                 return RedirectToAction("Index");
             }
 
-
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name", routine41.session_id);
+            ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name", routine41.year_id);
             return View(routine41);
         }
-
         public FileResult Download(string fileName)
         {
-            string fullPath = Path.Combine(Server.MapPath("~/Materials"), fileName);
+            string fullPath = Path.Combine(Server.MapPath("~/Routines"), fileName);
             byte[] fileBytes = System.IO.File.ReadAllBytes(fullPath);
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
-
 
         // GET: routine41/Edit/5
         public ActionResult Edit(int? id)
@@ -97,6 +95,7 @@ namespace CSE_DEPARTMENT.Controllers
                 return HttpNotFound();
             }
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name", routine41.session_id);
+            ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name", routine41.year_id);
             return View(routine41);
         }
 
@@ -114,6 +113,7 @@ namespace CSE_DEPARTMENT.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.session_id = new SelectList(db.Sessions, "session_id", "session_name", routine41.session_id);
+            ViewBag.year_id = new SelectList(db.Years, "year_id", "year_name", routine41.year_id);
             return View(routine41);
         }
 
