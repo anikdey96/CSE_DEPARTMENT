@@ -1,0 +1,136 @@
+﻿@model IEnumerable<CSE_DEPARTMENT.Models.oldRoutine>
+
+@{ ViewBag.Title = "Routine";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml"; }
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h3 class="m-0 font-weight-bold text-primary">Class Routine</h3>
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <tr>
+                    <th>
+                        Day
+                    </th>
+                    <th>
+                        Session
+                    </th>
+                    <th>
+                        Course Name
+                    </th>
+                    <th>
+                        Teacher Name
+                    </th>
+                    <th>
+                        Year
+                    </th>
+                    @*<th>
+            @Html.DisplayNameFor(model => model.routine_upload)
+        </th>*@
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Start Time
+                    </th>
+                    <th>
+                        End Time
+                    </th>
+                    <th>
+                        Duration
+                    </th>
+                    <th>
+                        Room No
+                    </th>
+                    <th>
+                        Comment
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.day)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Session.session_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject.Subject_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.teacher.teacher_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year.year_name)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.routine_upload)
+        </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.class_date)
+                </td>
+
+                <td>
+                    <b><h3>@Html.DisplayFor(modelItem => item.start_time)</h3></b>
+                </td>
+                <td>
+                    <b><h3>@Html.DisplayFor(modelItem => item.end_time)</h3></b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.duration)
+                </td>
+                <td>
+                    <b><h3>@Html.DisplayFor(modelItem => item.Room_No)</h3></b>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.comment)
+                </td>
+                <td class="btn-group">
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.routine_id }, new { @class = "btn btn-primary" })}
+                    @Html.ActionLink("Details", "Details", new { id = item.routine_id }, new { @class = "btn btn-info" })
+                    @*@Html.ActionLink("Preview", "Details", new { id = item.currentacademic_id }, new { @class = "btn btn-secondary" })*@
+                    @*@Html.ActionLink("Download", "Details", new { id = item.currentacademic_id }, new { @class = "btn btn-success" })*@
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { id = item.routine_id }, new { @class = "btn btn-danger" })}
+                </td>
+            </tr>
+                }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<p>
+
+    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin")))
+    {
+        @Html.ActionLink("Create A New Entry", "Create", null, new { @class = "btn btn-success" })
+    }
+</p>

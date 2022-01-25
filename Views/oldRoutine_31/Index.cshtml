@@ -1,0 +1,115 @@
+﻿@model IEnumerable<CSE_DEPARTMENT.Models.oldRoutine_31>
+
+@{ ViewBag.Title = "Routine";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml"; }
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h3 class="m-0 font-weight-bold text-primary">Class Routine</h3>
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+                        9-10
+                    </th>
+                    <th>
+                        10-11
+                    </th>
+                    <th>
+                        11-12
+                    </th>
+                    <th>
+                        12-01
+                    </th>
+                    <th>
+                        01-02
+                    </th>
+                    <th>
+                        02-03
+                    </th>
+                    <th>
+                        03-04
+                    </th>
+                    <th>
+                        04-05
+                    </th>
+
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.day)
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.box1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.box2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.box3)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.box4)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.box5)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.box6)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.box7)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.box8)
+                        </td>
+
+                        <td class="btn-group">
+                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || (User.IsInRole("Faculty"))))
+                            {
+                                @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })}
+
+                        </td>
+                    </tr>
+                }
+
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+<p>
+    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || (User.IsInRole("Faculty"))))
+    {
+        @Html.ActionLink("Create A New Entry", "Create", null, new { @class = "btn btn-success" })}
+</p>

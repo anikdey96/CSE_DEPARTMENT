@@ -127,7 +127,7 @@ namespace CSE_DEPARTMENT.Models
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.materials42> materials42 { get; set; }
 
-        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine12> routine12 { get; set; }
+ 
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.routine21> routine21 { get; set; }
 
@@ -161,7 +161,27 @@ namespace CSE_DEPARTMENT.Models
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.notice42> notice42 { get; set; }
 
-        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.rou11> rou11 { get; set; }
+     
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine> oldRoutines { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine_2> oldRoutine_2 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine11> oldRoutine11 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine_12> oldRoutine_12 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine_21> oldRoutine_21 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine_22> oldRoutine_22 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine_31> oldRoutine_31 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine_32> oldRoutine_32 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine_41> oldRoutine_41 { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine_42> oldRoutine_42 { get; set; }
 
 
         //public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.RoleViewModel> RoleViewModels { get; set; }

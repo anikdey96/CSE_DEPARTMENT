@@ -360,10 +360,18 @@
     <Compile Include="Controllers\notice41Controller.cs" />
     <Compile Include="Controllers\notice42Controller.cs" />
     <Compile Include="Controllers\noticesController.cs" />
+    <Compile Include="Controllers\oldRoutine11Controller.cs" />
+    <Compile Include="Controllers\oldRoutinesController.cs" />
+    <Compile Include="Controllers\oldRoutine_12Controller.cs" />
+    <Compile Include="Controllers\oldRoutine_21Controller.cs" />
+    <Compile Include="Controllers\oldRoutine_22Controller.cs" />
+    <Compile Include="Controllers\oldRoutine_2Controller.cs" />
+    <Compile Include="Controllers\oldRoutine_31Controller.cs" />
+    <Compile Include="Controllers\oldRoutine_32Controller.cs" />
+    <Compile Include="Controllers\oldRoutine_41Controller.cs" />
+    <Compile Include="Controllers\oldRoutine_42Controller.cs" />
     <Compile Include="Controllers\previous_academicController.cs" />
     <Compile Include="Controllers\resultsController.cs" />
-    <Compile Include="Controllers\rou11Controller.cs" />
-    <Compile Include="Controllers\routine12Controller.cs" />
     <Compile Include="Controllers\routine21Controller.cs" />
     <Compile Include="Controllers\routine22Controller.cs" />
     <Compile Include="Controllers\routine31Controller.cs" />
@@ -667,6 +675,26 @@
     <Compile Include="Migrations\202201231052518_checkboxApplication1.designer.cs">
       <DependentUpon>202201231052518_checkboxApplication1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201240438532_oldRoutine-1.cs" />
+    <Compile Include="Migrations\202201240438532_oldRoutine-1.designer.cs">
+      <DependentUpon>202201240438532_oldRoutine-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201240520507_oldRoutine-2.cs" />
+    <Compile Include="Migrations\202201240520507_oldRoutine-2.designer.cs">
+      <DependentUpon>202201240520507_oldRoutine-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201241218449_old-routine-two.cs" />
+    <Compile Include="Migrations\202201241218449_old-routine-two.designer.cs">
+      <DependentUpon>202201241218449_old-routine-two.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201241736016_oldROUTINE11.cs" />
+    <Compile Include="Migrations\202201241736016_oldROUTINE11.designer.cs">
+      <DependentUpon>202201241736016_oldROUTINE11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201251010382_oldRoutineFINALupdate.cs" />
+    <Compile Include="Migrations\202201251010382_oldRoutineFINALupdate.designer.cs">
+      <DependentUpon>202201251010382_oldRoutineFINALupdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\activities.cs" />
@@ -718,11 +746,19 @@
     <Compile Include="Models\notice32.cs" />
     <Compile Include="Models\notice41.cs" />
     <Compile Include="Models\notice42.cs" />
+    <Compile Include="Models\oldRoutine-12.cs" />
+    <Compile Include="Models\oldRoutine-2.cs" />
+    <Compile Include="Models\oldRoutine-21.cs" />
+    <Compile Include="Models\oldRoutine-22.cs" />
+    <Compile Include="Models\oldRoutine-31.cs" />
+    <Compile Include="Models\oldRoutine-32.cs" />
+    <Compile Include="Models\oldRoutine-41.cs" />
+    <Compile Include="Models\oldRoutine-42.cs" />
+    <Compile Include="Models\oldRoutine.cs" />
+    <Compile Include="Models\oldRoutine11.cs" />
     <Compile Include="Models\previous_academic.cs" />
     <Compile Include="Models\result.cs" />
-    <Compile Include="Models\rou11.cs" />
     <Compile Include="Models\routine.cs" />
-    <Compile Include="Models\routine12.cs" />
     <Compile Include="Models\routine21.cs" />
     <Compile Include="Models\routine22.cs" />
     <Compile Include="Models\routine31.cs" />
@@ -3021,21 +3057,11 @@
     <Content Include="Views\notice42\Index.cshtml" />
     <Content Include="Views\Shared\_AccessLayoutPage.cshtml" />
     <Content Include="Views\HomePage\Access.cshtml" />
-    <Content Include="Views\rou11\Create.cshtml" />
-    <Content Include="Views\rou11\Delete.cshtml" />
-    <Content Include="Views\rou11\Details.cshtml" />
-    <Content Include="Views\rou11\Edit.cshtml" />
-    <Content Include="Views\rou11\Index.cshtml" />
     <Content Include="Views\routines\Create.cshtml" />
     <Content Include="Views\routines\Delete.cshtml" />
     <Content Include="Views\routines\Details.cshtml" />
     <Content Include="Views\routines\Edit.cshtml" />
     <Content Include="Views\routines\Index.cshtml" />
-    <Content Include="Views\routine12\Create.cshtml" />
-    <Content Include="Views\routine12\Delete.cshtml" />
-    <Content Include="Views\routine12\Details.cshtml" />
-    <Content Include="Views\routine12\Edit.cshtml" />
-    <Content Include="Views\routine12\Index.cshtml" />
     <Content Include="Views\routine21\Create.cshtml" />
     <Content Include="Views\routine21\Delete.cshtml" />
     <Content Include="Views\routine21\Details.cshtml" />
@@ -3070,6 +3096,56 @@
     <Content Include="Views\Faculty_Application\Success.cshtml" />
     <Content Include="Views\Applications\Success.cshtml" />
     <Content Include="Views\faculty_task_assign\Success.cshtml" />
+    <Content Include="Views\oldRoutines\Create.cshtml" />
+    <Content Include="Views\oldRoutines\Delete.cshtml" />
+    <Content Include="Views\oldRoutines\Details.cshtml" />
+    <Content Include="Views\oldRoutines\Edit.cshtml" />
+    <Content Include="Views\oldRoutines\Index.cshtml" />
+    <Content Include="Views\oldRoutine_2\Create.cshtml" />
+    <Content Include="Views\oldRoutine_2\Delete.cshtml" />
+    <Content Include="Views\oldRoutine_2\Details.cshtml" />
+    <Content Include="Views\oldRoutine_2\Edit.cshtml" />
+    <Content Include="Views\oldRoutine_2\Index.cshtml" />
+    <Content Include="Views\oldRoutine11\Create.cshtml" />
+    <Content Include="Views\oldRoutine11\Delete.cshtml" />
+    <Content Include="Views\oldRoutine11\Details.cshtml" />
+    <Content Include="Views\oldRoutine11\Edit.cshtml" />
+    <Content Include="Views\oldRoutine11\Index.cshtml" />
+    <Content Include="Views\oldRoutine_12\Create.cshtml" />
+    <Content Include="Views\oldRoutine_12\Delete.cshtml" />
+    <Content Include="Views\oldRoutine_12\Details.cshtml" />
+    <Content Include="Views\oldRoutine_12\Edit.cshtml" />
+    <Content Include="Views\oldRoutine_12\Index.cshtml" />
+    <Content Include="Views\oldRoutine_21\Create.cshtml" />
+    <Content Include="Views\oldRoutine_21\Delete.cshtml" />
+    <Content Include="Views\oldRoutine_21\Details.cshtml" />
+    <Content Include="Views\oldRoutine_21\Edit.cshtml" />
+    <Content Include="Views\oldRoutine_21\Index.cshtml" />
+    <Content Include="Views\oldRoutine_22\Create.cshtml" />
+    <Content Include="Views\oldRoutine_22\Delete.cshtml" />
+    <Content Include="Views\oldRoutine_22\Details.cshtml" />
+    <Content Include="Views\oldRoutine_22\Edit.cshtml" />
+    <Content Include="Views\oldRoutine_22\Index.cshtml" />
+    <Content Include="Views\oldRoutine_31\Create.cshtml" />
+    <Content Include="Views\oldRoutine_31\Delete.cshtml" />
+    <Content Include="Views\oldRoutine_31\Details.cshtml" />
+    <Content Include="Views\oldRoutine_31\Edit.cshtml" />
+    <Content Include="Views\oldRoutine_31\Index.cshtml" />
+    <Content Include="Views\oldRoutine_32\Create.cshtml" />
+    <Content Include="Views\oldRoutine_32\Delete.cshtml" />
+    <Content Include="Views\oldRoutine_32\Details.cshtml" />
+    <Content Include="Views\oldRoutine_32\Edit.cshtml" />
+    <Content Include="Views\oldRoutine_32\Index.cshtml" />
+    <Content Include="Views\oldRoutine_41\Create.cshtml" />
+    <Content Include="Views\oldRoutine_41\Delete.cshtml" />
+    <Content Include="Views\oldRoutine_41\Details.cshtml" />
+    <Content Include="Views\oldRoutine_41\Edit.cshtml" />
+    <Content Include="Views\oldRoutine_41\Index.cshtml" />
+    <Content Include="Views\oldRoutine_42\Create.cshtml" />
+    <Content Include="Views\oldRoutine_42\Delete.cshtml" />
+    <Content Include="Views\oldRoutine_42\Details.cshtml" />
+    <Content Include="Views\oldRoutine_42\Edit.cshtml" />
+    <Content Include="Views\oldRoutine_42\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3299,6 +3375,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201231052518_checkboxApplication1.resx">
       <DependentUpon>202201231052518_checkboxApplication1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201240438532_oldRoutine-1.resx">
+      <DependentUpon>202201240438532_oldRoutine-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201240520507_oldRoutine-2.resx">
+      <DependentUpon>202201240520507_oldRoutine-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201241218449_old-routine-two.resx">
+      <DependentUpon>202201241218449_old-routine-two.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201241736016_oldROUTINE11.resx">
+      <DependentUpon>202201241736016_oldROUTINE11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201251010382_oldRoutineFINALupdate.resx">
+      <DependentUpon>202201251010382_oldRoutineFINALupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
