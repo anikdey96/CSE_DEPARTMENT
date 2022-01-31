@@ -50,11 +50,13 @@
                     <th>
                         04-05
                     </th>
-
-                    <th>
-                        Actions
-                    </th>
-                </tr>
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || (User.IsInRole("Faculty"))))
+                    {
+                        <th>
+                            Actions
+                        </th>
+                    }
+                    </tr>
 
                 @foreach (var item in Model)
                 {
@@ -68,7 +70,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.box1)
                         </td>
-                        <td>
+                        <td class="alert-primary">
                             @Html.DisplayFor(modelItem => item.box2)
                         </td>
                         <td>

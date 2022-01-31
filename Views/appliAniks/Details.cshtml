@@ -1,0 +1,59 @@
+﻿@model CSE_DEPARTMENT.Models.appliAnik
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>appliAnik</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.namesAnik.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namesAnik.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rollAnik.Roll)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rollAnik.Roll)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.requiredLeave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.requiredLeave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.aid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

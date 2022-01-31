@@ -29,8 +29,11 @@
                         <th>
                             Application Title
                         </th>
+                        @*<th>
+            Application Tag
+        </th>*@
                         <th>
-                            Application Tag
+                            Required Leave
                         </th>
                         <th>
                             Application Description
@@ -55,8 +58,11 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.title)
                         </td>
+                        @*<td>
+            @Html.DisplayFor(modelItem => item.tag)
+        </td>*@
                         <td>
-                            @Html.DisplayFor(modelItem => item.tag)
+                            @Html.DisplayFor(modelItem => item.NoOfLeave)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.description)

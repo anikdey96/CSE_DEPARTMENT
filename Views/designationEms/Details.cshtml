@@ -1,0 +1,27 @@
+﻿@model CSE_DEPARTMENT.Models.designationEm
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>designationEm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.did }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

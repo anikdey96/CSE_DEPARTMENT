@@ -18,10 +18,9 @@
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
                 <dl class="dl-horizontal">
                     <dt>
-                        Name
+                        @Html.DisplayNameFor(model => model.name)
                     </dt>
 
                     <dd>
@@ -29,53 +28,64 @@
                     </dd>
 
                     <dt>
-                        Application Title
+                        @Html.DisplayNameFor(model => model.title)
                     </dt>
 
                     <dd>
                         @Html.DisplayFor(model => model.title)
                     </dd>
 
-                    <dt>
-                        Tag
+                    @*<dt>
+                        @Html.DisplayNameFor(model => model.Designation)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.tag)
+                        @Html.DisplayFor(model => model.Designation)
+                    </dd>*@
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NoOfLeave)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NoOfLeave)
                     </dd>
 
                     <dt>
-                        Description
+                        @Html.DisplayNameFor(model => model.description)
                     </dt>
 
                     <dd>
                         @Html.DisplayFor(model => model.description)
                     </dd>
-                    <dt>
-                        Accepted/Rejected
-                    </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Accepted_Rejected)
-                    </dd>
                     <dt>
-                        Comment
+                        @Html.DisplayNameFor(model => model.status)
                     </dt>
 
                     <dd>
                         @Html.DisplayFor(model => model.status)
                     </dd>
 
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Accepted_Rejected)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Accepted_Rejected)
+                    </dd>
+
                 </dl>
 
                 @using (Html.BeginForm())
                 {
-            @Html.AntiForgeryToken()
+                    @Html.AntiForgeryToken()
 
-                            <div class="form-actions no-color">
-                                <input type="submit" value="Delete" class="btn btn-danger" /> |
-                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
-                            </div>}
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-danger" /> |
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+                    </div>
+}
             </table>
 
         </div>

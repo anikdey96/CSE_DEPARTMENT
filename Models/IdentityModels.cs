@@ -183,6 +183,52 @@ namespace CSE_DEPARTMENT.Models
 
         public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.oldRoutine_42> oldRoutine_42 { get; set; }
 
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.moFacultyInfo> moFacultyInfoes { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.emFacultyInfo> emFacultyInfoes { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.shFacultyInfo> shFacultyInfoes { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.moFacultyApplication> moFacultyApplications { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.designationEm> designationEms { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.designationMo> designationMoes { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.designationSha> designationShas { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.emFacultyApplication> emFacultyApplications { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.shaFacultyApplication> shaFacultyApplications { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.rollAnik> rollAniks { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.namesAnik> namesAniks { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.appliAnik> appliAniks { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.nameArsad> nameArsads { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.nameImrul> nameImruls { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.appliImrul> appliImruls { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.appliArsad> appliArsads { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.nameMahin> nameMahins { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.rollMahin> rollMahins { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.appliMahin> appliMahins { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.indexAppliAnik> indexAppliAniks { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.indexAppliMahin> indexAppliMahins { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.indexAppliArsad> indexAppliArsads { get; set; }
+
+        public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.indexAppliImrul> indexAppliImruls { get; set; }
+
 
         //public System.Data.Entity.DbSet<CSE_DEPARTMENT.Models.RoleViewModel> RoleViewModels { get; set; }
 

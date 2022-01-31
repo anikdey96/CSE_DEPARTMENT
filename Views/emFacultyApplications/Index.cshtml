@@ -1,0 +1,82 @@
+﻿@model IEnumerable<CSE_DEPARTMENT.Models.emFacultyApplication>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.designationEm.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emFacultyInfo.Designation)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfLeave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Accepted_Rejected)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.designationEm.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emFacultyInfo.Designation)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Designation)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfLeave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Accepted_Rejected)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.application_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.application_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.application_id })
+        </td>
+    </tr>
+}
+
+</table>

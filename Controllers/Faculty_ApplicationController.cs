@@ -19,12 +19,10 @@ namespace CSE_DEPARTMENT.Controllers
         {
             return View(db.Faculty_Application.ToList());
         }
-
         public ActionResult Success()
         {
             return View();
         }
-
         // GET: Faculty_Application/Details/5
         public ActionResult Details(int? id)
         {
@@ -53,7 +51,6 @@ namespace CSE_DEPARTMENT.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Faculty_Application faculty_Application)
         {
-
             if (ModelState.IsValid)
             {
                 if (User.IsInRole("SuperAdmin"))
@@ -69,6 +66,7 @@ namespace CSE_DEPARTMENT.Controllers
                     return RedirectToAction("Success");
                 }
             }
+
             return View(faculty_Application);
         }
 

@@ -1,0 +1,91 @@
+﻿@*@model CSE_DEPARTMENT.Models.emFacultyApplication
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>emFacultyApplication</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.designationEm.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.designationEm.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emFacultyInfo.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emFacultyInfo.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfLeave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfLeave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Accepted_Rejected)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Accepted_Rejected)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.application_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

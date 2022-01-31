@@ -323,7 +323,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\activitiesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\appliAniksController.cs" />
+    <Compile Include="Controllers\appliArsadsController.cs" />
     <Compile Include="Controllers\ApplicationsController.cs" />
+    <Compile Include="Controllers\appliImrulsController.cs" />
+    <Compile Include="Controllers\appliMahinsController.cs" />
     <Compile Include="Controllers\book11Controller.cs" />
     <Compile Include="Controllers\book12Controller.cs" />
     <Compile Include="Controllers\book21Controller.cs" />
@@ -334,11 +338,20 @@
     <Compile Include="Controllers\book42Controller.cs" />
     <Compile Include="Controllers\booksController.cs" />
     <Compile Include="Controllers\current_academicController.cs" />
+    <Compile Include="Controllers\designationEmsController.cs" />
+    <Compile Include="Controllers\designationMoesController.cs" />
+    <Compile Include="Controllers\designationShasController.cs" />
+    <Compile Include="Controllers\emFacultyApplicationsController.cs" />
+    <Compile Include="Controllers\emFacultyInfoesController.cs" />
     <Compile Include="Controllers\Faculty_ApplicationController.cs" />
     <Compile Include="Controllers\faculty_task_assignController.cs" />
     <Compile Include="Controllers\GoogleClassRoomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Controllers\indexAppliAniksController.cs" />
+    <Compile Include="Controllers\indexAppliArsadsController.cs" />
+    <Compile Include="Controllers\indexAppliImrulsController.cs" />
+    <Compile Include="Controllers\indexAppliMahinsController.cs" />
     <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
@@ -351,6 +364,12 @@
     <Compile Include="Controllers\materials41Controller.cs" />
     <Compile Include="Controllers\materials42Controller.cs" />
     <Compile Include="Controllers\materialsController.cs" />
+    <Compile Include="Controllers\moFacultyApplicationsController.cs" />
+    <Compile Include="Controllers\moFacultyInfoesController.cs" />
+    <Compile Include="Controllers\nameArsadsController.cs" />
+    <Compile Include="Controllers\nameImrulsController.cs" />
+    <Compile Include="Controllers\nameMahinsController.cs" />
+    <Compile Include="Controllers\namesAniksController.cs" />
     <Compile Include="Controllers\notice11Controller.cs" />
     <Compile Include="Controllers\notice12Controller.cs" />
     <Compile Include="Controllers\notice21Controller.cs" />
@@ -372,6 +391,8 @@
     <Compile Include="Controllers\oldRoutine_42Controller.cs" />
     <Compile Include="Controllers\previous_academicController.cs" />
     <Compile Include="Controllers\resultsController.cs" />
+    <Compile Include="Controllers\rollAniksController.cs" />
+    <Compile Include="Controllers\rollMahinsController.cs" />
     <Compile Include="Controllers\routine21Controller.cs" />
     <Compile Include="Controllers\routine22Controller.cs" />
     <Compile Include="Controllers\routine31Controller.cs" />
@@ -380,6 +401,8 @@
     <Compile Include="Controllers\routine42Controller.cs" />
     <Compile Include="Controllers\routinesController.cs" />
     <Compile Include="Controllers\SessionsController.cs" />
+    <Compile Include="Controllers\shaFacultyApplicationsController.cs" />
+    <Compile Include="Controllers\shFacultyInfoesController.cs" />
     <Compile Include="Controllers\ShowDataController.cs" />
     <Compile Include="Controllers\StaffsController.cs" />
     <Compile Include="Controllers\Staff_ApplicationController.cs" />
@@ -695,10 +718,82 @@
     <Compile Include="Migrations\202201251010382_oldRoutineFINALupdate.designer.cs">
       <DependentUpon>202201251010382_oldRoutineFINALupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201251748329_fa-last.cs" />
+    <Compile Include="Migrations\202201251748329_fa-last.designer.cs">
+      <DependentUpon>202201251748329_fa-last.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201260359189_sss.cs" />
+    <Compile Include="Migrations\202201260359189_sss.designer.cs">
+      <DependentUpon>202201260359189_sss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201271622089_facAppli271.cs" />
+    <Compile Include="Migrations\202201271622089_facAppli271.designer.cs">
+      <DependentUpon>202201271622089_facAppli271.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201281508249_281th.cs" />
+    <Compile Include="Migrations\202201281508249_281th.designer.cs">
+      <DependentUpon>202201281508249_281th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201281618344_282th.cs" />
+    <Compile Include="Migrations\202201281618344_282th.designer.cs">
+      <DependentUpon>202201281618344_282th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201281632252_283th.cs" />
+    <Compile Include="Migrations\202201281632252_283th.designer.cs">
+      <DependentUpon>202201281632252_283th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201290559369_291th.cs" />
+    <Compile Include="Migrations\202201290559369_291th.designer.cs">
+      <DependentUpon>202201290559369_291th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201290652395_292th.cs" />
+    <Compile Include="Migrations\202201290652395_292th.designer.cs">
+      <DependentUpon>202201290652395_292th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201290727178_294thdesig.cs" />
+    <Compile Include="Migrations\202201290727178_294thdesig.designer.cs">
+      <DependentUpon>202201290727178_294thdesig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201290742341_295th.cs" />
+    <Compile Include="Migrations\202201290742341_295th.designer.cs">
+      <DependentUpon>202201290742341_295th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201291010380_296th.cs" />
+    <Compile Include="Migrations\202201291010380_296th.designer.cs">
+      <DependentUpon>202201291010380_296th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201291422556_300th.cs" />
+    <Compile Include="Migrations\202201291422556_300th.designer.cs">
+      <DependentUpon>202201291422556_300th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201291500328_305th.cs" />
+    <Compile Include="Migrations\202201291500328_305th.designer.cs">
+      <DependentUpon>202201291500328_305th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201291515521_400th.cs" />
+    <Compile Include="Migrations\202201291515521_400th.designer.cs">
+      <DependentUpon>202201291515521_400th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201291631131_500th.cs" />
+    <Compile Include="Migrations\202201291631131_500th.designer.cs">
+      <DependentUpon>202201291631131_500th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201291715100_600th.cs" />
+    <Compile Include="Migrations\202201291715100_600th.designer.cs">
+      <DependentUpon>202201291715100_600th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201291821028_700th.cs" />
+    <Compile Include="Migrations\202201291821028_700th.designer.cs">
+      <DependentUpon>202201291821028_700th.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\activities.cs" />
+    <Compile Include="Models\appliAnik.cs" />
+    <Compile Include="Models\appliArsad.cs" />
     <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\appliImrul.cs" />
+    <Compile Include="Models\appliMahin.cs" />
     <Compile Include="Models\AspNetRole.cs">
       <DependentUpon>UserRoleAssign.tt</DependentUpon>
     </Compile>
@@ -721,11 +816,20 @@
     <Compile Include="Models\book41.cs" />
     <Compile Include="Models\book42.cs" />
     <Compile Include="Models\current_academic.cs" />
+    <Compile Include="Models\designationEm.cs" />
+    <Compile Include="Models\designationMo.cs" />
+    <Compile Include="Models\designationSha.cs" />
+    <Compile Include="Models\emFacultyApplication.cs" />
+    <Compile Include="Models\emFacultyInfo.cs" />
     <Compile Include="Models\ErrorViewModel.cs" />
     <Compile Include="Models\Faculty_Application.cs" />
     <Compile Include="Models\faculty_task_assign.cs" />
     <Compile Include="Models\GoogleInvite.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\indexAppliAnik.cs" />
+    <Compile Include="Models\indexAppliArsad.cs" />
+    <Compile Include="Models\indexAppliImrul.cs" />
+    <Compile Include="Models\indexAppliMahin.cs" />
     <Compile Include="Models\Mail_info.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\materials.cs" />
@@ -737,6 +841,12 @@
     <Compile Include="Models\materials32.cs" />
     <Compile Include="Models\materials41.cs" />
     <Compile Include="Models\materials42.cs" />
+    <Compile Include="Models\moFacultyApplication.cs" />
+    <Compile Include="Models\moFacultyInfo.cs" />
+    <Compile Include="Models\nameArsad.cs" />
+    <Compile Include="Models\nameImrul.cs" />
+    <Compile Include="Models\nameMahin.cs" />
+    <Compile Include="Models\namesAnik.cs" />
     <Compile Include="Models\notice.cs" />
     <Compile Include="Models\notice11.cs" />
     <Compile Include="Models\notice12.cs" />
@@ -758,6 +868,8 @@
     <Compile Include="Models\oldRoutine11.cs" />
     <Compile Include="Models\previous_academic.cs" />
     <Compile Include="Models\result.cs" />
+    <Compile Include="Models\rollAnik.cs" />
+    <Compile Include="Models\rollMahin.cs" />
     <Compile Include="Models\routine.cs" />
     <Compile Include="Models\routine21.cs" />
     <Compile Include="Models\routine22.cs" />
@@ -766,6 +878,8 @@
     <Compile Include="Models\routine41.cs" />
     <Compile Include="Models\routine42.cs" />
     <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\shaFacultyApplication.cs" />
+    <Compile Include="Models\shFacultyInfo.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\Staff_Application.cs" />
     <Compile Include="Models\staff_career.cs" />
@@ -2908,11 +3022,6 @@
     <Content Include="Views\Staff_Application\Details.cshtml" />
     <Content Include="Views\Staff_Application\Edit.cshtml" />
     <Content Include="Views\Staff_Application\Index.cshtml" />
-    <Content Include="Views\Faculty_Application\Create.cshtml" />
-    <Content Include="Views\Faculty_Application\Delete.cshtml" />
-    <Content Include="Views\Faculty_Application\Details.cshtml" />
-    <Content Include="Views\Faculty_Application\Edit.cshtml" />
-    <Content Include="Views\Faculty_Application\Index.cshtml" />
     <Content Include="Views\current_academic\Create.cshtml" />
     <Content Include="Views\current_academic\Delete.cshtml" />
     <Content Include="Views\current_academic\Details.cshtml" />
@@ -3093,7 +3202,6 @@
     <Content Include="Views\routine42\Edit.cshtml" />
     <Content Include="Views\routine42\Index.cshtml" />
     <Content Include="Views\Staff_Application\Success.cshtml" />
-    <Content Include="Views\Faculty_Application\Success.cshtml" />
     <Content Include="Views\Applications\Success.cshtml" />
     <Content Include="Views\faculty_task_assign\Success.cshtml" />
     <Content Include="Views\oldRoutines\Create.cshtml" />
@@ -3146,6 +3254,104 @@
     <Content Include="Views\oldRoutine_42\Details.cshtml" />
     <Content Include="Views\oldRoutine_42\Edit.cshtml" />
     <Content Include="Views\oldRoutine_42\Index.cshtml" />
+    <Content Include="Views\Faculty_Application\Create.cshtml" />
+    <Content Include="Views\Faculty_Application\Delete.cshtml" />
+    <Content Include="Views\Faculty_Application\Details.cshtml" />
+    <Content Include="Views\Faculty_Application\Edit.cshtml" />
+    <Content Include="Views\Faculty_Application\Index.cshtml" />
+    <Content Include="Views\Faculty_Application\Success.cshtml" />
+    <Content Include="Views\moFacultyInfoes\Create.cshtml" />
+    <Content Include="Views\moFacultyInfoes\Delete.cshtml" />
+    <Content Include="Views\moFacultyInfoes\Details.cshtml" />
+    <Content Include="Views\moFacultyInfoes\Edit.cshtml" />
+    <Content Include="Views\moFacultyInfoes\Index.cshtml" />
+    <Content Include="Views\emFacultyInfoes\Create.cshtml" />
+    <Content Include="Views\emFacultyInfoes\Delete.cshtml" />
+    <Content Include="Views\emFacultyInfoes\Details.cshtml" />
+    <Content Include="Views\emFacultyInfoes\Edit.cshtml" />
+    <Content Include="Views\emFacultyInfoes\Index.cshtml" />
+    <Content Include="Views\shFacultyInfoes\Create.cshtml" />
+    <Content Include="Views\shFacultyInfoes\Delete.cshtml" />
+    <Content Include="Views\shFacultyInfoes\Details.cshtml" />
+    <Content Include="Views\shFacultyInfoes\Edit.cshtml" />
+    <Content Include="Views\shFacultyInfoes\Index.cshtml" />
+    <Content Include="Views\designationEms\Create.cshtml" />
+    <Content Include="Views\designationEms\Delete.cshtml" />
+    <Content Include="Views\designationEms\Details.cshtml" />
+    <Content Include="Views\designationEms\Edit.cshtml" />
+    <Content Include="Views\designationEms\Index.cshtml" />
+    <Content Include="Views\designationMoes\Create.cshtml" />
+    <Content Include="Views\designationMoes\Delete.cshtml" />
+    <Content Include="Views\designationMoes\Details.cshtml" />
+    <Content Include="Views\designationMoes\Edit.cshtml" />
+    <Content Include="Views\designationMoes\Index.cshtml" />
+    <Content Include="Views\designationShas\Create.cshtml" />
+    <Content Include="Views\designationShas\Delete.cshtml" />
+    <Content Include="Views\designationShas\Details.cshtml" />
+    <Content Include="Views\designationShas\Edit.cshtml" />
+    <Content Include="Views\designationShas\Index.cshtml" />
+    <Content Include="Views\emFacultyApplications\Create.cshtml" />
+    <Content Include="Views\emFacultyApplications\Delete.cshtml" />
+    <Content Include="Views\emFacultyApplications\Details.cshtml" />
+    <Content Include="Views\emFacultyApplications\Edit.cshtml" />
+    <Content Include="Views\emFacultyApplications\Index.cshtml" />
+    <Content Include="Views\moFacultyApplications\Create.cshtml" />
+    <Content Include="Views\moFacultyApplications\Delete.cshtml" />
+    <Content Include="Views\moFacultyApplications\Details.cshtml" />
+    <Content Include="Views\moFacultyApplications\Edit.cshtml" />
+    <Content Include="Views\moFacultyApplications\Index.cshtml" />
+    <Content Include="Views\shaFacultyApplications\Create.cshtml" />
+    <Content Include="Views\shaFacultyApplications\Delete.cshtml" />
+    <Content Include="Views\shaFacultyApplications\Details.cshtml" />
+    <Content Include="Views\shaFacultyApplications\Edit.cshtml" />
+    <Content Include="Views\shaFacultyApplications\Index.cshtml" />
+    <Content Include="Views\emFacultyApplications\Success.cshtml" />
+    <Content Include="Views\moFacultyApplications\Success.cshtml" />
+    <Content Include="Views\shaFacultyApplications\Success.cshtml" />
+    <Content Include="Views\appliAniks\Create.cshtml" />
+    <Content Include="Views\appliAniks\Delete.cshtml" />
+    <Content Include="Views\appliAniks\Details.cshtml" />
+    <Content Include="Views\appliAniks\Edit.cshtml" />
+    <Content Include="Views\appliAniks\Index.cshtml" />
+    <Content Include="Views\appliAniks\Success.cshtml" />
+    <Content Include="Views\appliImruls\Create.cshtml" />
+    <Content Include="Views\appliImruls\Delete.cshtml" />
+    <Content Include="Views\appliImruls\Details.cshtml" />
+    <Content Include="Views\appliImruls\Edit.cshtml" />
+    <Content Include="Views\appliImruls\Index.cshtml" />
+    <Content Include="Views\appliArsads\Create.cshtml" />
+    <Content Include="Views\appliArsads\Delete.cshtml" />
+    <Content Include="Views\appliArsads\Details.cshtml" />
+    <Content Include="Views\appliArsads\Edit.cshtml" />
+    <Content Include="Views\appliArsads\Index.cshtml" />
+    <Content Include="Views\appliImruls\Success.cshtml" />
+    <Content Include="Views\appliArsads\Success.cshtml" />
+    <Content Include="Views\appliMahins\Create.cshtml" />
+    <Content Include="Views\appliMahins\Delete.cshtml" />
+    <Content Include="Views\appliMahins\Details.cshtml" />
+    <Content Include="Views\appliMahins\Edit.cshtml" />
+    <Content Include="Views\appliMahins\Index.cshtml" />
+    <Content Include="Views\appliMahins\Success.cshtml" />
+    <Content Include="Views\indexAppliAniks\Create.cshtml" />
+    <Content Include="Views\indexAppliAniks\Delete.cshtml" />
+    <Content Include="Views\indexAppliAniks\Details.cshtml" />
+    <Content Include="Views\indexAppliAniks\Edit.cshtml" />
+    <Content Include="Views\indexAppliAniks\Index.cshtml" />
+    <Content Include="Views\indexAppliMahins\Create.cshtml" />
+    <Content Include="Views\indexAppliMahins\Delete.cshtml" />
+    <Content Include="Views\indexAppliMahins\Details.cshtml" />
+    <Content Include="Views\indexAppliMahins\Edit.cshtml" />
+    <Content Include="Views\indexAppliMahins\Index.cshtml" />
+    <Content Include="Views\indexAppliArsads\Create.cshtml" />
+    <Content Include="Views\indexAppliArsads\Delete.cshtml" />
+    <Content Include="Views\indexAppliArsads\Details.cshtml" />
+    <Content Include="Views\indexAppliArsads\Edit.cshtml" />
+    <Content Include="Views\indexAppliArsads\Index.cshtml" />
+    <Content Include="Views\indexAppliImruls\Create.cshtml" />
+    <Content Include="Views\indexAppliImruls\Delete.cshtml" />
+    <Content Include="Views\indexAppliImruls\Details.cshtml" />
+    <Content Include="Views\indexAppliImruls\Edit.cshtml" />
+    <Content Include="Views\indexAppliImruls\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3159,6 +3365,12 @@
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Routines\" />
     <Folder Include="UploadedFiles\" />
+    <Folder Include="Views\nameArsads\" />
+    <Folder Include="Views\nameImruls\" />
+    <Folder Include="Views\nameMahins\" />
+    <Folder Include="Views\namesAniks\" />
+    <Folder Include="Views\rollAniks\" />
+    <Folder Include="Views\rollMahins\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -3390,6 +3602,57 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201251010382_oldRoutineFINALupdate.resx">
       <DependentUpon>202201251010382_oldRoutineFINALupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201251748329_fa-last.resx">
+      <DependentUpon>202201251748329_fa-last.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201260359189_sss.resx">
+      <DependentUpon>202201260359189_sss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201271622089_facAppli271.resx">
+      <DependentUpon>202201271622089_facAppli271.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201281508249_281th.resx">
+      <DependentUpon>202201281508249_281th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201281618344_282th.resx">
+      <DependentUpon>202201281618344_282th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201281632252_283th.resx">
+      <DependentUpon>202201281632252_283th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201290559369_291th.resx">
+      <DependentUpon>202201290559369_291th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201290652395_292th.resx">
+      <DependentUpon>202201290652395_292th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201290727178_294thdesig.resx">
+      <DependentUpon>202201290727178_294thdesig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201290742341_295th.resx">
+      <DependentUpon>202201290742341_295th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201291010380_296th.resx">
+      <DependentUpon>202201291010380_296th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201291422556_300th.resx">
+      <DependentUpon>202201291422556_300th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201291500328_305th.resx">
+      <DependentUpon>202201291500328_305th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201291515521_400th.resx">
+      <DependentUpon>202201291515521_400th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201291631131_500th.resx">
+      <DependentUpon>202201291631131_500th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201291715100_600th.resx">
+      <DependentUpon>202201291715100_600th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201291821028_700th.resx">
+      <DependentUpon>202201291821028_700th.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

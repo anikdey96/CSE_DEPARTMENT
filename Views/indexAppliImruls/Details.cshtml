@@ -1,0 +1,43 @@
+﻿@model CSE_DEPARTMENT.Models.indexAppliImrul
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_HomeLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>indexAppliImrul</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalLeave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalLeave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveTaken)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveTaken)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

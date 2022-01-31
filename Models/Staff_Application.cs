@@ -14,6 +14,7 @@ namespace CSE_DEPARTMENT.Models
         public string name { get; set; }
         [Required(ErrorMessage = "Required Field!!")]
         public string title { get; set; }
+        public int NoOfLeave { get; set; }
         public string tag { get; set; }
         [Required(ErrorMessage = "Please Specify Your Task!!")]
         public string description { get; set; }
